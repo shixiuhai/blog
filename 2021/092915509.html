@@ -1,0 +1,1371 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="frp配置相关, 思进不思停的博客笔记">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>frp配置相关 | 思进不思停的博客笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="思进不思停的博客笔记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">思进不思停的博客笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>工具链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>媒体</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/cv">
+          
+          <i class="fas fa-comments" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>CV</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/shixiufen">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Shixiufen</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/share">
+          
+          <i class="fas fa-comments" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Share</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">思进不思停的博客笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			工具链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			媒体
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/cv " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-comments" style="position: absolute;left:50px" ></i>
+			      
+		          <span>CV</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/shixiufen " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Shixiufen</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/share " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-comments" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Share</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">frp配置相关</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/frp%E9%85%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">frp配置基础</span>
+                            </a>
+                        
+                            <a href="/tags/frp%E4%BD%BF%E7%94%A8/">
+                                <span class="chip bg-color">frp使用</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="post-category">
+                                内网穿透
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-09-29
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.3k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="frp-服务端配置"><a href="#frp-服务端配置" class="headerlink" title="frp 服务端配置"></a>frp 服务端配置</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> frp_0.33.0_linux_amd64/
+<span class="token function">vi</span> frps.ini
+<span class="token punctuation">[</span>common<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># frp监听的端口，默认是7000，可以改成其他的</span>
+bind_port <span class="token operator">=</span> 7000
+<span class="token comment" spellcheck="true"># 授权码，请改成更复杂的</span>
+token <span class="token operator">=</span> 52010  <span class="token comment" spellcheck="true"># 这个token之后在客户端会用到</span>
+
+<span class="token comment" spellcheck="true"># frp管理后台端口，请按自己需求更改</span>
+dashboard_port <span class="token operator">=</span> 7500
+<span class="token comment" spellcheck="true"># frp管理后台用户名和密码，请改成自己的</span>
+dashboard_user <span class="token operator">=</span> admin
+dashboard_pwd <span class="token operator">=</span> admin
+enable_prometheus <span class="token operator">=</span> <span class="token boolean">true</span>
+
+<span class="token comment" spellcheck="true"># 配置http代理</span>
+vhost_http_port <span class="token operator">=</span> 80
+<span class="token comment" spellcheck="true"># 配置https代理</span>
+vhost_https_port <span class="token operator">=</span> 443
+
+<span class="token comment" spellcheck="true"># frp日志配置</span>
+log_file <span class="token operator">=</span> /var/log/frps.log
+log_level <span class="token operator">=</span> info
+log_max_days <span class="token operator">=</span> 3
+
+
+<span class="token comment" spellcheck="true">## 设置和启动frp服务</span>
+
+<span class="token function">sudo</span> <span class="token function">mkdir</span> -p /etc/frp
+<span class="token function">sudo</span> <span class="token function">cp</span> frps.ini /etc/frp
+<span class="token function">sudo</span> <span class="token function">cp</span> frps /usr/bin
+<span class="token function">sudo</span> <span class="token function">cp</span> systemd/frps.service /usr/lib/systemd/system/<span class="token comment" spellcheck="true"># (或者 /lib/systemd/system)</span>
+<span class="token function">sudo</span> systemctl <span class="token function">enable</span> frps
+<span class="token function">sudo</span> systemctl start frps
+systemctl daemon-reload
+systemctl <span class="token function">enable</span> disk-space-check.service
+
+<span class="token comment" spellcheck="true">## 设计开机自启动</span>
+$ <span class="token function">cat</span> /usr/lib/systemd/system/mycmd.service
+<span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+Description <span class="token operator">=</span> some shell script
+<span class="token comment" spellcheck="true"># 要求脚本具有可执行权限</span>
+ConditionFileIsExecutable<span class="token operator">=</span>/usr/bin/some.sh
+
+<span class="token comment" spellcheck="true"># 指定要运行的命令、脚本</span>
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+ExecStart <span class="token operator">=</span> /usr/bin/some.sh
+
+<span class="token comment" spellcheck="true"># 下面这段不能少</span>
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+WantedBy <span class="token operator">=</span> multi-user.target
+
+$ systemctl daemon-reload
+$ systemctl <span class="token function">enable</span> mycmd.service
+
+
+
+
+
+<span class="token comment" spellcheck="true">## 防火墙开放端口</span>
+
+<span class="token comment" spellcheck="true"># 添加监听端口</span>
+<span class="token function">sudo</span> firewall-cmd --permanent --add-port<span class="token operator">=</span>7000/tcp
+<span class="token comment" spellcheck="true"># 添加管理后台端口</span>
+<span class="token function">sudo</span> firewall-cmd --permanent --add-port<span class="token operator">=</span>7500/tcp
+<span class="token function">sudo</span> firewall-cmd --reload
+</code></pre>
+<h2 id="frp-客户端配置"><a href="#frp-客户端配置" class="headerlink" title="frp 客户端配置"></a>frp 客户端配置</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> frpc.ini  <span class="token comment" spellcheck="true"># (注意哦，不是frps.ini)</span>
+<span class="token comment" spellcheck="true"># 客户端配置</span>
+<span class="token punctuation">[</span>common<span class="token punctuation">]</span>
+server_addr <span class="token operator">=</span> 服务器ip
+server_port <span class="token operator">=</span> 7000 <span class="token comment" spellcheck="true"># 与frps.ini的bind_port一致</span>
+token <span class="token operator">=</span> 52010  <span class="token comment" spellcheck="true"># 与frps.ini的token一致</span>
+
+<span class="token comment" spellcheck="true"># 配置ssh服务</span>
+<span class="token punctuation">[</span>ssh<span class="token punctuation">]</span>
+<span class="token function">type</span> <span class="token operator">=</span> tcp
+local_ip <span class="token operator">=</span> 127.0.0.1
+local_port <span class="token operator">=</span> 22
+remote_port <span class="token operator">=</span> 6000  <span class="token comment" spellcheck="true"># 这个自定义，之后再ssh连接的时候要用</span>
+
+<span class="token comment" spellcheck="true"># 配置http服务，可用于小程序开发、远程调试等，如果没有可以不写下面的</span>
+<span class="token punctuation">[</span>web<span class="token punctuation">]</span>
+<span class="token function">type</span> <span class="token operator">=</span> http
+local_ip <span class="token operator">=</span> 127.0.0.1
+local_port <span class="token operator">=</span> 8080
+subdomain <span class="token operator">=</span> test.hijk.pw  <span class="token comment" spellcheck="true"># web域名</span>
+remote_port <span class="token operator">=</span> 自定义的远程服务器端口，例如8080
+
+
+<span class="token comment" spellcheck="true">## web相关配置</span>
+
+<span class="token punctuation">[</span>walterlv_example_http<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 依然支持 http 访问</span>
+<span class="token function">type</span> <span class="token operator">=</span> http
+<span class="token comment" spellcheck="true"># 本地 Web 服务的端口</span>
+local_port <span class="token operator">=</span> 10000
+<span class="token comment" spellcheck="true"># 需要反向代理的域名（当访客通过此域名访问 A 机器时，才会将请求反向代理到此 Web 服务）</span>
+custom_domains <span class="token operator">=</span> example.walterlv.com
+
+<span class="token punctuation">[</span>walterlv_example<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 配置 https 访问</span>
+<span class="token function">type</span> <span class="token operator">=</span> https
+<span class="token comment" spellcheck="true"># 本地 Web 服务的端口（与前面的配置一样，都对应同一个 Web 服务）</span>
+local_port <span class="token operator">=</span> 10000
+<span class="token comment" spellcheck="true"># 需要反向代理的域名（当访客通过此域名访问 A 机器时，才会将请求反向代理到此 Web 服务）</span>
+custom_domains <span class="token operator">=</span> example.walterlv.com
+
+<span class="token comment" spellcheck="true"># 接下来的配置是支持 https 的重点配置</span>
+<span class="token comment" spellcheck="true"># 配置插件，将 https 请求转换成 http 请求后再发送给本地 Web 服务程序</span>
+plugin <span class="token operator">=</span> https2http
+<span class="token comment" spellcheck="true"># 转换成 http 后，发送到本机的 10000 端口</span>
+plugin_local_addr <span class="token operator">=</span> 127.0.0.1:10000
+<span class="token comment" spellcheck="true"># 可能是 frp 的 Bug？这里必须写成 127.0.0.1，稍后解释</span>
+plugin_host_header_rewrite <span class="token operator">=</span> 127.0.0.1
+<span class="token comment" spellcheck="true"># 指定代理方式为 frp</span>
+plugin_header_X-From-Where <span class="token operator">=</span> frp
+<span class="token comment" spellcheck="true"># 指定成你在前面部分导出的证书的路径</span>
+plugin_crt_path <span class="token operator">=</span> C:/Samples/_.walterlv.com_chain.crt
+plugin_key_path <span class="token operator">=</span> C:/Samples/_.walterlv.com_key.key
+</code></pre>
+<h2 id="测试穿透是否配置成功"><a href="#测试穿透是否配置成功" class="headerlink" title="测试穿透是否配置成功"></a>测试穿透是否配置成功</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> 用户名@服务端ip  -p 端口号
+<span class="token comment" spellcheck="true"># 这里一定要注意，这里用的是服务端的ip和用户名，端口号用的frpc.ini文件中的remote_port。如果你登录成功，那么，恭喜你，你已经学会了利用frc怎么配置内网穿透了！！！</span>
+</code></pre>
+<h3 id="frps-完整"><a href="#frps-完整" class="headerlink" title="frps 完整"></a>frps 完整</h3><pre class=" language-bash"><code class="language-bash">vim frps.ini
+ 
+基础配置
+​
+bind_addr           服务端监听地址          0.0.0.0        
+bind_port           服务端监听端口           7000      
+bind_udp_port       服务端监听 UDP 端口        0       
+kcp_bind_port       服务端监听 KCP 协议端口     0        
+proxy_bind_addr     代理监听地址      
+log_file            日志文件地址             /var/log/frp.log
+log_level           日志级别                trace, debug, info, warn, error<span class="token punctuation">(</span>默认info<span class="token punctuation">)</span>
+log_max_days        日志文件保留天数           3    
+detailed_errors_to_client  服务端返回详细错误信息给客户端  <span class="token boolean">true</span>
+tls_cert_file       TLS 服务端证书文件路径           
+tls_key_file        TLS 服务端密钥文件路径           
+tls_trusted_ca_file  TLS CA 证书路径    
+​
+权限验证
+authentication_method       鉴权方式              token <span class="token punctuation">(</span>默认token 。oidc<span class="token punctuation">)</span>         
+authenticate_heartbeats     开启心跳消息鉴权       <span class="token boolean">false</span>        
+token                       鉴权使用的 token 值   客户端需要设置一样的值才能鉴权通过
+​
+管理配置
+allow_ports          允许代理绑定的服务端端口     1000-2000,2001,3000-4000
+max_pool_count       最大连接池大小             5
+max_ports_per_client 限制单个客户端最大同时存在的代理数  0<span class="token punctuation">(</span>0表示没有限制<span class="token punctuation">)</span>
+tls_only             只接受启用了 TLS 的客户端连接     <span class="token boolean">false</span>        
+​
+监控
+dashboard_addr          启用 Dashboard 监听的本地地址    0.0.0.0         
+dashboard_port          启用 Dashboard 监听的本地端口    0       
+dashboard_user          HTTP BasicAuth 用户名          
+dashboard_pwd           HTTP BasicAuth 密码           
+enable_prometheus       是否提供 Prometheus 监控接口    <span class="token boolean">false</span>       需要同时启用了 Dashboard 才会生效
+asserts_dir             静态资源目录          Dashboard 使用的资源默认打包在二进制文件中，通过指定此参数使用自定义的静态资源
+​
+HTTP <span class="token operator">&amp;</span> HTTPS
+vhost_http_port         为 HTTP 类型代理监听的端口    0       启用后才支持 HTTP 类型的代理，默认不启用
+vhost_https_port        为 HTTPS 类型代理监听的端口   0       启用后才支持 HTTPS 类型的代理，默认不启用
+vhost_http_timeout      HTTP 类型代理在服务端的 ResponseHeader 超时时间  60      
+subdomain_host          二级域名后缀          
+custom_404_page         自定义 404 错误页面地址          
+​
+TCPMUX
+tcpmux_httpconnect_port     为 TCPMUX 类型代理监听的端口  0       启用后才支持 TCPMUX 类型的代理，默认不启用
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/frp%E9%85%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">frp配置基础</span>
+                                </a>
+                            
+                                <a href="/tags/frp%E4%BD%BF%E7%94%A8/">
+                                    <span class="chip bg-color">frp使用</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">谢谢你的打赏</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/101456103.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java笔记">
+                        
+                        <span class="card-title">java笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    编程语言
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">java基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/092915509.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="frp配置相关">
+                        
+                        <span class="card-title">frp配置相关</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="post-category">
+                                    内网穿透
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/frp%E9%85%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">frp配置基础</span>
+                    </a>
+                    
+                    <a href="/tags/frp%E4%BD%BF%E7%94%A8/">
+                        <span class="chip bg-color">frp使用</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">shixiuhai</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/shixiuhai" target="_blank">Hexo</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shixiuhai" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:15256728901@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=189128259" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 189128259" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
