@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-10-19T05:48:05.686Z</updated>
+  <updated>2021-10-19T05:54:51.454Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>华为USG防火墙二层部署</title>
+    <link href="http://www.fuyaoershang.xyz/2021/10194219.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/10194219.html</id>
+    <published>2021-10-19T05:51:46.000Z</published>
+    <updated>2021-10-19T05:54:51.454Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;华为USG600V防火墙二层部署&quot;&gt;&lt;a href=&quot;#华为USG600V防火墙二层部署&quot; class=&quot;headerlink&quot; title=&quot;华为USG600V防火墙二层部署&quot;&gt;&lt;/a&gt;&lt;code&gt;华为USG600V防火墙二层部署&lt;/code&gt;&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="数据通信" scheme="http://www.fuyaoershang.xyz/categories/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/"/>
+    
+    
+    <category term="USG6000V二层部署" scheme="http://www.fuyaoershang.xyz/tags/USG6000V%E4%BA%8C%E5%B1%82%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>华为USG防火墙三层部署</title>
     <link href="http://www.fuyaoershang.xyz/2021/101947200.html"/>
     <id>http://www.fuyaoershang.xyz/2021/101947200.html</id>
     <published>2021-10-19T02:16:43.000Z</published>
-    <updated>2021-10-19T05:48:05.686Z</updated>
+    <updated>2021-10-19T05:56:43.680Z</updated>
     
     
       
