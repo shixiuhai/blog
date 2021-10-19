@@ -544,7 +544,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.8k
                 </div>
                 
 
@@ -707,7 +707,8 @@ int e0/0/8
 nat outbound 2000 
 
 <span class="token comment" spellcheck="true">## 配置缺省路由</span>
-ip route-static 0.0.0.0 0.0.0.0 192.168.137.1 <span class="token comment" spellcheck="true"># 这里面192.168.137.1是cloud2的地址，即缺省路由的下一跳跳到cloud2上</span>
+<span class="token comment" spellcheck="true"># 这里我们配置的是一条缺省路由实现出去，192.168.137.1就是我们前面获取cloud2的真正的地址，来做为防火墙的下一跳，出接口是GE1/0/1接口</span>
+ip route-static 0.0.0.0 0.0.0.0 192.168.137.1 
 </code></pre>
 <h2 id="8-验证是否实现上网"><a href="#8-验证是否实现上网" class="headerlink" title="8. 验证是否实现上网"></a><code>8. 验证是否实现上网</code></h2><p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91%E9%AA%8C%E8%AF%81.PNG"></p>
 <p>这里选择vlan10的pc1和vlan30的pc5进行了一个验证，得pc上外网成功，至此这个项目操作结束</p>
@@ -717,9 +718,6 @@ ip route-static 0.0.0.0 0.0.0.0 192.168.137.1 <span class="token comment" spellc
 <p>（4）本项目的防火墙web配置也可以通过命令配置</p>
 <p>（5）本项目对路由器进行了简单的nat配置和静态缺省路由配置</p>
 <p>（6）本项目需要强调一下防火墙在做二层部署的时候一定要创建需要的vlan</p>
-<pre class=" language-bash"><code class="language-bash">ip route-static 0.0.0.0 0.0.0.0 172.16.0.1
-</code></pre>
-<p>这里我们配置的是一条缺省路由实现出去，192.168.137.1就是我们前面获取cloud2的真正的地址，来做为防火墙的下一条，出接口是GE1/0/1接口</p>
 
                 
             </div>
