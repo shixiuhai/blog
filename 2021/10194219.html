@@ -637,9 +637,7 @@ port trunk allow-pass vlan 10 20
 <p>这里需要先介绍一下cloud1的配置，因为后期需要通过本机的web页面登录防火墙实现对防火墙的配置</p>
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/cloud1%E7%9A%84%E9%85%8D%E7%BD%AE.PNG" alt="cloud1"></p>
-<blockquote>
 <p>这里不同电脑vmnet1的ip地址可能不同，比如我这里的ip是192.168.157.1那么我的防火墙G0/0/0地址就必须配置一个和192.168.157.1 同一个网段的地址。这里我防火墙ip地址配置的是192.168.157.5/24，具体ip配置可以进入ensp项目中通过终端查看防火墙的ip配置。这里防火墙G0/0/0接口里我配置了多个地址，但是只有192.168.157.5是有效的。所以由于不同电脑的vmnet的地址段不一样，你需要根据自己电脑的地址端在自己的防火墙上进行修改，或者你可以直接将vmnet1修改成和我一样的地址段</p>
-</blockquote>
 <h2 id="5-cloud2的具体配置"><a href="#5-cloud2的具体配置" class="headerlink" title="5. cloud2的具体配置"></a><code>5. cloud2的具体配置</code></h2><blockquote>
 <p>这里cloud2的配置有点复杂，这里我们为了实现pc可以上外网，即可以ping通114.114.114.114，我们需要为cloud2绑定的vmnet8再绑定一下本机可以上网的网卡</p>
 </blockquote>
