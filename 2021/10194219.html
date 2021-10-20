@@ -542,14 +542,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-19
+                    2021-10-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2k
                 </div>
                 
 
@@ -728,6 +728,35 @@ ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
 <p>（4）本项目的防火墙web配置也可以通过命令配置</p>
 <p>（5）本项目对路由器进行了简单的nat配置和静态缺省路由配置</p>
 <p>（6）本项目需要强调一下防火墙在做二层部署的时候一定要创建需要的vlan</p>
+<h2 id="10-小贴士常用查询某个配置的命令"><a href="#10-小贴士常用查询某个配置的命令" class="headerlink" title="10. 小贴士常用查询某个配置的命令"></a><code>10. 小贴士常用查询某个配置的命令</code></h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 进如命令模式进行命令配置</span>
+system-view <span class="token comment" spellcheck="true"># 配置命令的第一步</span>
+
+<span class="token comment" spellcheck="true">## 查询当前的配置</span>
+display this
+
+<span class="token comment" spellcheck="true">## 查询创建了哪些vlan</span>
+display vlan
+
+<span class="token comment" spellcheck="true">## 设备状态信息刷屏</span>
+Tab
+
+<span class="token comment" spellcheck="true">## 查询接口配置ip状态</span>
+display ip interface brief
+
+<span class="token comment" spellcheck="true">## 查询接口状态</span>
+display interface brief
+
+<span class="token comment" spellcheck="true">## 清晰查看端口属于哪个vlan</span>
+display port vlan
+
+<span class="token comment" spellcheck="true">## 查看路由表</span>
+display ip routing-table
+
+<span class="token comment" spellcheck="true">## 查看接口有哪些配置</span>
+int 接口名
+display this
+
+</code></pre>
 
                 
             </div>
