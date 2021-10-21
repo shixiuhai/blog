@@ -542,21 +542,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-19
+                    2021-10-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    82
+                    796
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -576,7 +576,81 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="华为防火墙连接云端详细配置"><a href="#华为防火墙连接云端详细配置" class="headerlink" title="华为防火墙连接云端详细配置"></a><code>华为防火墙连接云端详细配置</code></h1><h2 id="1-部署方式"><a href="#1-部署方式" class="headerlink" title="1. 部署方式"></a><code>1. 部署方式</code></h2><h3 id="1-1-二层部署方式"><a href="#1-1-二层部署方式" class="headerlink" title="1.1 二层部署方式"></a><code>1.1 二层部署方式</code></h3><h3 id="1-2-三层部署方式"><a href="#1-2-三层部署方式" class="headerlink" title="1.2 三层部署方式"></a><code>1.2 三层部署方式</code></h3><h2 id="2-电光口的使用"><a href="#2-电光口的使用" class="headerlink" title="2. 电光口的使用"></a><code>2. 电光口的使用</code></h2><h2 id="3-端口ip修改"><a href="#3-端口ip修改" class="headerlink" title="3.端口ip修改"></a><code>3.端口ip修改</code></h2><h2 id="4-IPSEC修改"><a href="#4-IPSEC修改" class="headerlink" title="4. IPSEC修改"></a><code>4. IPSEC修改</code></h2><h2 id="5-云平台连接"><a href="#5-云平台连接" class="headerlink" title="5. 云平台连接"></a><code>5. 云平台连接</code></h2><h2 id="6-日志源修改"><a href="#6-日志源修改" class="headerlink" title="6. 日志源修改"></a><code>6. 日志源修改</code></h2><h2 id="7-License激活"><a href="#7-License激活" class="headerlink" title="7. License激活"></a><code>7. License激活</code></h2><h2 id="8-系统更新"><a href="#8-系统更新" class="headerlink" title="8. 系统更新"></a><code>8. 系统更新</code></h2><h2 id="9-升级中心"><a href="#9-升级中心" class="headerlink" title="9. 升级中心"></a><code>9. 升级中心</code></h2><h2 id="10-云沙箱联动配置"><a href="#10-云沙箱联动配置" class="headerlink" title="10. 云沙箱联动配置"></a><code>10. 云沙箱联动配置</code></h2>
+                <h1 id="华为防火墙连接云端详细配置"><a href="#华为防火墙连接云端详细配置" class="headerlink" title="华为防火墙连接云端详细配置"></a><code>华为防火墙连接云端详细配置</code></h1><h2 id="1-部署业务可用"><a href="#1-部署业务可用" class="headerlink" title="1. 部署业务可用"></a><code>1. 部署业务可用</code></h2><p>(1) 导入配置文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E5%9B%BE%E7%89%871.png"></p>
+<p>(2) 实现客户网络课用</p>
+<p>​        实现客户网络恢复正常， <a target="_blank" rel="noopener" href="https://fuyaoershang.xyz/2021/10194219.html">二层上网的方式参考</a>此配置（这里的二层配置的是接口对模式，实际上还有交换模式可以选择配置方式和接口对类似）,<a target="_blank" rel="noopener" href="https://fuyaoershang.xyz/2021/101947200.html">三层可上网方式参考</a>此配置，实际在安装部署防火墙的时候，因为是导入的配置文件，我们只需要在配置文件的基础上对防火墙端口的修改或者增减就可以了。</p>
+<h2 id="2-电光口的使用"><a href="#2-电光口的使用" class="headerlink" title="2. 电光口的使用"></a><code>2. 电光口的使用</code></h2><blockquote>
+<p>实际业务部署中会出现使用光口还是使用电口的方式</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 进如命令模式进行命令配置</span>
+system-view 
+
+<span class="token comment" spellcheck="true">## 从使用电口切换到使用光口</span>
+int 接口<span class="token punctuation">(</span>例:int g0/0/1<span class="token punctuation">)</span>
+combo <span class="token function">enable</span> fiber
+
+<span class="token comment" spellcheck="true">## 从使用光口切换到使用电口</span>
+int 接口<span class="token punctuation">(</span>例：int g0/0/1<span class="token punctuation">)</span>
+combo-port copper
+</code></pre>
+<h2 id="3-IPSEC修改"><a href="#3-IPSEC修改" class="headerlink" title="3. IPSEC修改"></a><code>3. IPSEC修改</code></h2><p>(1) 在网络接口处修改或者创建loopback地址</p>
+<blockquote>
+<p>如果是导入的配置文件一般都是已经存在了loopback地址，我们只需要进行一下修改即可</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/loop1.PNG" alt="回环地址配置"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/loop2.png" alt="回环地址配置"></p>
+<p>(2) 配置IPSEC本端端口</p>
+<ul>
+<li><p>第一种知道IPSEC 预共享密码 的情况下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/ipsec%E9%85%8D%E7%BD%AE.png" alt="图形界面填入本段端口"></p>
+</li>
+<li><p>第二种不知道 预共享密码 的情况下</p>
+<blockquote>
+<p>一般需要通过命令把本端接口修改为其他端口，因为在图形界面下修改本端端口 预共享密码 会消失，在不知道密码的情况下我们是无法进行配置的</p>
+</blockquote>
+<p>(1) 查看默认配置文件下的本端端口</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4%E6%9C%AC%E7%AB%AF%E7%AB%AF%E5%8F%A3.png"></p>
+<p>我们得走默认本端端口是GE1/0/1</p>
+<p>(2) 命令方式修改本段端口</p>
+<p>```</p>
+<h2 id="进入端口"><a href="#进入端口" class="headerlink" title="进入端口"></a>进入端口</h2><p>int g0/0/1</p>
+<h2 id="查看端口下的配置"><a href="#查看端口下的配置" class="headerlink" title="查看端口下的配置"></a>查看端口下的配置</h2><p>display this</p>
+<h1 id="我们可以看到如下内容"><a href="#我们可以看到如下内容" class="headerlink" title="我们可以看到如下内容"></a>我们可以看到如下内容</h1><p>interface GigabitEthernet1/0/1<br>undo shutdown<br>ip address 192.168.137.6 255.255.255.0<br>service-manage ping permit<br>ipsec policy ipsec2010125724 # ipsec2010125724这个值是不断改变的，基于不同的防火墙。</p>
+<h1 id="禁用g1-0-1做为IPSEC本端端口"><a href="#禁用g1-0-1做为IPSEC本端端口" class="headerlink" title="禁用g1/0/1做为IPSEC本端端口"></a>禁用g1/0/1做为IPSEC本端端口</h1><p>undo ipsec policy ipsec2010125724</p>
+<h2 id="进入到我们需要修改的本段端口，比如g1-0-2"><a href="#进入到我们需要修改的本段端口，比如g1-0-2" class="headerlink" title="进入到我们需要修改的本段端口，比如g1/0/2"></a>进入到我们需要修改的本段端口，比如g1/0/2</h2><h1 id="进入端口-1"><a href="#进入端口-1" class="headerlink" title="进入端口"></a>进入端口</h1><p>int g1/0/2</p>
+<h1 id="添加命令"><a href="#添加命令" class="headerlink" title="添加命令"></a>添加命令</h1><p>ipsec policy ipsec2010125724</p>
+<h2 id="再次查看图形界面发现本端端口已经修改为g1-0-2这个端口了"><a href="#再次查看图形界面发现本端端口已经修改为g1-0-2这个端口了" class="headerlink" title="再次查看图形界面发现本端端口已经修改为g1/0/2这个端口了"></a>再次查看图形界面发现本端端口已经修改为g1/0/2这个端口了</h2></li>
+</ul>
+<p>(3) 配置IPSEC待加密数据流</p>
+<blockquote>
+<p>这里的待加密数据流源地址其实就是前面配置的loopback地址</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E5%BE%85%E5%8A%A0%E5%AF%86%E6%95%B0%E6%8D%AE%E6%B5%81%E6%BA%90%E5%9C%B0%E5%9D%80.png" alt="配置IPSEC待加密数据流源地址"></p>
+<h2 id="4-云平台连接"><a href="#4-云平台连接" class="headerlink" title="4. 云平台连接"></a><code>4. 云平台连接</code></h2><blockquote>
+<p>这里配置在 系统 理员 设置 北向接口里</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/sypeiz.png" alt="北向接口配置"></p>
+<p>​        主机名称是设备序列号，源ip地址就是网络接口里填写的loopback地址</p>
+<h2 id="5-日志源修改"><a href="#5-日志源修改" class="headerlink" title="5. 日志源修改"></a><code>5. 日志源修改</code></h2><p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E6%97%A5%E5%BF%97%E6%BA%90%E9%85%8D%E7%BD%AE.png" alt="日志源修改"></p>
+<p>这里把日志源发送IP地址填为前面网络接口里的loopback地址就行</p>
+<h2 id="6-License激活"><a href="#6-License激活" class="headerlink" title="6. License激活"></a><code>6. License激活</code></h2><blockquote>
+<p>实际设备的License这个位置还有用户试用模块</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/lices.png" alt="License激活"></p>
+<h2 id="7-系统更新"><a href="#7-系统更新" class="headerlink" title="7. 系统更新"></a><code>7. 系统更新</code></h2><blockquote>
+<p>在系统系统更新中</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/xitongsheij.png" alt="系统更新"></p>
+<h2 id="8-升级中心"><a href="#8-升级中心" class="headerlink" title="8. 升级中心"></a><code>8. 升级中心</code></h2><blockquote>
+<p>在系统升级中心选项</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/xitsj.png" alt="升级中心"></p>
+<h2 id="9-云沙箱联动配置"><a href="#9-云沙箱联动配置" class="headerlink" title="9. 云沙箱联动配置"></a><code>9. 云沙箱联动配置</code></h2><blockquote>
+<p>这里的云沙箱联动没有云账户这个选项，实际云沙箱是有云账户这个选项的，填入的地址如下所示</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E4%BA%91%E6%B2%99%E7%AE%B1%E8%81%94%E5%8A%A8.png" alt="云沙箱联动配置"></p>
+
                 
             </div>
             <hr/>
