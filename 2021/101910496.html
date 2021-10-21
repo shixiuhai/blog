@@ -549,7 +549,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    796
+                    797
                 </div>
                 
 
@@ -613,7 +613,7 @@ combo-port copper
 <p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4%E6%9C%AC%E7%AB%AF%E7%AB%AF%E5%8F%A3.png"></p>
 <p>我们得走默认本端端口是GE1/0/1</p>
 <p>(2) 命令方式修改本段端口</p>
-<p>```</p>
+<p>```bash</p>
 <h2 id="进入端口"><a href="#进入端口" class="headerlink" title="进入端口"></a>进入端口</h2><p>int g0/0/1</p>
 <h2 id="查看端口下的配置"><a href="#查看端口下的配置" class="headerlink" title="查看端口下的配置"></a>查看端口下的配置</h2><p>display this</p>
 <h1 id="我们可以看到如下内容"><a href="#我们可以看到如下内容" class="headerlink" title="我们可以看到如下内容"></a>我们可以看到如下内容</h1><p>interface GigabitEthernet1/0/1<br>undo shutdown<br>ip address 192.168.137.6 255.255.255.0<br>service-manage ping permit<br>ipsec policy ipsec2010125724 # ipsec2010125724这个值是不断改变的，基于不同的防火墙。</p>
