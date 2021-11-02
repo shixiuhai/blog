@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-10-21T03:18:54.390Z</updated>
+  <updated>2021-11-02T01:05:07.636Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>日记</title>
+    <link href="http://www.fuyaoershang.xyz/2021/110263420.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/110263420.html</id>
+    <published>2021-11-02T00:51:05.000Z</published>
+    <updated>2021-11-02T01:05:07.636Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="日记" scheme="http://www.fuyaoershang.xyz/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="日记" scheme="http://www.fuyaoershang.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>防火墙连接云端详细配置</title>

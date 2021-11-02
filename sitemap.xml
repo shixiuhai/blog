@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.fuyaoershang.xyz/2021/110263420.html</loc>
+    
+    <lastmod>2021-11-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.fuyaoershang.xyz/2021/101910496.html</loc>
     
     <lastmod>2021-10-21</lastmod>
@@ -165,13 +172,6 @@
 
   
   <url>
-    <loc>http://www.fuyaoershang.xyz/tags/git-lfs%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2021-11-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.fuyaoershang.xyz/tags/frp%E9%85%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
@@ -180,6 +180,13 @@
   
   <url>
     <loc>http://www.fuyaoershang.xyz/tags/frp%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2021-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.fuyaoershang.xyz/tags/git-lfs%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -221,6 +228,13 @@
   </url>
   
   <url>
+    <loc>http://www.fuyaoershang.xyz/tags/%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2021-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.fuyaoershang.xyz/tags/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
@@ -244,14 +258,14 @@
 
   
   <url>
-    <loc>http://www.fuyaoershang.xyz/categories/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0/</loc>
+    <loc>http://www.fuyaoershang.xyz/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</loc>
     <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.fuyaoershang.xyz/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</loc>
+    <loc>http://www.fuyaoershang.xyz/categories/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0/</loc>
     <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -273,6 +287,13 @@
   
   <url>
     <loc>http://www.fuyaoershang.xyz/categories/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2021-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.fuyaoershang.xyz/categories/%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
