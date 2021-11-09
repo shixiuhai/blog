@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-11-03T01:43:07.106Z</updated>
+  <updated>2021-11-09T07:31:31.013Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python通过csv向mysql插入数据或者更新数据</title>
+    <link href="http://www.fuyaoershang.xyz/2021/110962388.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/110962388.html</id>
+    <published>2021-11-09T07:28:07.000Z</published>
+    <updated>2021-11-09T07:31:31.013Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;插入数据v1-0版本&quot;&gt;&lt;a href=&quot;#插入数据v1-0版本&quot; class=&quot;headerlink&quot; title=&quot;插入数据v1.0版本&quot;&gt;&lt;/a&gt;&lt;code&gt;插入数据v1.0版本&lt;/code&gt;&lt;/h1&gt;&lt;pre class=&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>日记</title>
     <link href="http://www.fuyaoershang.xyz/2021/110263420.html"/>
     <id>http://www.fuyaoershang.xyz/2021/110263420.html</id>
     <published>2021-11-02T00:51:05.000Z</published>
-    <updated>2021-11-03T01:43:07.106Z</updated>
+    <updated>2021-11-05T09:08:53.059Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
