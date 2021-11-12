@@ -764,6 +764,7 @@ v2.0添加了防止插入数据中断,中断后再允许可以自动更新数据
             <span class="token keyword">pass</span>
             <span class="token triple-quoted-string string">"""调用sql_execute插入数据"""</span>
             <span class="token comment" spellcheck="true"># 进口数据插入</span>
+            <span class="token comment" spellcheck="true"># created_time是获取当前的时间时间格式是timestamp</span>
             created_time<span class="token operator">=</span>datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span>
             sql_execute<span class="token punctuation">(</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>interface_in_info<span class="token punctuation">,</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span>
             <span class="token comment" spellcheck="true"># 出口数据插入</span>
@@ -967,8 +968,9 @@ v3.0添加了防止插入数据中断,可以在已有的数据基础上更新数
     db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h1 id="插入数据v4-0版本"><a href="#插入数据v4-0版本" class="headerlink" title="插入数据v4.0版本"></a><code>插入数据v4.0版本</code></h1><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
-v2.0添加了防止插入数据中断,可以在已有的数据基础上更新数据，数据查询字段依靠log_time和interface_info,实现了默认插入和已经存在的进行更新
+v2.0添加了防止插入数据中断,可以在已有的数据基础上更新数据，数据查询字段依靠log_time和interface_info,实现了默认插入和已经存在的进行更新。
 """</span>
+<span class="token comment" spellcheck="true"># 导入相关需要使用的函数库</span>
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> time
 <span class="token keyword">import</span> pymysql
