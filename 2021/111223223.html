@@ -542,14 +542,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-12
+                    2021-11-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    15
+                    167
                 </div>
                 
 
@@ -577,6 +577,40 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="显示当前目录"><a href="#显示当前目录" class="headerlink" title="显示当前目录"></a>显示当前目录</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"../"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="python装饰器是什么"><a href="#python装饰器是什么" class="headerlink" title="python装饰器是什么"></a>python装饰器是什么</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">pass</span>
+</code></pre>
+<h4 id="不定参数函数变量"><a href="#不定参数函数变量" class="headerlink" title="不定参数函数变量"></a>不定参数函数变量</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># *args 是用来发送一个非键值对的可变数量的参数列表给一个函数</span>
+<span class="token comment" spellcheck="true"># 1</span>
+<span class="token keyword">def</span> <span class="token function">test_args_kwargs</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_args_kwargs<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">332</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 2</span>
+a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span>
+<span class="token keyword">def</span> <span class="token function">test_args_kwargs</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_args_kwargs<span class="token punctuation">(</span><span class="token operator">*</span>a<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># **kwargs 允许你将不定长度的键值对, 作为参数传递给一个函数</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token keyword">def</span> <span class="token function">test_kwargs</span><span class="token punctuation">(</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> kwargs<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+b<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"name":'python',"name1":'java',"name2":'ruby',"name3":'lua'&amp;#125;</span>
+test_kwargs<span class="token punctuation">(</span><span class="token operator">**</span>b<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 2</span>
+<span class="token keyword">def</span> <span class="token function">test_kwargs</span><span class="token punctuation">(</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> kwargs<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+a  <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+
+    <span class="token string">'a'</span><span class="token punctuation">:</span><span class="token string">'a'</span><span class="token punctuation">,</span>
+    <span class="token string">'b'</span><span class="token punctuation">:</span><span class="token string">'b'</span><span class="token punctuation">,</span>
+    <span class="token string">'c'</span><span class="token punctuation">:</span><span class="token string">'c'</span><span class="token punctuation">,</span>
+    <span class="token string">'d'</span><span class="token punctuation">:</span><span class="token string">'d'</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+test_kwargs<span class="token punctuation">(</span><span class="token operator">**</span>a<span class="token punctuation">)</span>
 </code></pre>
 
                 
