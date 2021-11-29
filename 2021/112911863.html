@@ -1,0 +1,1927 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="基于yolov5的视频识别推流截图接口, 思进不思停的博客笔记">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>基于yolov5的视频识别推流截图接口 | 思进不思停的博客笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="思进不思停的博客笔记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">思进不思停的博客笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>工具链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>媒体</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/cv">
+          
+          <i class="fas fa-comments" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>CV</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/shixiufen">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Shixiufen</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/share">
+          
+          <i class="fas fa-comments" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Share</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">思进不思停的博客笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			工具链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			媒体
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/cv " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-comments" style="position: absolute;left:50px" ></i>
+			      
+		          <span>CV</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/shixiufen " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Shixiufen</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/share " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-comments" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Share</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">基于yolov5的视频识别推流截图接口</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/yolov5/">
+                                <span class="chip bg-color">yolov5</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/">
+                                <span class="chip bg-color">视频推流</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E7%89%A9%E6%88%AA%E5%9B%BE/">
+                                <span class="chip bg-color">视频目标物截图</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-11-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-11-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href="https://shixiuhai.github.io/work_share/video_interface.zip"  target="_blank"  style="color: #8ebf42"> 点击这里下载本文项目</a></p>
+<p><code># 1. flask_app_1.py分析</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+通过此flask 接口调用多个函数实现功能
+"""</span>
+<span class="token keyword">from</span> class_app_3 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">import</span> argparse
+<span class="token keyword">import</span> io
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> torch
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
+<span class="token comment" spellcheck="true"># from torch._C import device</span>
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> function_app_2 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token comment" spellcheck="true"># 导入function_app_2.py里面所有的函数</span>
+<span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer<span class="token punctuation">,</span>KafkaProducer
+server <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+@server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/gttx/objectrecognition'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">objectrecognition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    通过接口解析json数据
+    """</span>
+    <span class="token keyword">if</span> <span class="token operator">not</span> request<span class="token punctuation">.</span>data<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 返回没有数据</span>
+        <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token string">"&amp;#123;'message': 'None'&amp;#125;"</span><span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 以utf-8编码接收json数据</span>
+    information <span class="token operator">=</span> request<span class="token punctuation">.</span>data
+    <span class="token comment" spellcheck="true"># 解析json数据为字典格式</span>
+    information <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>information<span class="token punctuation">)</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        type <span class="token operator">=</span> information<span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span>
+        <span class="token triple-quoted-string string">"""
+        将传入的字符 type 传做为函数去调用function_app_2.py 下面代码的意思就是函数调用函数 smoke(information)
+        """</span>
+        eval<span class="token punctuation">(</span>type <span class="token operator">+</span> <span class="token string">"(%s)"</span><span class="token operator">%</span>information<span class="token punctuation">)</span> 
+    
+    <span class="token keyword">except</span>  TypeError <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'no this function or function error'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'result':'1'&amp;#125;)</span>
+    <span class="token comment" spellcheck="true"># return json.dumps(information,ensure_ascii=False)</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    启动flask服务
+    """</span>
+    <span class="token comment" spellcheck="true"># 指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问</span>
+    <span class="token comment" spellcheck="true"># server.run(debug=True, threaded=True,port=5000, host='127.0.0.1') # 多线程指定</span>
+    <span class="token comment" spellcheck="true"># 多进程指定，各个进程之间不冲突</span>
+    server<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> processes<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>port<span class="token operator">=</span><span class="token number">5000</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">)</span>
+    
+</code></pre>
+<p><code># 2. function_app_2.py分析</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+flask接口传入的数据会在这里进行处理
+"""</span>
+<span class="token keyword">from</span> class_app_3 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">import</span> json
+<span class="token keyword">from</span> kafka_listen_4 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token triple-quoted-string string">"""kafka 服务器地址等相关信息"""</span>
+server_ip <span class="token operator">=</span> <span class="token string">'183.131.192.8:9092'</span>
+<span class="token triple-quoted-string string">"""调用接口的信息"""</span>
+interfaceurl <span class="token operator">=</span> <span class="token string">"http://localhost:5000/gttx/objectrecognition"</span>
+<span class="token keyword">def</span> <span class="token function">smoke</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    data 是一个json字典数据流
+    这里的传入的数据格式是
+    'path' : 'path',  
+    'id' :'4',
+    'type':'smoke',
+    'status':'0',
+    'confidence': '0.3'
+    """</span>
+    <span class="token triple-quoted-string string">"""判断kafka消息"""</span>
+    <span class="token comment" spellcheck="true"># 对象字符串的名字 比如 obj_smoke_4</span>
+    obj_name_string <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'obj'</span><span class="token operator">+</span> <span class="token string">'_'</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'_'</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 判断当前状态</span>
+    <span class="token keyword">if</span> data<span class="token punctuation">[</span><span class="token string">'status'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 发送关闭状态到kafka</span>
+        kafka_producer<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'status':'0'&amp;#125;,server_ip,(data['type']+data['id']))</span>
+        <span class="token comment" spellcheck="true"># 结束这个flask进程</span>
+        <span class="token keyword">return</span> None
+    
+    <span class="token comment" spellcheck="true"># status_value 表示status状态，当status状态等于1的时候创建对象</span>
+    <span class="token keyword">elif</span> data<span class="token punctuation">[</span><span class="token string">'status'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""将关闭状态发送给kafka服务器 为了避免同一个对象创建两次"""</span>
+        kafka_producer<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'status':'0'&amp;#125;,server_ip,(data['type']+data['id']))</span>
+
+        <span class="token triple-quoted-string string">""" 将开启状态发送给kafka服务器 为了避免同一个对象创建两次"""</span>
+        kafka_producer<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'status':'1'&amp;#125;,server_ip,(data['type']+data['id']))</span>
+        
+        <span class="token triple-quoted-string string">"""创建对象"""</span>
+        <span class="token comment" spellcheck="true"># path,id,type,confidence,obj_name_string)</span>
+        <span class="token comment" spellcheck="true"># path(视频路径), id(摄像头编号), type(选择的模型类型),confidence（模型识别信任度）,obj_name_string（对象名的字符串形式）</span>
+        obj_name <span class="token operator">=</span> vars<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span>obj_name_string<span class="token punctuation">]</span> <span class="token operator">=</span> Process_video<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'path'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>data<span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>data<span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>data<span class="token punctuation">[</span><span class="token string">'confidence'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>obj_name_string<span class="token punctuation">)</span>
+
+        <span class="token triple-quoted-string string">"""调用一下 是否开关的心跳接口 方法"""</span>
+        <span class="token comment" spellcheck="true"># 对象调用一下是否开关的心跳接口</span>
+        <span class="token comment" spellcheck="true"># obj_status(无需传入参数)</span>
+        MyThread<span class="token punctuation">(</span>obj_name<span class="token punctuation">.</span>obj_status<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token triple-quoted-string string">"""调用一下 错误自动重启 方法"""</span>
+        <span class="token comment" spellcheck="true"># obj_restart(interface_url,data)</span>
+        <span class="token comment" spellcheck="true"># MyThread(obj_name.obj_restart,args=(interfaceurl,data,)).start()</span>
+
+        <span class="token triple-quoted-string string">"""调用一下 视频拼接_标出对象_rtmp推流 方法"""</span> 
+        <span class="token comment" spellcheck="true"># 传入的参数是(video_fps,rtmp_fps) video_frp是解析视频的帧率,rtmp_fps是推流帧率</span>
+        MyThread<span class="token punctuation">(</span>obj_name<span class="token punctuation">.</span>video_mark_savepicture_push<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       
+
+
+<span class="token keyword">def</span> <span class="token function">person</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    obj_name <span class="token operator">=</span> vars<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'obj'</span><span class="token operator">+</span><span class="token string">'%s'</span><span class="token operator">%</span>data<span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> Process_video<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    MyThread<span class="token punctuation">(</span>obj_name<span class="token punctuation">.</span>test1<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">mask</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>    
+
+<span class="token keyword">def</span> <span class="token function">other</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+</code></pre>
+<p><code># 3. class_app_3.py分析</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+导入相关的库和函数
+"""</span>
+<span class="token keyword">from</span> logging <span class="token keyword">import</span> error
+<span class="token keyword">import</span> threading
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Lock<span class="token punctuation">,</span> Thread
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> cv2 
+<span class="token keyword">import</span> argparse
+<span class="token keyword">import</span> io
+<span class="token keyword">import</span> json
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>_C <span class="token keyword">import</span>  device
+<span class="token keyword">import</span> torch
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> requests
+<span class="token keyword">from</span> kafka_listen_4 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> ImageDraw<span class="token punctuation">,</span>Image<span class="token punctuation">,</span>ImageFont
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> subprocess
+<span class="token triple-quoted-string string">"""kafka 服务器地址等相关信息"""</span>
+server_ip <span class="token operator">=</span> <span class="token string">'183.131.192.8:9092'</span>
+<span class="token triple-quoted-string string">"""
+这是一个对视频进行处理的类
+算法基于yolov5 训练框架基于pytorch
+"""</span>
+<span class="token comment" spellcheck="true"># 'path' : r'C:\Users\15256\Desktop\nowtime\吸烟视频\2.mp4',  </span>
+<span class="token comment" spellcheck="true"># 'id' :'3',</span>
+<span class="token comment" spellcheck="true"># 'type':'smoke',</span>
+<span class="token comment" spellcheck="true"># 'status':'1',</span>
+<span class="token comment" spellcheck="true"># 'confidence': '0.5'</span>
+<span class="token keyword">class</span> <span class="token class-name">Process_video</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""类初始化的变量"""</span>
+    <span class="token comment" spellcheck="true"># path 视频路径, id 摄像头的编号,confidence 置信度, obj_name_string 对象的字符串名字</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>path<span class="token punctuation">,</span>id<span class="token punctuation">,</span>type<span class="token punctuation">,</span>confidence<span class="token punctuation">,</span>obj_name_string<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 视频路径</span>
+        self<span class="token punctuation">.</span>path <span class="token operator">=</span> path
+
+        <span class="token comment" spellcheck="true"># 视频id</span>
+        self<span class="token punctuation">.</span>id <span class="token operator">=</span> id
+        
+        <span class="token comment" spellcheck="true"># 模型类型</span>
+        self<span class="token punctuation">.</span>type <span class="token operator">=</span> type
+
+        <span class="token comment" spellcheck="true"># 对象字符串名字</span>
+        self<span class="token punctuation">.</span>obj_name_string <span class="token operator">=</span> obj_name_string
+
+        <span class="token comment" spellcheck="true"># 置信度参数</span>
+        self<span class="token punctuation">.</span>confidence <span class="token operator">=</span> confidence
+
+        <span class="token comment" spellcheck="true"># 加载模型</span>
+        self<span class="token punctuation">.</span>model <span class="token operator">=</span> torch<span class="token punctuation">.</span>hub<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">'yolov5'</span><span class="token punctuation">,</span> <span class="token string">'custom'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">'models/%s.pt'</span><span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">,</span> source<span class="token operator">=</span><span class="token string">'local'</span><span class="token punctuation">)</span>
+        
+        <span class="token comment" spellcheck="true"># 定义一个图片的全局变量 self.picture是opencv格式的图片是一个三维数组</span>
+        self<span class="token punctuation">.</span>picture<span class="token operator">=</span><span class="token string">''</span>
+        
+        <span class="token comment" spellcheck="true"># 定义一个开关状态相关的全局变量</span>
+        self<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'1'</span>
+        
+        <span class="token comment" spellcheck="true"># 打印创建对象成功的消息</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----------------------'</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'创建对象%s成功'</span><span class="token operator">%</span>self<span class="token punctuation">.</span>obj_name_string<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----------------------'</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 定义一个销毁对象的方法，释放内存空间</span>
+    <span class="token keyword">def</span> <span class="token function">__del__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"调用__del__()方法销毁 "</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>obj_name_string <span class="token operator">+</span> <span class="token string">" 对象，释放其空间"</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">video_mark_savepicture_push</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>video_fps<span class="token punctuation">,</span>rtmp_fps<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 创建对象</span>
+        cap <span class="token operator">=</span> cv2<span class="token punctuation">.</span>VideoCapture<span class="token punctuation">(</span>self<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 显示图片的宽设置</span>
+        width <span class="token operator">=</span> int<span class="token punctuation">(</span>cap<span class="token punctuation">.</span>get<span class="token punctuation">(</span>cv2<span class="token punctuation">.</span>CAP_PROP_FRAME_WIDTH<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 显示图像的高设置</span>
+        height <span class="token operator">=</span> int<span class="token punctuation">(</span>cap<span class="token punctuation">.</span>get<span class="token punctuation">(</span>cv2<span class="token punctuation">.</span>CAP_PROP_FRAME_HEIGHT<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'video_mark_savepicture_push已经进入++++++++++++++++++++++++'</span><span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># 调用 单帧识别画框 方法</span>
+        <span class="token comment" spellcheck="true"># identification_frequency 就是延迟时间</span>
+        MyThread<span class="token punctuation">(</span>self<span class="token punctuation">.</span>draw_picture<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># 调用 推流方法</span>
+        <span class="token comment" spellcheck="true"># push_stream(self,rtmp_url,rtmp_fps,width,height)</span>
+        MyThread<span class="token punctuation">(</span>self<span class="token punctuation">.</span>push_stream<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"rtmp://104.225.236.140:1935/stream/%s"</span><span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>obj_name_string<span class="token punctuation">)</span><span class="token punctuation">,</span>rtmp_fps<span class="token punctuation">,</span>width<span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+        <span class="token keyword">while</span> cap<span class="token punctuation">.</span>isOpened<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            ret<span class="token punctuation">,</span> frame <span class="token operator">=</span> cap<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># cv2.imwrite('./1.jpg',frame)</span>
+            <span class="token comment" spellcheck="true"># status 状态判断</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 释放cap对象</span>
+                cap<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+                <span class="token keyword">break</span>
+            <span class="token keyword">elif</span> self<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+                time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span>video_fps<span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token operator">not</span> ret<span class="token punctuation">:</span>
+                    <span class="token comment" spellcheck="true"># 调用kafka发送错误信息</span>
+                    kafka_producer<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'status':'0'&amp;#125;,server_ip,(self.type+self.id))</span>
+                    <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>obj_name_string <span class="token operator">+</span> <span class="token string">"打开视频源失败"</span><span class="token punctuation">)</span>
+                    <span class="token keyword">break</span>
+                self<span class="token punctuation">.</span>picture <span class="token operator">=</span> frame
+                <span class="token comment" spellcheck="true"># self.draw_picture(0.1)</span>
+                <span class="token comment" spellcheck="true"># cv2.imshow('img'+path,self.picture)</span>
+                cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+     
+            
+    <span class="token triple-quoted-string string">"""单帧识别画框_保存图片 方法"""</span>
+    <span class="token comment" spellcheck="true"># picture 是opencv读取到的图片 ，model是模型，identification_frequency是识别频率,比如identification_frequency代表1s钟识别一次</span>
+    <span class="token keyword">def</span> <span class="token function">draw_picture</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>identification_frequency<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        
+        <span class="token comment" spellcheck="true"># time.sleep(2) 等待 self.picture获取图片内容</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>identification_frequency<span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> self<span class="token punctuation">.</span>status <span class="token operator">==</span><span class="token string">'0'</span><span class="token punctuation">:</span>
+                    <span class="token keyword">break</span>
+                <span class="token keyword">elif</span> self<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+                    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>identification_frequency<span class="token punctuation">)</span>
+                    img <span class="token operator">=</span> Image<span class="token punctuation">.</span>fromarray<span class="token punctuation">(</span>cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>self<span class="token punctuation">.</span>picture<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>COLOR_BGR2RGB<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+                    <span class="token comment" spellcheck="true"># print(img)</span>
+                    <span class="token comment" spellcheck="true"># 调用模型</span>
+                    results <span class="token operator">=</span> self<span class="token punctuation">.</span>model<span class="token punctuation">(</span>img<span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">640</span><span class="token punctuation">)</span>
+                    <span class="token comment" spellcheck="true"># 获取到图片画框json数据</span>
+                    results_objectrecognition <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>results<span class="token punctuation">.</span>pandas<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xyxy<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_json<span class="token punctuation">(</span>orient<span class="token operator">=</span><span class="token string">"records"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>results_objectrecognition<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        <span class="token comment" spellcheck="true"># 这里面有多个</span>
+                        <span class="token comment" spellcheck="true"># 取出每个对象返回的 json 结果</span>
+                        name <span class="token operator">=</span> results_objectrecognition<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span>
+                        <span class="token comment" spellcheck="true"># confidence_result是浮点型数据</span>
+                        confidence_result <span class="token operator">=</span> results_objectrecognition<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'confidence'</span><span class="token punctuation">]</span>
+                        xmin <span class="token operator">=</span> results_objectrecognition<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'xmin'</span><span class="token punctuation">]</span>
+                        ymin <span class="token operator">=</span> results_objectrecognition<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'ymin'</span><span class="token punctuation">]</span>
+                        xmax <span class="token operator">=</span> results_objectrecognition<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'xmax'</span><span class="token punctuation">]</span>
+                        ymax <span class="token operator">=</span> results_objectrecognition<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'ymax'</span><span class="token punctuation">]</span>
+                        <span class="token comment" spellcheck="true"># 把这四个做标转换为x,y,width,height</span>
+                        x <span class="token operator">=</span> int<span class="token punctuation">(</span>xmin<span class="token punctuation">)</span>
+                        y <span class="token operator">=</span>  int<span class="token punctuation">(</span>ymin<span class="token punctuation">)</span>
+                        w <span class="token operator">=</span>  int<span class="token punctuation">(</span>xmax<span class="token operator">-</span>xmin<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                        h <span class="token operator">=</span>  int<span class="token punctuation">(</span>ymax<span class="token operator">-</span>ymin<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'置信度是%s'</span><span class="token operator">%</span>confidence_result<span class="token punctuation">)</span>
+                        <span class="token keyword">if</span> confidence_result <span class="token operator">>=</span> float<span class="token punctuation">(</span>self<span class="token punctuation">.</span>confidence<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                            <span class="token triple-quoted-string string">"""
+                            将目标图片写入到存放违规图片的文件夹
+                            """</span>
+                            <span class="token comment" spellcheck="true"># 画框</span>
+                            pic<span class="token operator">=</span> cv2<span class="token punctuation">.</span>rectangle<span class="token punctuation">(</span>self<span class="token punctuation">.</span>picture<span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x <span class="token operator">+</span> w<span class="token punctuation">,</span> y <span class="token operator">+</span> h<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> thickness<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+                            <span class="token comment" spellcheck="true"># cv2.putText(picture)</span>
+                            <span class="token comment" spellcheck="true"># 添加中文显示</span>
+                            <span class="token comment" spellcheck="true"># image,strs,local(图片的坐标),sizes,color </span>
+                            pic <span class="token operator">=</span> self<span class="token punctuation">.</span>change_cv2_draw<span class="token punctuation">(</span>self<span class="token punctuation">.</span>picture<span class="token punctuation">,</span><span class="token string">"%s %.2s%%"</span><span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>type<span class="token punctuation">,</span>confidence_result<span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span>x<span class="token operator">+</span>w<span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">,</span>y<span class="token number">-5</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                            <span class="token comment" spellcheck="true"># 将画好的图片赋值给self.picture 这个全局变量</span>
+                            <span class="token comment" spellcheck="true"># for i in range(100):</span>
+
+                            self<span class="token punctuation">.</span>picture <span class="token operator">=</span> pic
+                            <span class="token comment" spellcheck="true"># cv2.imwrite('target_images/2.jpg',self.picture)</span>
+                            <span class="token comment" spellcheck="true"># cv2.imwrite("%s/'%s'.jpg"%('target_images',time.strftime('%Y-%m-%d-%H:%M:%S',time.localtime(time.time()))),self.picture)</span>
+                            self<span class="token punctuation">.</span>save_images<span class="token punctuation">(</span><span class="token string">'target_images'</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 调用kafka发送错误消息</span>
+            kafka_producer<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'status':'0'&amp;#125;,server_ip,(self.type+self.id))</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>obj_name_string <span class="token operator">+</span> <span class="token string">'视频取帧识别保存出错'</span><span class="token punctuation">)</span>
+       
+                   
+    <span class="token triple-quoted-string string">"""推流"""</span>
+    <span class="token comment" spellcheck="true"># rtmp_url是推流的地址,rtmp_fps是推流的fps,widht和height是推流图像的分辨率（宽和高）</span>
+    <span class="token keyword">def</span> <span class="token function">push_stream</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>rtmp_url<span class="token punctuation">,</span>rtmp_fps<span class="token punctuation">,</span>width<span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># time.sleep(2) 等待 self.picture获取图片内容</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># command定义</span>
+        command <span class="token operator">=</span> <span class="token punctuation">[</span>r<span class="token string">'C:\Users\15256\Downloads\2021-10-26-00-34-45-www.gyan.dev-ffmpeg-4.4.1-full_build-shared\ffmpeg-4.4.1-full_build-shared\bin\ffmpeg.exe'</span><span class="token punctuation">,</span>
+        <span class="token string">'-y'</span><span class="token punctuation">,</span>
+        <span class="token string">'-f'</span><span class="token punctuation">,</span> <span class="token string">'rawvideo'</span><span class="token punctuation">,</span>
+        <span class="token string">'-vcodec'</span><span class="token punctuation">,</span> <span class="token string">'rawvideo'</span><span class="token punctuation">,</span>
+        <span class="token string">'-pix_fmt'</span><span class="token punctuation">,</span> <span class="token string">'bgr24'</span><span class="token punctuation">,</span>
+        <span class="token string">'-s'</span><span class="token punctuation">,</span> <span class="token string">"&amp;#123;&amp;#125;x&amp;#123;&amp;#125;"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>width<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'-r'</span><span class="token punctuation">,</span> str<span class="token punctuation">(</span>rtmp_fps<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'-i'</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span>
+        <span class="token string">'-c:v'</span><span class="token punctuation">,</span> <span class="token string">'libx264'</span><span class="token punctuation">,</span>
+        <span class="token string">'-pix_fmt'</span><span class="token punctuation">,</span> <span class="token string">'yuv420p'</span><span class="token punctuation">,</span>
+        <span class="token string">'-preset'</span><span class="token punctuation">,</span> <span class="token string">'ultrafast'</span><span class="token punctuation">,</span>
+        <span class="token string">'-f'</span><span class="token punctuation">,</span> <span class="token string">'flv'</span><span class="token punctuation">,</span>
+        rtmp_url<span class="token punctuation">]</span>
+
+        pipe <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span>command<span class="token punctuation">,</span> shell<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>  stdin<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+                time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span>rtmp_fps<span class="token punctuation">)</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s在推流中'</span><span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>obj_name_string<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token comment" spellcheck="true"># status 状态判断</span>
+                <span class="token keyword">if</span> self<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'0'</span> <span class="token punctuation">:</span>
+                    pipe<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 关闭输入管道</span>
+                    <span class="token comment" spellcheck="true"># pipe.communicate()  # 等待子进程关闭</span>
+                    <span class="token keyword">break</span>
+                    
+                <span class="token keyword">elif</span> self<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+                    pipe<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>write<span class="token punctuation">(</span>self<span class="token punctuation">.</span>picture<span class="token punctuation">.</span>tostring<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 调用kafka发送错误消息</span>
+            kafka_producer<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'status':'0'&amp;#125;,server_ip,(self.type+self.id))</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s推流出错了'</span><span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>obj_name_string<span class="token punctuation">)</span><span class="token punctuation">)</span>
+       
+               
+    <span class="token triple-quoted-string string">"""保存图片 方法"""</span>
+    <span class="token comment" spellcheck="true"># save_path就是需要将 BGR 通道流的图片保存位置</span>
+    <span class="token keyword">def</span> <span class="token function">save_images</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>save_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 获取当前时间的字符串</span>
+        now <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d-%H_%M_%S"</span><span class="token punctuation">,</span>time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+        cv2<span class="token punctuation">.</span>imwrite<span class="token punctuation">(</span><span class="token string">"%s/%s_(%s).jpg"</span><span class="token operator">%</span><span class="token punctuation">(</span>save_path<span class="token punctuation">,</span>now<span class="token punctuation">,</span>self<span class="token punctuation">.</span>obj_name_string<span class="token punctuation">)</span><span class="token punctuation">,</span>self<span class="token punctuation">.</span>picture<span class="token punctuation">)</span>
+        
+        
+    <span class="token triple-quoted-string string">"""通过kafka 做一个对象开关的方法"""</span>
+    <span class="token keyword">def</span> <span class="token function">obj_status</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># kafka_consumer(group_id,server_ip,topic,value_key</span>
+            <span class="token keyword">if</span>  kafka_consumer<span class="token punctuation">(</span>server_ip<span class="token punctuation">,</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>type<span class="token operator">+</span>self<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'status'</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'0'</span>
+                <span class="token comment" spellcheck="true"># # 关闭重启方法</span>
+                <span class="token comment" spellcheck="true"># kafka_producer(&amp;#123;'error_status':'1'&amp;#125;,server_ip,(self.type+self.id))</span>
+                self<span class="token punctuation">.</span>__del__
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'对象'</span><span class="token operator">+</span> self<span class="token punctuation">.</span>obj_name_string<span class="token operator">+</span><span class="token string">'已经删除'</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span>
+
+    <span class="token triple-quoted-string string">"""通过kafka 做一个对象自动重新启动 的方法"""</span>
+    <span class="token comment" spellcheck="true"># # interface_url是接口地址,data 是传入的json数据</span>
+    <span class="token comment" spellcheck="true"># def obj_restart(self,interface_url,data):</span>
+    <span class="token comment" spellcheck="true">#     while True:</span>
+    <span class="token comment" spellcheck="true">#         if kafka_consumer((self.type+self.id),server_ip,(self.type+self.id),'error_status') == '1':</span>
+    <span class="token comment" spellcheck="true">#             if self.status == '1':</span>
+    <span class="token comment" spellcheck="true">#                 # print(self.obj_name_string + '准备重启')</span>
+    <span class="token comment" spellcheck="true">#                 # 发送关闭消息给kafka</span>
+    <span class="token comment" spellcheck="true">#                 kafka_producer(&amp;#123;'status':'0'&amp;#125;,server_ip,(self.type+self.id))</span>
+    <span class="token comment" spellcheck="true">#                 # time.sleep(10)</span>
+    <span class="token comment" spellcheck="true">#                 # if (requests.post(url=interface_url, data= json.dumps(data))).json()['result'] == '1':</span>
+    <span class="token comment" spellcheck="true">#                 #     print(self.obj_name_string + '重启成功')</span>
+    <span class="token comment" spellcheck="true">#                 # else:</span>
+    <span class="token comment" spellcheck="true">#                 #     print('接口错误')</span>
+    <span class="token comment" spellcheck="true">#             elif self.status == '0':</span>
+    <span class="token comment" spellcheck="true">#                 break</span>
+    <span class="token comment" spellcheck="true"># 'path' : 'path',  </span>
+    <span class="token comment" spellcheck="true"># 'id' :'4',</span>
+    <span class="token comment" spellcheck="true"># 'type':'smoke',</span>
+    <span class="token comment" spellcheck="true"># 'status':'0',</span>
+    <span class="token comment" spellcheck="true"># 'confidence': '0.3'</span>
+    <span class="token comment" spellcheck="true"># interface_url是传入的url, data是传入的json数据, monitor_time是监听时间,server_ip是kafka服务器ip，topic是</span>
+    <span class="token comment" spellcheck="true"># def obj_restart(self,interface_url,data,monitor_time):</span>
+    <span class="token comment" spellcheck="true">#     while True:</span>
+    <span class="token comment" spellcheck="true">#         # 监听对象状态异常的延迟时间</span>
+    <span class="token comment" spellcheck="true">#         time.sleep(monitor_time)</span>
+    <span class="token comment" spellcheck="true">#         print('%s错误状态监听中'%(self.obj_name_string))</span>
+    <span class="token comment" spellcheck="true">#         # 监听时间判断status状态</span>
+    <span class="token comment" spellcheck="true">#         if self.status == '0':</span>
+    <span class="token comment" spellcheck="true">#             print(self.obj_name_string + '已经关闭')</span>
+    <span class="token comment" spellcheck="true">#             break</span>
+    <span class="token comment" spellcheck="true">#         elif self.status == '1':</span>
+    <span class="token comment" spellcheck="true">#             # 监听完成后判断 status状态</span>
+    <span class="token comment" spellcheck="true">#             if self.error_value == '1':</span>
+    <span class="token comment" spellcheck="true">#                 # 发送一条信息给kafka心跳接口，实现心跳接口线程关闭</span>
+    <span class="token comment" spellcheck="true">#                 kafka_producer(&amp;#123;'status':'0'&amp;#125;,server_ip,(self.type+self.id))</span>
+    <span class="token comment" spellcheck="true">#                 # print(self.obj_name_string+ '准备重启')</span>
+    <span class="token comment" spellcheck="true">#                 # if (requests.post(url=interface_url, data= json.dumps(data))).json()['result'] == '1':</span>
+    <span class="token comment" spellcheck="true">#                 #     print(self.obj_name_string + '重启成功')</span>
+    <span class="token comment" spellcheck="true">#                 #     # 等待别的进程全部关闭</span>
+    <span class="token comment" spellcheck="true">#                 #     time.sleep(15)</span>
+    <span class="token comment" spellcheck="true">#                 # else:</span>
+    <span class="token comment" spellcheck="true">#                 #     print('请求接口失败，服务关闭')</span>
+                    
+        
+
+    <span class="token triple-quoted-string string">"""定义一个可以在图片上添加中文的方法"""</span>
+    <span class="token comment" spellcheck="true"># 吸烟 %.2s%%"%(confidence_result*100),(x+w+5,y-5),30,(255,0,0))</span>
+    <span class="token comment" spellcheck="true"># image是图片 strs是中文汉字 local是做标 size 是字体尺寸 colour是颜色的RGB码</span>
+    <span class="token keyword">def</span> <span class="token function">change_cv2_draw</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>image<span class="token punctuation">,</span>strs<span class="token punctuation">,</span>local<span class="token punctuation">,</span>sizes<span class="token punctuation">,</span>colour<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cv2img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>image<span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>COLOR_BGR2RGB<span class="token punctuation">)</span>
+        pilimg <span class="token operator">=</span> Image<span class="token punctuation">.</span>fromarray<span class="token punctuation">(</span>cv2img<span class="token punctuation">)</span>
+        draw <span class="token operator">=</span> ImageDraw<span class="token punctuation">.</span>Draw<span class="token punctuation">(</span>pilimg<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 图片上打印</span>
+        font <span class="token operator">=</span> ImageFont<span class="token punctuation">.</span>truetype<span class="token punctuation">(</span><span class="token string">"SIMYOU.TTF"</span><span class="token punctuation">,</span>sizes<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+        draw<span class="token punctuation">.</span>text<span class="token punctuation">(</span>local<span class="token punctuation">,</span> strs<span class="token punctuation">,</span> colour<span class="token punctuation">,</span> font<span class="token operator">=</span>font<span class="token punctuation">)</span>
+        image <span class="token operator">=</span> cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>pilimg<span class="token punctuation">)</span><span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>COLOR_RGB2BGR<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> image
+    
+
+<span class="token triple-quoted-string string">"""
+这是一个使用多线程的类
+"""</span>
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> func<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>RLock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        super<span class="token punctuation">(</span>MyThread<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>func <span class="token operator">=</span> func
+        self<span class="token punctuation">.</span>args <span class="token operator">=</span> args
+
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 锁上</span>
+        self<span class="token punctuation">.</span>lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+        self<span class="token punctuation">.</span>result <span class="token operator">=</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span><span class="token operator">*</span>self<span class="token punctuation">.</span>args<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 解锁</span>
+        self<span class="token punctuation">.</span>lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_result</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>result
+        <span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+
+
+<span class="token comment" spellcheck="true"># class Test():</span>
+<span class="token comment" spellcheck="true">#     def __init__(self) -> None:</span>
+<span class="token comment" spellcheck="true">#         self.ab = 5</span>
+
+<span class="token comment" spellcheck="true">#     def __del__(self):</span>
+<span class="token comment" spellcheck="true">#         print('线程删除成功')</span>
+
+
+<span class="token comment" spellcheck="true">#     def test1(self,a,b,c):</span>
+<span class="token comment" spellcheck="true">#         while True:</span>
+<span class="token comment" spellcheck="true">#             time.sleep(2)</span>
+<span class="token comment" spellcheck="true">#             self.ab = self.ab +1</span>
+<span class="token comment" spellcheck="true">#             print('test1')</span>
+<span class="token comment" spellcheck="true">#             print(self.ab)</span>
+            
+
+<span class="token comment" spellcheck="true">#     def test2(self,a,b,c):</span>
+<span class="token comment" spellcheck="true">#         while True:</span>
+<span class="token comment" spellcheck="true">#             time.sleep(1)</span>
+<span class="token comment" spellcheck="true">#             self.ab =self.ab-1</span>
+<span class="token comment" spellcheck="true">#             print(self.ab)</span>
+<span class="token comment" spellcheck="true">#             print('test2')</span>
+<span class="token comment" spellcheck="true">#     def test3(self):</span>
+<span class="token comment" spellcheck="true">#         time.sleep(3)</span>
+<span class="token comment" spellcheck="true">#         self.__del__()</span>
+<span class="token comment" spellcheck="true">#         print('对象删除完成')</span>
+
+
+<span class="token comment" spellcheck="true"># at = Test()</span>
+<span class="token comment" spellcheck="true"># def t(a,b,c):</span>
+<span class="token comment" spellcheck="true">#     print('hello word')</span>
+<span class="token comment" spellcheck="true"># # a.test2(1,2,3)</span>
+<span class="token comment" spellcheck="true"># MyThread(at.test1,args=(1, 2,5,)).start()</span>
+<span class="token comment" spellcheck="true"># MyThread(at.test2,args=(1, 2,5,)).start()</span>
+<span class="token comment" spellcheck="true"># MyThread(at.test3,args=()).start()</span>
+
+
+<span class="token comment" spellcheck="true"># t1.start()</span>
+<span class="token comment" spellcheck="true"># t2.start()</span>
+<span class="token comment" spellcheck="true"># time.sleep(2)</span>
+<span class="token comment" spellcheck="true"># t1.join()</span>
+<span class="token comment" spellcheck="true"># t2.join()</span>
+
+<span class="token comment" spellcheck="true"># a = 2</span>
+<span class="token comment" spellcheck="true"># def add():</span>
+<span class="token comment" spellcheck="true">#     global a</span>
+<span class="token comment" spellcheck="true">#     while True:</span>
+<span class="token comment" spellcheck="true">#         time.sleep(5)</span>
+<span class="token comment" spellcheck="true">#         a = a+1</span>
+    
+<span class="token comment" spellcheck="true">#         print(a)</span>
+<span class="token comment" spellcheck="true"># def sum():</span>
+<span class="token comment" spellcheck="true">#     global a</span>
+<span class="token comment" spellcheck="true">#     while True:</span>
+<span class="token comment" spellcheck="true">#         time.sleep(10)</span>
+        
+<span class="token comment" spellcheck="true">#         a = a-1</span>
+<span class="token comment" spellcheck="true">#         print(a)</span>
+
+<span class="token comment" spellcheck="true"># MyThread(add,args=()).start()</span>
+<span class="token comment" spellcheck="true"># MyThread(sum,args=()).start()</span>
+</code></pre>
+<p><code># 4. kafka_listen_4.py分析</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer<span class="token punctuation">,</span>KafkaProducer
+<span class="token keyword">import</span> json
+<span class="token triple-quoted-string string">"""
+data = &amp;#123;'value_1' : 'value_2'&amp;#125;
+producer = KafkaProducer(bootstrap_servers=['183.131.192.8:9092'], value_serializer=lambda m: json.dumps(m).encode())
+future = producer.send('my' ,  value=data , partition= 0)
+future.get(timeout= 3)
+"""</span>
+<span class="token triple-quoted-string string">"""
+server_ip 是服务器ip+端口的形式 ip:port 这里为了保证唯一将topic 和 group_id设置成一样的
+"""</span>
+
+<span class="token keyword">def</span> <span class="token function">kafka_producer</span><span class="token punctuation">(</span>producer_data<span class="token punctuation">,</span>server_ip<span class="token punctuation">,</span>topic<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    producer <span class="token operator">=</span> KafkaProducer<span class="token punctuation">(</span>bootstrap_servers<span class="token operator">=</span><span class="token punctuation">[</span>server_ip<span class="token punctuation">]</span><span class="token punctuation">,</span> value_serializer<span class="token operator">=</span><span class="token keyword">lambda</span> m<span class="token punctuation">:</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    future <span class="token operator">=</span> producer<span class="token punctuation">.</span>send<span class="token punctuation">(</span>topic<span class="token punctuation">,</span>  value<span class="token operator">=</span>producer_data <span class="token punctuation">,</span> partition<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    future<span class="token punctuation">.</span>get<span class="token punctuation">(</span>timeout<span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">)</span>
+    
+
+
+<span class="token keyword">def</span> <span class="token function">kafka_consumer</span><span class="token punctuation">(</span>server_ip<span class="token punctuation">,</span>topic<span class="token punctuation">,</span>value_key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># consumer_timeout_ms=1000</span>
+    <span class="token comment" spellcheck="true"># consumer = KafkaConsumer(topic,group_id = group_id, bootstrap_servers= [server_ip], auto_offset_reset='latest',enable_auto_commit = True,</span>
+    <span class="token comment" spellcheck="true"># auto_commit_interval_ms = 1,value_deserializer=lambda m: json.loads(m.decode('ascii')))</span>
+    consumer <span class="token operator">=</span> KafkaConsumer<span class="token punctuation">(</span>topic<span class="token punctuation">,</span>
+    bootstrap_servers<span class="token operator">=</span> <span class="token punctuation">[</span>server_ip<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    value_deserializer<span class="token operator">=</span><span class="token keyword">lambda</span> m<span class="token punctuation">:</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>m<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> msg <span class="token keyword">in</span> consumer<span class="token punctuation">:</span>
+        dic <span class="token operator">=</span> eval<span class="token punctuation">(</span>str<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> dic<span class="token punctuation">[</span>value_key<span class="token punctuation">]</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
+    
+</code></pre>
+<p><code># 5. post_request_text.py分析</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""Perform test request"""</span>
+<span class="token keyword">import</span> pprint
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> argparse
+<span class="token keyword">import</span> io
+<span class="token comment" spellcheck="true">## 定义访问接口</span>
+interfaceurl <span class="token operator">=</span> <span class="token string">"http://localhost:5000/gttx/objectrecognition"</span>
+
+<span class="token comment" spellcheck="true">## 将要传入的数据设置为json格式</span>
+information <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; 'path' : r'C:\Users\15256\Desktop\nowtime\吸烟视频\2.mp4',  </span>
+                <span class="token string">'id'</span> <span class="token punctuation">:</span><span class="token string">'3'</span><span class="token punctuation">,</span>
+                <span class="token string">'type'</span><span class="token punctuation">:</span><span class="token string">'smoke'</span><span class="token punctuation">,</span>
+                <span class="token string">'status'</span><span class="token punctuation">:</span><span class="token string">'1'</span><span class="token punctuation">,</span>
+                <span class="token string">'confidence'</span><span class="token punctuation">:</span> <span class="token string">'0.5'</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; </span>
+information <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>information<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## 数据打包传输</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>interfaceurl<span class="token punctuation">,</span> data<span class="token operator">=</span>information<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(response)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'result'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># requests.post(interfaceurl, data=information)</span>
+</code></pre>
+<p><code># 6. requirements.txt分析</code></p>
+<pre class=" language-python"><code class="language-python">absl<span class="token operator">-</span>py<span class="token operator">==</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0</span>
+cachetools<span class="token operator">==</span><span class="token number">4.2</span><span class="token punctuation">.</span><span class="token number">4</span>
+certifi<span class="token operator">==</span><span class="token number">2021.10</span><span class="token punctuation">.</span><span class="token number">8</span>
+charset<span class="token operator">-</span>normalizer<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">7</span>
+click<span class="token operator">==</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">3</span>
+colorama<span class="token operator">==</span><span class="token number">0.4</span><span class="token punctuation">.</span><span class="token number">4</span>
+cycler<span class="token operator">==</span><span class="token number">0.11</span><span class="token punctuation">.</span><span class="token number">0</span>
+Flask<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">2</span>
+fonttools<span class="token operator">==</span><span class="token number">4.28</span><span class="token punctuation">.</span><span class="token number">1</span>
+google<span class="token operator">-</span>auth<span class="token operator">==</span><span class="token number">2.3</span><span class="token punctuation">.</span><span class="token number">3</span>
+google<span class="token operator">-</span>auth<span class="token operator">-</span>oauthlib<span class="token operator">==</span><span class="token number">0.4</span><span class="token punctuation">.</span><span class="token number">6</span>
+grpcio<span class="token operator">==</span><span class="token number">1.42</span><span class="token punctuation">.</span><span class="token number">0</span>
+idna<span class="token operator">==</span><span class="token number">3.3</span>
+importlib<span class="token operator">-</span>metadata<span class="token operator">==</span><span class="token number">4.8</span><span class="token punctuation">.</span><span class="token number">2</span>
+itsdangerous<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">1</span>
+Jinja2<span class="token operator">==</span><span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">3</span>
+kafka<span class="token operator">-</span>python<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">2</span>
+kiwisolver<span class="token operator">==</span><span class="token number">1.3</span><span class="token punctuation">.</span><span class="token number">2</span>
+Markdown<span class="token operator">==</span><span class="token number">3.3</span><span class="token punctuation">.</span><span class="token number">6</span>
+MarkupSafe<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">1</span>
+matplotlib<span class="token operator">==</span><span class="token number">3.5</span><span class="token punctuation">.</span><span class="token number">0</span>
+numpy<span class="token operator">==</span><span class="token number">1.21</span><span class="token punctuation">.</span><span class="token number">4</span>
+oauthlib<span class="token operator">==</span><span class="token number">3.1</span><span class="token punctuation">.</span><span class="token number">1</span>
+opencv<span class="token operator">-</span>python<span class="token operator">==</span><span class="token number">4.5</span><span class="token punctuation">.</span><span class="token number">4.58</span>
+packaging<span class="token operator">==</span><span class="token number">21.2</span>
+pandas<span class="token operator">==</span><span class="token number">1.3</span><span class="token punctuation">.</span><span class="token number">4</span>
+Pillow<span class="token operator">==</span><span class="token number">8.4</span><span class="token punctuation">.</span><span class="token number">0</span>
+protobuf<span class="token operator">==</span><span class="token number">3.19</span><span class="token punctuation">.</span><span class="token number">1</span>
+pyasn1<span class="token operator">==</span><span class="token number">0.4</span><span class="token punctuation">.</span><span class="token number">8</span>
+pyasn1<span class="token operator">-</span>modules<span class="token operator">==</span><span class="token number">0.2</span><span class="token punctuation">.</span><span class="token number">8</span>
+pyparsing<span class="token operator">==</span><span class="token number">2.4</span><span class="token punctuation">.</span><span class="token number">7</span>
+python<span class="token operator">-</span>dateutil<span class="token operator">==</span><span class="token number">2.8</span><span class="token punctuation">.</span><span class="token number">2</span>
+pytz<span class="token operator">==</span><span class="token number">2021.3</span>
+PyYAML<span class="token operator">==</span><span class="token number">6.0</span>
+requests<span class="token operator">==</span><span class="token number">2.26</span><span class="token punctuation">.</span><span class="token number">0</span>
+requests<span class="token operator">-</span>oauthlib<span class="token operator">==</span><span class="token number">1.3</span><span class="token punctuation">.</span><span class="token number">0</span>
+rsa<span class="token operator">==</span><span class="token number">4.7</span><span class="token punctuation">.</span><span class="token number">2</span>
+scipy<span class="token operator">==</span><span class="token number">1.7</span><span class="token punctuation">.</span><span class="token number">2</span>
+seaborn<span class="token operator">==</span><span class="token number">0.11</span><span class="token punctuation">.</span><span class="token number">2</span>
+setuptools<span class="token operator">-</span>scm<span class="token operator">==</span><span class="token number">6.3</span><span class="token punctuation">.</span><span class="token number">2</span>
+six<span class="token operator">==</span><span class="token number">1.16</span><span class="token punctuation">.</span><span class="token number">0</span>
+tensorboard<span class="token operator">==</span><span class="token number">2.7</span><span class="token punctuation">.</span><span class="token number">0</span>
+tensorboard<span class="token operator">-</span>data<span class="token operator">-</span>server<span class="token operator">==</span><span class="token number">0.6</span><span class="token punctuation">.</span><span class="token number">1</span>
+tensorboard<span class="token operator">-</span>plugin<span class="token operator">-</span>wit<span class="token operator">==</span><span class="token number">1.8</span><span class="token punctuation">.</span><span class="token number">0</span>
+thop<span class="token operator">==</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">31.</span>post2005241907
+tomli<span class="token operator">==</span><span class="token number">1.2</span><span class="token punctuation">.</span><span class="token number">2</span>
+torch<span class="token operator">==</span><span class="token number">1.10</span><span class="token punctuation">.</span><span class="token number">0</span>
+torchvision<span class="token operator">==</span><span class="token number">0.11</span><span class="token punctuation">.</span><span class="token number">1</span>
+tqdm<span class="token operator">==</span><span class="token number">4.62</span><span class="token punctuation">.</span><span class="token number">3</span>
+typing_extensions<span class="token operator">==</span><span class="token number">4.0</span><span class="token punctuation">.</span><span class="token number">0</span>
+urllib3<span class="token operator">==</span><span class="token number">1.26</span><span class="token punctuation">.</span><span class="token number">7</span>
+Werkzeug<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">2</span>
+zipp<span class="token operator">==</span><span class="token number">3.6</span><span class="token punctuation">.</span><span class="token number">0</span>
+</code></pre>
+<p><code># 7. kafka_consumer.py分析（测试）</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> time
+<span class="token keyword">from</span> kafka_listen_4 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token comment" spellcheck="true"># 调用测试</span>
+server_ip <span class="token operator">=</span> <span class="token string">'183.131.192.8:9092'</span>
+topic <span class="token operator">=</span> <span class="token string">'smoke3'</span>
+value_key <span class="token operator">=</span> <span class="token string">'status0'</span>
+<span class="token comment" spellcheck="true"># 消息消费</span>
+<span class="token comment" spellcheck="true"># while True:</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>kafka_consumer<span class="token punctuation">(</span><span class="token string">'5'</span><span class="token punctuation">,</span>server_ip<span class="token punctuation">,</span>topic<span class="token punctuation">,</span>value_key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">break</span>
+      
+</code></pre>
+<p><code># 8. kafka_producer.py分析（测试）</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka_listen_4 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token triple-quoted-string string">"""调用测试"""</span>
+server_ip <span class="token operator">=</span> <span class="token string">'183.131.192.8:9092'</span>
+producer_data <span class="token operator">=</span>  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'status0':'2434'&amp;#125;</span>
+topic <span class="token operator">=</span> <span class="token string">'smoke3'</span>
+<span class="token comment" spellcheck="true"># key_value = 'status1'</span>
+<span class="token comment" spellcheck="true"># 消息生产</span>
+kafka_producer<span class="token punctuation">(</span>producer_data<span class="token punctuation">,</span>server_ip<span class="token punctuation">,</span>topic<span class="token punctuation">)</span>
+</code></pre>
+<p><code># 9. test（用于测试一些写法）.py分析（测试）</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer<span class="token punctuation">,</span>KafkaProducer
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> time
+<span class="token comment" spellcheck="true"># consumer = KafkaConsumer('my_topic', group_id= 'group2', bootstrap_servers= ['183.131.192.8:9092'])</span>
+<span class="token comment" spellcheck="true"># for msg in consumer:</span>
+<span class="token comment" spellcheck="true">#     print(msg)</span>
+
+<span class="token comment" spellcheck="true"># producer = KafkaProducer(bootstrap_servers=['183.131.192.8:9092'])</span>
+<span class="token comment" spellcheck="true"># future = producer.send('my_topic' , key= b'my_key', value= b'my_value', partition= 0)</span>
+<span class="token comment" spellcheck="true"># result = future.get(timeout= 10)</span>
+<span class="token comment" spellcheck="true"># print(result)</span>
+<span class="token comment" spellcheck="true"># consumer = KafkaConsumer('my_topic', group_id= 'group2', bootstrap_servers= ['localhost:9092'])</span>
+<span class="token triple-quoted-string string">"""
+生成端
+"""</span>
+<span class="token comment" spellcheck="true"># data = json.dumps(&amp;#123;'id':'id','status':'status'&amp;#125;).encode()</span>
+<span class="token comment" spellcheck="true"># producer = KafkaProducer(bootstrap_servers=['183.131.192.8:9092'])</span>
+<span class="token comment" spellcheck="true"># future = producer.send('test' , data, partition= 0)</span>
+<span class="token comment" spellcheck="true"># result = future.get(timeout= 10)</span>
+<span class="token comment" spellcheck="true"># print(result)</span>
+<span class="token comment" spellcheck="true"># data = &amp;#123;'value_1' : 'value_2'&amp;#125;</span>
+
+<span class="token comment" spellcheck="true"># producer = KafkaProducer(bootstrap_servers=['183.131.192.8:9092'], value_serializer=lambda m: json.dumps(m).encode())</span>
+<span class="token comment" spellcheck="true"># future = producer.send('my' ,  value=data , partition= 0)</span>
+<span class="token comment" spellcheck="true"># future.get(timeout= 3)</span>
+
+<span class="token triple-quoted-string string">"""
+消费者
+"""</span>
+
+<span class="token comment" spellcheck="true"># consumer = KafkaConsumer('test', bootstrap_servers= ['183.131.192.8:9092'])</span>
+<span class="token comment" spellcheck="true"># for msg in consumer:</span>
+<span class="token comment" spellcheck="true">#     # print(msg)</span>
+<span class="token comment" spellcheck="true">#     print('---------')</span>
+<span class="token comment" spellcheck="true">#     print(msg)</span>
+<span class="token comment" spellcheck="true">#     print('------------')</span>
+
+
+<span class="token keyword">import</span> argparse
+<span class="token keyword">import</span> io
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> torch
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>_C <span class="token keyword">import</span> device
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> os
+
+<span class="token comment" spellcheck="true"># 相对路径的方式导入mymodes下的yolov5s1.pt这个模型</span>
+<span class="token comment" spellcheck="true"># model = torch.hub.load('./yolov5', 'custom', path='models/smoke.pt', source='local') </span>
+cap <span class="token operator">=</span> cv2<span class="token punctuation">.</span>VideoCapture<span class="token punctuation">(</span><span class="token string">'http://nvr.secserv.top:10800/flv/hls/stream_3.flv'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 显示图片的宽设置</span>
+width <span class="token operator">=</span> int<span class="token punctuation">(</span>cap<span class="token punctuation">.</span>get<span class="token punctuation">(</span>cv2<span class="token punctuation">.</span>CAP_PROP_FRAME_WIDTH<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 显示图像的高设置</span>
+height <span class="token operator">=</span> int<span class="token punctuation">(</span>cap<span class="token punctuation">.</span>get<span class="token punctuation">(</span>cv2<span class="token punctuation">.</span>CAP_PROP_FRAME_HEIGHT<span class="token punctuation">)</span><span class="token punctuation">)</span>
+video_fps <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token keyword">while</span> cap<span class="token punctuation">.</span>isOpened<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hello word'</span><span class="token punctuation">)</span>
+    ret<span class="token punctuation">,</span> frame <span class="token operator">=</span> cap<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># time.sleep(1/video_fps)</span>
+    
+    <span class="token keyword">if</span> <span class="token operator">not</span> ret<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"打开视频源失败"</span><span class="token punctuation">)</span>
+    
+    cv2<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">,</span>frame<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># picture = Image.fromarray(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)) </span>
+    <span class="token comment" spellcheck="true"># results = model(picture, size=640)</span>
+    <span class="token comment" spellcheck="true"># print(results)</span>
+    cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/yolov5/">
+                                    <span class="chip bg-color">yolov5</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/">
+                                    <span class="chip bg-color">视频推流</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E7%89%A9%E6%88%AA%E5%9B%BE/">
+                                    <span class="chip bg-color">视频目标物截图</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">谢谢你的打赏</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/112911863.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="基于yolov5的视频识别推流截图接口">
+                        
+                        <span class="card-title">基于yolov5的视频识别推流截图接口</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/yolov5/">
+                        <span class="chip bg-color">yolov5</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/">
+                        <span class="chip bg-color">视频推流</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E7%89%A9%E6%88%AA%E5%9B%BE/">
+                        <span class="chip bg-color">视频目标物截图</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/112912177.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="网站备案信息查询脚本">
+                        
+                        <span class="card-title">网站备案信息查询脚本</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2%E8%84%9A%E6%9C%AC/">
+                        <span class="chip bg-color">网站备案信息查询脚本</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">shixiuhai</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/shixiuhai" target="_blank">Hexo</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shixiuhai" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:15256728901@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=189128259" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 189128259" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

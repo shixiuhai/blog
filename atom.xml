@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-11-29T08:22:11.733Z</updated>
+  <updated>2021-11-29T09:25:02.128Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于yolov5的视频识别推流截图接口</title>
+    <link href="http://www.fuyaoershang.xyz/2021/112911863.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/112911863.html</id>
+    <published>2021-11-29T09:00:42.000Z</published>
+    <updated>2021-11-29T09:25:02.128Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://shixiuhai.github.io/work_share/video_interface.zip&quot;  target=&quot;_blank&quot;  style=&quot;color: #8ebf42&quot;&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    
+    
+    <category term="yolov5" scheme="http://www.fuyaoershang.xyz/tags/yolov5/"/>
+    
+    <category term="视频推流" scheme="http://www.fuyaoershang.xyz/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/"/>
+    
+    <category term="视频目标物截图" scheme="http://www.fuyaoershang.xyz/tags/%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E7%89%A9%E6%88%AA%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站备案信息查询脚本</title>
+    <link href="http://www.fuyaoershang.xyz/2021/112912177.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/112912177.html</id>
+    <published>2021-11-29T08:44:29.000Z</published>
+    <updated>2021-11-29T08:52:06.235Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot; language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; ssl &lt;span class=&quot;token</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    
+    
+    <category term="网站备案信息查询脚本" scheme="http://www.fuyaoershang.xyz/tags/%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>python调用asrtv1.0的语音识别脏话接口</title>
