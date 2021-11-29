@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-11-29T09:25:02.128Z</updated>
+  <updated>2021-11-29T09:28:53.432Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>yolov5训练项目</title>
+    <link href="http://www.fuyaoershang.xyz/2021/112926093.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/112926093.html</id>
+    <published>2021-11-29T09:28:00.000Z</published>
+    <updated>2021-11-29T09:28:53.432Z</updated>
+    
+    
+    
+    
+    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    
+    
+    <category term="yolov5" scheme="http://www.fuyaoershang.xyz/tags/yolov5/"/>
+    
+    <category term="yolov5训练" scheme="http://www.fuyaoershang.xyz/tags/yolov5%E8%AE%AD%E7%BB%83/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于yolov5的视频识别推流截图接口</title>
     <link href="http://www.fuyaoershang.xyz/2021/112911863.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112911863.html</id>
     <published>2021-11-29T09:00:42.000Z</published>
-    <updated>2021-11-29T09:25:02.128Z</updated>
+    <updated>2021-11-29T09:25:50.388Z</updated>
     
     
       
@@ -50,7 +69,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112912177.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112912177.html</id>
     <published>2021-11-29T08:44:29.000Z</published>
-    <updated>2021-11-29T08:52:06.235Z</updated>
+    <updated>2021-11-29T09:25:50.392Z</updated>
     
     
       
