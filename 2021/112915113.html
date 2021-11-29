@@ -508,12 +508,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python%E8%B0%83%E7%94%A8asrt%E5%AE%9E%E7%8E%B0%E8%84%8F%E8%AF%9D%E8%AF%86%E5%88%AB/">
+                                <span class="chip bg-color">python调用asrt实现脏话识别</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -536,14 +549,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -563,7 +576,275 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
+                <p><a href="https://shixiuhai.github.io/work_share/python_asrt_Recognition.zip"  target="_blank"  style="color: #8ebf42"> 点击这里下载调用asrt识别脏话</a></p>
+<p><code># 1. 项目代码相对位置</code></p>
+<p>需要下载源码分析</p>
+<p><code>2. asrserver.py分析</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 使用flask实现多进程调用</span>
+<span class="token keyword">import</span> http<span class="token punctuation">.</span>server
+<span class="token keyword">import</span> urllib
+<span class="token keyword">import</span> socket
+<span class="token keyword">from</span> numpy<span class="token punctuation">.</span>core<span class="token punctuation">.</span>numeric <span class="token keyword">import</span> Inf
+<span class="token keyword">from</span> numpy<span class="token punctuation">.</span>lib<span class="token punctuation">.</span>npyio <span class="token keyword">import</span> save
+<span class="token keyword">from</span> speech_model <span class="token keyword">import</span> ModelSpeech
+<span class="token keyword">from</span> speech_model_zoo <span class="token keyword">import</span> SpeechModel251
+<span class="token keyword">from</span> speech_features <span class="token keyword">import</span> Spectrogram
+<span class="token keyword">from</span> LanguageModel2 <span class="token keyword">import</span> ModelLanguage
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> librosa
+<span class="token keyword">from</span> utils<span class="token punctuation">.</span>ops <span class="token keyword">import</span> read_wav_data
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> threading
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> func<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>RLock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        super<span class="token punctuation">(</span>MyThread<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>func <span class="token operator">=</span> func
+        self<span class="token punctuation">.</span>args <span class="token operator">=</span> args
+
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 锁上</span>
+        self<span class="token punctuation">.</span>lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+        self<span class="token punctuation">.</span>result <span class="token operator">=</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span><span class="token operator">*</span>self<span class="token punctuation">.</span>args<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 解锁</span>
+        self<span class="token punctuation">.</span>lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_result</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>result
+        <span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+<span class="token comment" spellcheck="true"># 定义一个拿出敏感词库的函数</span>
+<span class="token keyword">def</span> <span class="token function">read_txt</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span>file <span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        list_data <span class="token operator">=</span> data<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 关闭文件很重要</span>
+        f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> list_data
+
+
+<span class="token comment" spellcheck="true"># 定义一个语音识别函数</span>
+<span class="token keyword">def</span> <span class="token function">video_to_word</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>save_path<span class="token punctuation">,</span>company_id<span class="token punctuation">,</span>task_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        now <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d-%H_%M_%S"</span><span class="token punctuation">,</span>time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        file_path <span class="token operator">=</span> save_path <span class="token operator">+</span> <span class="token string">'/'</span> <span class="token operator">+</span> now<span class="token operator">+</span> <span class="token string">'.wav'</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>save_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># print('已经创建路径'+ save_path)</span>
+                os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>save_path<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 执行save命令</span>
+        save_cmd <span class="token operator">=</span> <span class="token string">"ffmpeg -loglevel quiet -i %s -t 5 -f wav -ar 16000 %s"</span><span class="token operator">%</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>file_path<span class="token punctuation">)</span>
+        os<span class="token punctuation">.</span>system<span class="token punctuation">(</span>save_cmd<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 获取音频数组形式(wavsignal)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----------------------'</span><span class="token punctuation">)</span>
+        wavsignal<span class="token punctuation">,</span> fs<span class="token punctuation">,</span> _<span class="token punctuation">,</span> _ <span class="token operator">=</span> read_wav_data<span class="token punctuation">(</span><span class="token string">'%s'</span><span class="token operator">%</span><span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 转换为拼音</span>
+        r_speech <span class="token operator">=</span> ms<span class="token punctuation">.</span>recognize_speech<span class="token punctuation">(</span>wavsignal<span class="token punctuation">,</span> fs<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 转换为文本</span>
+        r_text <span class="token operator">=</span> ml<span class="token punctuation">.</span>SpeechToText<span class="token punctuation">(</span>r_speech<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'+++++++'</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>r_text<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'+++++++'</span><span class="token punctuation">)</span>
+        <span class="token triple-quoted-string string">"""进行敏感词判断"""</span>
+        content <span class="token operator">=</span> <span class="token string">''</span>
+        <span class="token keyword">for</span> word <span class="token keyword">in</span> read_txt<span class="token punctuation">(</span><span class="token string">'./targetword/target.txt'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> word <span class="token keyword">in</span> r_text<span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># print('-------')</span>
+                content <span class="token operator">=</span> content <span class="token operator">+</span> word <span class="token operator">+</span> <span class="token string">','</span>
+                <span class="token comment" spellcheck="true"># print(word)</span>
+                <span class="token comment" spellcheck="true"># print('-------')</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'java接口已经调用了'</span><span class="token punctuation">)</span>
+            <span class="token triple-quoted-string string">"""调用java接口"""</span>
+            send_data <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+                <span class="token string">'taskId'</span><span class="token punctuation">:</span>task_id<span class="token punctuation">,</span>
+                <span class="token string">'companyId'</span><span class="token punctuation">:</span>company_id<span class="token punctuation">,</span>
+                <span class="token string">'imgUrl'</span><span class="token punctuation">:</span>file_path<span class="token punctuation">,</span>
+                <span class="token string">'content'</span><span class="token punctuation">:</span>content<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
                 
+            <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+            <span class="token comment" spellcheck="true"># print(send_data)</span>
+            <span class="token comment" spellcheck="true"># 字典数据转为json数据</span>
+            send_data <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>send_data<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># 发送相关参数</span>
+            <span class="token comment" spellcheck="true"># 亦Content-Type':'application/json的方式提交json请求</span>
+            response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">'http://10.8.0.42:8088/wx/photo/saveVoidWarning'</span><span class="token punctuation">,</span> headers<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'Content-Type':'application/json'&amp;#125;, data=send_data)</span>
+            <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> len<span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 删除非敏感语音</span>
+            os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+                
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+       <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+    
+      
+        
+<span class="token triple-quoted-string string">"""flask接口"""</span>
+server <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+@server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/gttx/objectrecognition'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">objectrecognition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    通过接口解析json数据
+    """</span>
+    <span class="token keyword">if</span> <span class="token operator">not</span> request<span class="token punctuation">.</span>data<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 返回没有数据</span>
+        <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># return json.dumps("&amp;#123;'message': 'None'&amp;#125;",ensure_ascii=False)</span>
+    <span class="token comment" spellcheck="true"># 以utf-8编码接收json数据</span>
+    information <span class="token operator">=</span> request<span class="token punctuation">.</span>data
+    <span class="token comment" spellcheck="true"># 解析json数据为字典格式</span>
+    information <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>information<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print('------------')</span>
+    <span class="token comment" spellcheck="true"># print(information)</span>
+    <span class="token comment" spellcheck="true"># print('------------')</span>
+    <span class="token comment" spellcheck="true"># return json.dumps(200,ensure_ascii=False)</span>
+    
+    <span class="token comment" spellcheck="true"># # 获取变量</span>
+    path <span class="token operator">=</span> information<span class="token punctuation">[</span><span class="token string">'path'</span><span class="token punctuation">]</span>
+    save_path <span class="token operator">=</span> information<span class="token punctuation">[</span><span class="token string">'savePath'</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># save_path = 'target'</span>
+    company_id <span class="token operator">=</span> information<span class="token punctuation">[</span><span class="token string">'companyId'</span><span class="token punctuation">]</span>
+    task_id <span class="token operator">=</span> information<span class="token punctuation">[</span><span class="token string">'taskId'</span><span class="token punctuation">]</span>
+
+    <span class="token comment" spellcheck="true"># 调用函数传入视频路径</span>
+    <span class="token comment" spellcheck="true"># 调用多线程实现异步处理</span>
+    MyThread<span class="token punctuation">(</span>video_to_word<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>save_path<span class="token punctuation">,</span>company_id<span class="token punctuation">,</span>task_id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># result = video_to_word(path,save_path,company_id,task_id)</span>
+    <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""基础模型导入"""</span>
+    <span class="token comment" spellcheck="true"># resample_rate('test.wav')</span>
+    audio_length <span class="token operator">=</span> <span class="token number">1600</span>
+    audio_feature_length <span class="token operator">=</span> <span class="token number">200</span>
+    channels <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token comment" spellcheck="true"># 默认输出的拼音的表示大小是1428，即1427个拼音+1个空白块</span>
+    output_size <span class="token operator">=</span> <span class="token number">1428</span>
+    sm251 <span class="token operator">=</span> SpeechModel251<span class="token punctuation">(</span>
+        input_shape<span class="token operator">=</span><span class="token punctuation">(</span>audio_length<span class="token punctuation">,</span> audio_feature_length<span class="token punctuation">,</span> channels<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        output_size<span class="token operator">=</span>output_size
+        <span class="token punctuation">)</span>
+    feat <span class="token operator">=</span> Spectrogram<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ms <span class="token operator">=</span> ModelSpeech<span class="token punctuation">(</span>sm251<span class="token punctuation">,</span> feat<span class="token punctuation">,</span> max_label_length<span class="token operator">=</span><span class="token number">64</span><span class="token punctuation">)</span>
+    ms<span class="token punctuation">.</span>load_model<span class="token punctuation">(</span><span class="token string">'save_models/'</span> <span class="token operator">+</span> sm251<span class="token punctuation">.</span>get_model_name<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.model.h5'</span><span class="token punctuation">)</span>
+    ml <span class="token operator">=</span> ModelLanguage<span class="token punctuation">(</span><span class="token string">'model_language'</span><span class="token punctuation">)</span>
+    ml<span class="token punctuation">.</span>LoadModel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token triple-quoted-string string">"""启动flask服务"""</span>
+    <span class="token comment" spellcheck="true"># 指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问</span>
+    <span class="token comment" spellcheck="true"># server.run(debug=True, threaded=True,port=5000, host='127.0.0.1') # 多线程指定</span>
+    <span class="token comment" spellcheck="true"># 多进程指定，各个进程之间不冲突</span>
+    server<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> processes<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>port<span class="token operator">=</span><span class="token number">5100</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">)</span>
+</code></pre>
+<p><code>2. post_test.py分析</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""Perform test request"""</span>
+<span class="token keyword">import</span> pprint
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> argparse
+<span class="token keyword">import</span> io
+<span class="token comment" spellcheck="true">## 定义访问接口</span>
+interfaceurl <span class="token operator">=</span> <span class="token string">"http://10.8.0.37:5100/gttx/objectrecognition"</span>
+<span class="token comment" spellcheck="true"># C:/Users/15256/Desktop/nowtime/yolov_smoke_v1.0/yolov5/smokingdata/images/train/000001.jpg</span>
+<span class="token comment" spellcheck="true">## 将要传入的数据设置为json格式</span>
+<span class="token comment" spellcheck="true"># http://pili-live-hdl.miaobolive.com/live/dfbe2bcc0acd956bda5c9a3d133e5c18.flv</span>
+<span class="token comment" spellcheck="true"># information = &amp;#123; 'path' : r'C:\Users\15256\Desktop\nowtime\吸烟视频\2.mp4',  </span>
+<span class="token comment" spellcheck="true">#                 'savePath' :'targetimages'&amp;#125; </span>
+information <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; 'path' : 'http://pili-live-hdl.miaobolive.com/live/e160addb5b2e5f8123de6cb0c6e1956b.flv', </span>
+                <span class="token string">'savePath'</span><span class="token punctuation">:</span> <span class="token string">'target'</span><span class="token punctuation">,</span>
+                <span class="token string">'companyId'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token string">'taskId'</span><span class="token punctuation">:</span><span class="token number">3</span>
+            <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; </span>
+information <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>information<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 10.0.0.59</span>
+<span class="token comment" spellcheck="true">## 数据打包传输</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>interfaceurl<span class="token punctuation">,</span> data<span class="token operator">=</span>information<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(response)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># requests.post(interfaceurl, data=information)</span>
+</code></pre>
+<p><code># 3. requirements.txt分析</code></p>
+<pre class=" language-python"><code class="language-python">absl<span class="token operator">-</span>py<span class="token operator">==</span><span class="token number">0.15</span><span class="token punctuation">.</span><span class="token number">0</span>
+appdirs<span class="token operator">==</span><span class="token number">1.4</span><span class="token punctuation">.</span><span class="token number">4</span>
+astor<span class="token operator">==</span><span class="token number">0.8</span><span class="token punctuation">.</span><span class="token number">0</span>
+astunparse<span class="token operator">==</span><span class="token number">1.6</span><span class="token punctuation">.</span><span class="token number">3</span>
+audioread<span class="token operator">==</span><span class="token number">2.1</span><span class="token punctuation">.</span><span class="token number">9</span>
+cached<span class="token operator">-</span>property<span class="token operator">==</span><span class="token number">1.5</span><span class="token punctuation">.</span><span class="token number">2</span>
+cachetools<span class="token operator">==</span><span class="token number">4.2</span><span class="token punctuation">.</span><span class="token number">4</span>
+certifi<span class="token operator">==</span><span class="token number">2019.9</span><span class="token punctuation">.</span><span class="token number">11</span>
+cffi<span class="token operator">==</span><span class="token number">1.15</span><span class="token punctuation">.</span><span class="token number">0</span>
+charset<span class="token operator">-</span>normalizer<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">7</span>
+click<span class="token operator">==</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">3</span>
+colorama<span class="token operator">==</span><span class="token number">0.4</span><span class="token punctuation">.</span><span class="token number">4</span>
+cycler<span class="token operator">==</span><span class="token number">0.10</span><span class="token punctuation">.</span><span class="token number">0</span>
+decorator<span class="token operator">==</span><span class="token number">4.4</span><span class="token punctuation">.</span><span class="token number">2</span>
+Flask<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">2</span>
+flatbuffers<span class="token operator">==</span><span class="token number">1.12</span>
+gast<span class="token operator">==</span><span class="token number">0.4</span><span class="token punctuation">.</span><span class="token number">0</span>
+google<span class="token operator">-</span>auth<span class="token operator">==</span><span class="token number">2.3</span><span class="token punctuation">.</span><span class="token number">3</span>
+google<span class="token operator">-</span>auth<span class="token operator">-</span>oauthlib<span class="token operator">==</span><span class="token number">0.4</span><span class="token punctuation">.</span><span class="token number">6</span>
+google<span class="token operator">-</span>pasta<span class="token operator">==</span><span class="token number">0.2</span><span class="token punctuation">.</span><span class="token number">0</span>
+grpcio<span class="token operator">==</span><span class="token number">1.34</span><span class="token punctuation">.</span><span class="token number">1</span>
+h5py<span class="token operator">==</span><span class="token number">3.1</span><span class="token punctuation">.</span><span class="token number">0</span>
+idna<span class="token operator">==</span><span class="token number">3.3</span>
+imageio<span class="token operator">==</span><span class="token number">2.12</span><span class="token punctuation">.</span><span class="token number">0</span>
+imageio<span class="token operator">-</span>ffmpeg<span class="token operator">==</span><span class="token number">0.4</span><span class="token punctuation">.</span><span class="token number">5</span>
+itsdangerous<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">1</span>
+Jinja2<span class="token operator">==</span><span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">3</span>
+joblib<span class="token operator">==</span><span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">0</span>
+Keras<span class="token operator">-</span>Applications<span class="token operator">==</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">8</span>
+keras<span class="token operator">-</span>nightly<span class="token operator">==</span><span class="token number">2.5</span><span class="token punctuation">.</span><span class="token number">0.</span>dev2021032900
+Keras<span class="token operator">-</span>Preprocessing<span class="token operator">==</span><span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">2</span>
+kiwisolver<span class="token operator">==</span><span class="token number">1.3</span><span class="token punctuation">.</span><span class="token number">1</span>
+librosa<span class="token operator">==</span><span class="token number">0.7</span><span class="token punctuation">.</span><span class="token number">2</span>
+llvmlite<span class="token operator">==</span><span class="token number">0.31</span><span class="token punctuation">.</span><span class="token number">0</span>
+Markdown<span class="token operator">==</span><span class="token number">3.1</span><span class="token punctuation">.</span><span class="token number">1</span>
+MarkupSafe<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">1</span>
+matplotlib<span class="token operator">==</span><span class="token number">3.4</span><span class="token punctuation">.</span><span class="token number">2</span>
+moviepy<span class="token operator">==</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">3</span>
+numba<span class="token operator">==</span><span class="token number">0.48</span><span class="token punctuation">.</span><span class="token number">0</span>
+numpy<span class="token operator">==</span><span class="token number">1.19</span><span class="token punctuation">.</span><span class="token number">5</span>
+oauthlib<span class="token operator">==</span><span class="token number">3.1</span><span class="token punctuation">.</span><span class="token number">1</span>
+opt<span class="token operator">-</span>einsum<span class="token operator">==</span><span class="token number">3.3</span><span class="token punctuation">.</span><span class="token number">0</span>
+packaging<span class="token operator">==</span><span class="token number">21.3</span>
+Pillow<span class="token operator">==</span><span class="token number">8.3</span><span class="token punctuation">.</span><span class="token number">2</span>
+pooch<span class="token operator">==</span><span class="token number">1.5</span><span class="token punctuation">.</span><span class="token number">2</span>
+proglog<span class="token operator">==</span><span class="token number">0.1</span><span class="token punctuation">.</span><span class="token number">9</span>
+protobuf<span class="token operator">==</span><span class="token number">3.10</span><span class="token punctuation">.</span><span class="token number">0</span>
+pyasn1<span class="token operator">==</span><span class="token number">0.4</span><span class="token punctuation">.</span><span class="token number">8</span>
+pyasn1<span class="token operator">-</span>modules<span class="token operator">==</span><span class="token number">0.2</span><span class="token punctuation">.</span><span class="token number">8</span>
+pycparser<span class="token operator">==</span><span class="token number">2.21</span>
+pyparsing<span class="token operator">==</span><span class="token number">2.4</span><span class="token punctuation">.</span><span class="token number">7</span>
+python<span class="token operator">-</span>dateutil<span class="token operator">==</span><span class="token number">2.8</span><span class="token punctuation">.</span><span class="token number">1</span>
+python<span class="token operator">-</span>speech<span class="token operator">-</span>features<span class="token operator">==</span><span class="token number">0.6</span>
+requests<span class="token operator">==</span><span class="token number">2.26</span><span class="token punctuation">.</span><span class="token number">0</span>
+requests<span class="token operator">-</span>oauthlib<span class="token operator">==</span><span class="token number">1.3</span><span class="token punctuation">.</span><span class="token number">0</span>
+resampy<span class="token operator">==</span><span class="token number">0.2</span><span class="token punctuation">.</span><span class="token number">2</span>
+rsa<span class="token operator">==</span><span class="token number">4.7</span><span class="token punctuation">.</span><span class="token number">2</span>
+scikit<span class="token operator">-</span>learn<span class="token operator">==</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">1</span>
+scipy<span class="token operator">==</span><span class="token number">1.6</span><span class="token punctuation">.</span><span class="token number">3</span>
+six<span class="token operator">==</span><span class="token number">1.15</span><span class="token punctuation">.</span><span class="token number">0</span>
+SoundFile<span class="token operator">==</span><span class="token number">0.10</span><span class="token punctuation">.</span><span class="token number">3.</span>post1
+tensorboard<span class="token operator">==</span><span class="token number">2.7</span><span class="token punctuation">.</span><span class="token number">0</span>
+tensorboard<span class="token operator">-</span>data<span class="token operator">-</span>server<span class="token operator">==</span><span class="token number">0.6</span><span class="token punctuation">.</span><span class="token number">1</span>
+tensorboard<span class="token operator">-</span>plugin<span class="token operator">-</span>wit<span class="token operator">==</span><span class="token number">1.8</span><span class="token punctuation">.</span><span class="token number">0</span>
+tensorflow<span class="token operator">-</span>estimator<span class="token operator">==</span><span class="token number">2.5</span><span class="token punctuation">.</span><span class="token number">0</span>
+tensorflow<span class="token operator">-</span>gpu<span class="token operator">==</span><span class="token number">2.5</span><span class="token punctuation">.</span><span class="token number">2</span>
+termcolor<span class="token operator">==</span><span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">0</span>
+threadpoolctl<span class="token operator">==</span><span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">0</span>
+tqdm<span class="token operator">==</span><span class="token number">4.62</span><span class="token punctuation">.</span><span class="token number">3</span>
+typing<span class="token operator">-</span>extensions<span class="token operator">==</span><span class="token number">3.7</span><span class="token punctuation">.</span><span class="token number">4.3</span>
+urllib3<span class="token operator">==</span><span class="token number">1.26</span><span class="token punctuation">.</span><span class="token number">7</span>
+Werkzeug<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">2</span>
+wrapt<span class="token operator">==</span><span class="token number">1.12</span><span class="token punctuation">.</span><span class="token number">1</span>
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -576,7 +857,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python%E8%B0%83%E7%94%A8asrt%E5%AE%9E%E7%8E%B0%E8%84%8F%E8%AF%9D%E8%AF%86%E5%88%AB/">
+                                    <span class="chip bg-color">python调用asrt实现脏话识别</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -760,13 +1045,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            shixiuhai
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python%E8%B0%83%E7%94%A8asrt%E5%AE%9E%E7%8E%B0%E8%84%8F%E8%AF%9D%E8%AF%86%E5%88%AB/">
+                        <span class="chip bg-color">python调用asrt实现脏话识别</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -798,11 +1095,23 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            shixiuhai
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python%E8%B0%83%E7%94%A8%E7%99%BE%E5%BA%A6api%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+                        <span class="chip bg-color">python调用百度api图像识别</span>
+                    </a>
+                    
                 </div>
                 
             </div>
