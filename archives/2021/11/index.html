@@ -563,7 +563,8 @@
                             <div class="summary block-with-text">
                                 
                                     linux 使用nohup创建后台# 将 check_application.py放入后台运行并生成日志，日志目录在info.log
-nohup python3 check_application.py >log/info.log 2>&a
+# 2>&amp;1 的意思就是将标准错误重定向到标准输出
+nohup python3 check_app
                                 
                             </div>
                             <div class="publish-info">
