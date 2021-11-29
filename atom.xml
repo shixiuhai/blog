@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-11-19T06:44:53.785Z</updated>
+  <updated>2021-11-29T02:24:30.910Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux日常笔记</title>
+    <link href="http://www.fuyaoershang.xyz/2021/112949872.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/112949872.html</id>
+    <published>2021-11-29T02:17:48.000Z</published>
+    <updated>2021-11-29T02:24:30.910Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;linux-使用nohup创建后台&quot;&gt;&lt;a href=&quot;#linux-使用nohup创建后台&quot; class=&quot;headerlink&quot; title=&quot;linux 使用nohup创建后台&quot;&gt;&lt;/a&gt;linux 使用nohup创建后台&lt;/h4&gt;&lt;pre class=&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.fuyaoershang.xyz/categories/linux/"/>
+    
+    
+    <category term="linux日常随记" scheme="http://www.fuyaoershang.xyz/tags/linux%E6%97%A5%E5%B8%B8%E9%9A%8F%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python日常笔记</title>
     <link href="http://www.fuyaoershang.xyz/2021/111223223.html"/>
     <id>http://www.fuyaoershang.xyz/2021/111223223.html</id>
     <published>2021-11-12T05:39:31.000Z</published>
-    <updated>2021-11-19T06:44:53.785Z</updated>
+    <updated>2021-11-29T02:19:01.653Z</updated>
     
     
       
@@ -37,7 +62,7 @@
     <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
     
     
-    <category term="日常记忆" scheme="http://www.fuyaoershang.xyz/tags/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BF%86/"/>
+    <category term="python日常随记" scheme="http://www.fuyaoershang.xyz/tags/python%E6%97%A5%E5%B8%B8%E9%9A%8F%E8%AE%B0/"/>
     
   </entry>
   
