@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-12-07T08:43:17.249Z</updated>
+  <updated>2021-12-07T09:19:32.982Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell脚本基础和进阶</title>
+    <link href="http://www.fuyaoershang.xyz/2021/120755240.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/120755240.html</id>
+    <published>2021-12-07T09:18:28.000Z</published>
+    <updated>2021-12-07T09:19:32.982Z</updated>
+    
+    
+    
+    
+    <category term="linux" scheme="http://www.fuyaoershang.xyz/categories/linux/"/>
+    
+    
+    <category term="shell" scheme="http://www.fuyaoershang.xyz/tags/shell/"/>
+    
+    <category term="shell基础" scheme="http://www.fuyaoershang.xyz/tags/shell%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="shell进阶" scheme="http://www.fuyaoershang.xyz/tags/shell%E8%BF%9B%E9%98%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>yolov5训练项目</title>
