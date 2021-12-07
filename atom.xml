@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-11-29T09:28:53.432Z</updated>
+  <updated>2021-12-07T06:03:44.643Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -21,8 +21,16 @@
     <link href="http://www.fuyaoershang.xyz/2021/112926093.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112926093.html</id>
     <published>2021-11-29T09:28:00.000Z</published>
-    <updated>2021-11-29T09:28:53.432Z</updated>
+    <updated>2021-12-07T06:03:44.643Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;yolov5命令训练&quot;&gt;&lt;a href=&quot;#yolov5命令训练&quot; class=&quot;headerlink&quot; title=&quot;yolov5命令训练&quot;&gt;&lt;/a&gt;yolov5命令训练&lt;/h4&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
+        
+      
     
     
     
@@ -119,7 +127,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112933904.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112933904.html</id>
     <published>2021-11-29T04:26:23.000Z</published>
-    <updated>2021-11-29T05:47:00.439Z</updated>
+    <updated>2021-12-01T05:39:52.162Z</updated>
     
     
       
@@ -144,7 +152,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112949872.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112949872.html</id>
     <published>2021-11-29T02:17:48.000Z</published>
-    <updated>2021-11-29T04:18:43.053Z</updated>
+    <updated>2021-12-07T08:32:55.324Z</updated>
     
     
       
@@ -352,7 +360,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/101621696.html"/>
     <id>http://www.fuyaoershang.xyz/2021/101621696.html</id>
     <published>2021-10-16T02:05:05.000Z</published>
-    <updated>2021-10-17T03:29:50.000Z</updated>
+    <updated>2021-12-01T05:34:31.005Z</updated>
     
     
       
@@ -368,7 +376,9 @@
     <category term="代码托管平台" scheme="http://www.fuyaoershang.xyz/categories/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0/"/>
     
     
-    <category term="github" scheme="http://www.fuyaoershang.xyz/tags/github/"/>
+    <category term="github基础配置" scheme="http://www.fuyaoershang.xyz/tags/github%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="github设置代理" scheme="http://www.fuyaoershang.xyz/tags/github%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/"/>
     
   </entry>
   
