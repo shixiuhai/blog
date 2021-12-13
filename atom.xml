@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-12-07T09:19:32.982Z</updated>
+  <updated>2021-12-13T02:52:58.316Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,11 +17,72 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>yolov5_detect.py重写</title>
+    <link href="http://www.fuyaoershang.xyz/2021/121321986.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/121321986.html</id>
+    <published>2021-12-13T02:49:43.000Z</published>
+    <updated>2021-12-13T02:52:58.316Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;吸烟口罩重写&quot;&gt;&lt;a href=&quot;#吸烟口罩重写&quot; class=&quot;headerlink&quot; title=&quot;吸烟口罩重写&quot;&gt;&lt;/a&gt;&lt;code&gt;吸烟口罩重写&lt;/code&gt;&lt;/h1&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    
+    
+    <category term="yolov5_detect" scheme="http://www.fuyaoershang.xyz/tags/yolov5-detect/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站域名截图</title>
+    <link href="http://www.fuyaoershang.xyz/2021/121340417.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/121340417.html</id>
+    <published>2021-12-13T02:34:45.000Z</published>
+    <updated>2021-12-13T02:48:30.904Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    
+    
+    <category term="网站域名截图" scheme="http://www.fuyaoershang.xyz/tags/%E7%BD%91%E7%AB%99%E5%9F%9F%E5%90%8D%E6%88%AA%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go语言入门</title>
+    <link href="http://www.fuyaoershang.xyz/2021/12082134.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/12082134.html</id>
+    <published>2021-12-08T02:33:09.000Z</published>
+    <updated>2021-12-08T02:33:52.971Z</updated>
+    
+    
+    
+    
+    <category term="go" scheme="http://www.fuyaoershang.xyz/categories/go/"/>
+    
+    
+    <category term="go入门" scheme="http://www.fuyaoershang.xyz/tags/go%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>shell脚本基础和进阶</title>
     <link href="http://www.fuyaoershang.xyz/2021/120755240.html"/>
     <id>http://www.fuyaoershang.xyz/2021/120755240.html</id>
     <published>2021-12-07T09:18:28.000Z</published>
-    <updated>2021-12-07T09:19:32.982Z</updated>
+    <updated>2021-12-07T09:19:37.473Z</updated>
     
     
     
@@ -42,14 +103,14 @@
     <link href="http://www.fuyaoershang.xyz/2021/112926093.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112926093.html</id>
     <published>2021-11-29T09:28:00.000Z</published>
-    <updated>2021-12-07T08:43:17.249Z</updated>
+    <updated>2021-12-08T09:05:01.810Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;yolov5命令训练&quot;&gt;&lt;a href=&quot;#yolov5命令训练&quot; class=&quot;headerlink&quot; title=&quot;yolov5命令训练&quot;&gt;&lt;/a&gt;yolov5命令训练&lt;/h4&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
+    <summary type="html">&lt;h4 id=&quot;yolov5命令训练命令&quot;&gt;&lt;a href=&quot;#yolov5命令训练命令&quot; class=&quot;headerlink&quot; title=&quot;yolov5命令训练命令&quot;&gt;&lt;/a&gt;yolov5命令训练命令&lt;/h4&gt;&lt;pre class=&quot;</summary>
         
       
     
@@ -98,14 +159,14 @@
     <link href="http://www.fuyaoershang.xyz/2021/112912177.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112912177.html</id>
     <published>2021-11-29T08:44:29.000Z</published>
-    <updated>2021-11-29T09:25:50.392Z</updated>
+    <updated>2021-12-13T02:43:58.378Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;pre class=&quot; language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; ssl &lt;span class=&quot;token</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://shixiuhai.github.io/work_share/web_scan_screenshot.zip&quot;  target=&quot;_blank&quot;  style=&quot;color: #8ebf42&quot;&gt;</summary>
         
       
     
@@ -429,83 +490,6 @@
     <category term="路由交换基础" scheme="http://www.fuyaoershang.xyz/tags/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%9F%BA%E7%A1%80/"/>
     
     <category term="华为" scheme="http://www.fuyaoershang.xyz/tags/%E5%8D%8E%E4%B8%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>web渗透</title>
-    <link href="http://www.fuyaoershang.xyz/2021/101455981.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/101455981.html</id>
-    <published>2021-10-14T02:18:21.000Z</published>
-    <updated>2021-10-19T12:33:58.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;web渗透&quot;&gt;&lt;a href=&quot;#web渗透&quot; class=&quot;headerlink&quot; title=&quot;web渗透&quot;&gt;&lt;/a&gt;&lt;code&gt;web渗透&lt;/code&gt;&lt;/h1&gt;&lt;h2 id=&quot;第1章-基本搜索工具的使用&quot;&gt;&lt;a href=&quot;#第1章-基本搜索工具的使用&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络安全" scheme="http://www.fuyaoershang.xyz/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="web渗透集合" scheme="http://www.fuyaoershang.xyz/tags/web%E6%B8%97%E9%80%8F%E9%9B%86%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java笔记</title>
-    <link href="http://www.fuyaoershang.xyz/2021/101456103.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/101456103.html</id>
-    <published>2021-10-14T02:05:05.000Z</published>
-    <updated>2021-11-29T04:22:10.972Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;JAVA-学习笔记&quot;&gt;&lt;a href=&quot;#JAVA-学习笔记&quot; class=&quot;headerlink&quot; title=&quot;JAVA 学习笔记&quot;&gt;&lt;/a&gt;JAVA 学习笔记&lt;/h1&gt;&lt;h3 id=&quot;java基础入门路线图参考&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="java" scheme="http://www.fuyaoershang.xyz/categories/java/"/>
-    
-    
-    <category term="java基础" scheme="http://www.fuyaoershang.xyz/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>frp配置相关</title>
-    <link href="http://www.fuyaoershang.xyz/2021/092915509.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/092915509.html</id>
-    <published>2021-09-29T05:14:43.000Z</published>
-    <updated>2021-10-15T08:23:14.896Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;frp-服务端配置&quot;&gt;&lt;a href=&quot;#frp-服务端配置&quot; class=&quot;headerlink&quot; title=&quot;frp 服务端配置&quot;&gt;&lt;/a&gt;frp 服务端配置&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="内网穿透" scheme="http://www.fuyaoershang.xyz/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
-    
-    
-    <category term="frp配置基础" scheme="http://www.fuyaoershang.xyz/tags/frp%E9%85%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="frp使用" scheme="http://www.fuyaoershang.xyz/tags/frp%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   

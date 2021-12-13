@@ -546,14 +546,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2021-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    29
+                    97
                 </div>
                 
 
@@ -580,7 +580,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="yolov5命令训练"><a href="#yolov5命令训练" class="headerlink" title="yolov5命令训练"></a>yolov5命令训练</h4><pre class=" language-python"><code class="language-python">python3 <span class="token operator">-</span>m torch<span class="token punctuation">.</span>distributed<span class="token punctuation">.</span>launch <span class="token operator">-</span><span class="token operator">-</span>nproc_per_node <span class="token number">2</span> train<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>batch <span class="token number">16</span> <span class="token operator">-</span><span class="token operator">-</span>cfg <span class="token punctuation">.</span><span class="token operator">/</span>models<span class="token operator">/</span>yolov5l<span class="token punctuation">.</span>yaml <span class="token operator">-</span><span class="token operator">-</span>data <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>smokingdata<span class="token operator">/</span>smoke<span class="token punctuation">.</span>yaml  <span class="token operator">-</span><span class="token operator">-</span>project <span class="token punctuation">.</span><span class="token operator">/</span>weight<span class="token operator">/</span>smoke  <span class="token operator">-</span><span class="token operator">-</span>device <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span>
+                <h4 id="yolov5命令训练命令"><a href="#yolov5命令训练命令" class="headerlink" title="yolov5命令训练命令"></a>yolov5命令训练命令</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --nproc_per_node指定训练Gpu的个数, --batch 16 加快训练速度（批处理） --cfg 指定神经网络模型 --data 训练数据集</span>
+<span class="token comment" spellcheck="true"># -- project 模型保存位置  --device 0,1 指定GPU 0和1进行训练</span>
+<span class="token comment" spellcheck="true"># smoke.yaml是训练数据集指定文件</span>
+python3 <span class="token operator">-</span>m torch<span class="token punctuation">.</span>distributed<span class="token punctuation">.</span>launch <span class="token operator">-</span><span class="token operator">-</span>nproc_per_node <span class="token number">2</span> train<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>batch <span class="token number">16</span> <span class="token operator">-</span><span class="token operator">-</span>cfg <span class="token punctuation">.</span><span class="token operator">/</span>models<span class="token operator">/</span>yolov5l<span class="token punctuation">.</span>yaml <span class="token operator">-</span><span class="token operator">-</span>data <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>smokingdata<span class="token operator">/</span>smoke<span class="token punctuation">.</span>yaml  <span class="token operator">-</span><span class="token operator">-</span>project <span class="token punctuation">.</span><span class="token operator">/</span>weight<span class="token operator">/</span>smoke  <span class="token operator">-</span><span class="token operator">-</span>device <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span>
 </code></pre>
 
                 
