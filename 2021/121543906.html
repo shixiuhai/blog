@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="linux日常笔记, 思进不思停的博客笔记">
+    <meta name="keywords" content="docker使用, 思进不思停的博客笔记">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>linux日常笔记 | 思进不思停的博客笔记</title>
+    <title>docker使用 | 思进不思停的博客笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -389,12 +389,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">linux日常笔记</h1>
+                    <h1 class="description center-align post-title">docker使用</h1>
                 </div>
             </div>
         </div>
@@ -510,8 +510,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/linux%E6%97%A5%E5%B8%B8%E9%9A%8F%E8%AE%B0/">
-                                <span class="chip bg-color">linux日常随记</span>
+                            <a href="/tags/docker%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">docker基础</span>
+                            </a>
+                        
+                            <a href="/tags/docker%E4%BD%BF%E7%94%A8/">
+                                <span class="chip bg-color">docker使用</span>
                             </a>
                         
                     </div>
@@ -522,8 +526,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/linux/" class="post-category">
-                                linux
+                            <a href="/categories/dokcer/" class="post-category">
+                                dokcer
                             </a>
                         
                     </div>
@@ -535,7 +539,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-29
+                    2021-12-15
                 </div>
                 
 
@@ -549,14 +553,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    451
+                    396
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -576,44 +580,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="linux-使用nohup创建后台"><a href="#linux-使用nohup创建后台" class="headerlink" title="linux 使用nohup创建后台"></a>linux 使用nohup创建后台</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将 check_application.py放入后台运行并生成日志，日志目录在info.log</span>
-<span class="token comment" spellcheck="true"># 2>&amp;1 的意思就是将标准错误重定向到标准输出</span>
-nohup python3 check_application<span class="token punctuation">.</span>py <span class="token operator">></span>log<span class="token operator">/</span>info<span class="token punctuation">.</span>log <span class="token number">2</span><span class="token operator">></span><span class="token operator">&amp;</span><span class="token number">1</span> <span class="token operator">&amp;</span>
+                <h1 id="1-手工构建docker镜像"><a href="#1-手工构建docker镜像" class="headerlink" title=" 1. 手工构建docker镜像"></a><code> 1. 手工构建docker镜像</code></h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## docker 基础命令 docker run docker commit docker exec </span>
 </code></pre>
-<h4 id="linux-删除所有空格（每行）"><a href="#linux-删除所有空格（每行）" class="headerlink" title="linux 删除所有空格（每行）"></a>linux 删除所有空格（每行）</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">sed</span> -i s/<span class="token punctuation">[</span><span class="token punctuation">[</span>:space:<span class="token punctuation">]</span><span class="token punctuation">]</span>//g filename
-<span class="token function">sed</span> -i <span class="token string">'/^[[:blank:]]*$/d'</span> filename
-</code></pre>
-<h4 id="linux-修改某个文件的某列"><a href="#linux-修改某个文件的某列" class="headerlink" title="linux 修改某个文件的某列"></a>linux 修改某个文件的某列</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -l <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^-"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l
-</code></pre>
-<h4 id="linux-查看文件夹下文件个数"><a href="#linux-查看文件夹下文件个数" class="headerlink" title="linux 查看文件夹下文件个数"></a>linux 查看文件夹下文件个数</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -l <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^-"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l
-</code></pre>
-<h4 id="linux-vim使用多窗口"><a href="#linux-vim使用多窗口" class="headerlink" title="linux  vim使用多窗口"></a>linux  vim使用多窗口</h4><pre class=" language-bash"><code class="language-bash">水平窗口的开启使用:sp命令即可 <span class="token comment" spellcheck="true"># （1）Ctrl+w+k 上一个窗口   Ctrl+w+ j  下一个窗口 （2）Ctrl+w+上下方向键</span>
-垂直窗口的开启使用:vs命令即可 <span class="token comment" spellcheck="true"># （1）Ctrl+w+h 当前窗口左边的一个窗口   Ctrl+w+ l  当前窗口右边的一个窗口 （2）Ctrl+w+左右方向键</span>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 获取镜像</span>
+docker pull ubuntu <span class="token comment" spellcheck="true"># 获取镜像ubuntu镜像</span>
 
+<span class="token comment" spellcheck="true">## 创建并自动启动容器</span>
+docker run -it ubuntu /bin/bash <span class="token comment" spellcheck="true"># 以bash的方式启动容器</span>
+docker run -it ubuntu  <span class="token comment" spellcheck="true"># 直接以镜像默认命令使用容器</span>
+
+<span class="token comment" spellcheck="true">## 启动容器</span>
+docker start <span class="token operator">&lt;</span>容器 ID or name<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">## 关闭容器</span>
+docker stop <span class="token operator">&lt;</span>容器 ID or name<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">## 重启容器</span>
+docker restart <span class="token operator">&lt;</span>容器 ID or name<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">## 导出和导入容器</span>
+<span class="token comment" spellcheck="true"># 导出容器</span>
+docker <span class="token function">export</span> 1e560fca3906 <span class="token operator">></span> ubuntu.tar
+<span class="token comment" spellcheck="true"># 导入容器</span>
+<span class="token function">cat</span> docker/ubuntu.tar <span class="token operator">|</span> docker <span class="token function">import</span> - test/ubuntu:v1
+
+<span class="token comment" spellcheck="true">## 删除容器</span>
+<span class="token function">cat</span> docker/ubuntu.tar <span class="token operator">|</span> docker <span class="token function">import</span> - test/ubuntu:v1
+
+<span class="token comment" spellcheck="true">## 退出容器自动删除容器内容</span>
+docker run --rm <span class="token operator">&lt;</span>容器 ID or name<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">## docker bash运行多个命令方法</span>
+docker run -itd  --name test150 apache2:v20 /bin/sh -c <span class="token string">'service apache2 start &amp;&amp; /bin/bash'</span>
 </code></pre>
-<h4 id="linux-获取某个进程的pid号"><a href="#linux-获取某个进程的pid号" class="headerlink" title="linux  获取某个进程的pid号"></a>linux  获取某个进程的pid号</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> check_application.py  <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">'grep'</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&amp;#123;print <span class="token variable">$2</span>&amp;#125;'</span> # check_application.py 是运行程序的名字
-<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> traffic_application.py <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">'grep'</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&amp;#123;print <span class="token variable">$2</span>&amp;#125;'</span>
-<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> truck_application.py <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">'grep'</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&amp;#123;print <span class="token variable">$2</span>&amp;#125;'</span>
-<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'SCREEN -S test'</span>  <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">'grep'</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&amp;#123;print <span class="token variable">$2</span>&amp;#125;'</span> # 获取screen 某个虚拟终端的id
-<span class="token comment" spellcheck="true">## 某个脚本案例</span>
-<span class="token comment" spellcheck="true">#!/bin/bash</span>
-<span class="token comment" spellcheck="true"># 获取pid程序运行的pid号</span>
-pid1<span class="token operator">=</span><span class="token punctuation">$(</span>ps -ef <span class="token operator">|</span> <span class="token function">grep</span> check_application.py  <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">'grep'</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&amp;#123;print <span class="token variable">$2</span>&amp;#125;'</span><span class="token punctuation">)</span>
-pid2<span class="token operator">=</span><span class="token punctuation">$(</span>ps -ef <span class="token operator">|</span> <span class="token function">grep</span> traffic_application.py  <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">'grep'</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&amp;#123;print <span class="token variable">$2</span>&amp;#125;'</span><span class="token punctuation">)</span>
-pid3<span class="token operator">=</span><span class="token punctuation">$(</span>ps -ef <span class="token operator">|</span> <span class="token function">grep</span> truck_application.py  <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">'grep'</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&amp;#123;print <span class="token variable">$2</span>&amp;#125;'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 杀死已经运行的程序</span>
-<span class="token function">kill</span> -9 <span class="token variable">$pid1</span>
-<span class="token function">kill</span> -9 <span class="token variable">$pid2</span>
-<span class="token function">kill</span> -9 <span class="token variable">$pid3</span>
-<span class="token comment" spellcheck="true"># 进入虚拟环境</span>
-<span class="token function">source</span> env/bin/activate
-<span class="token comment" spellcheck="true"># 后台运行程序</span>
-<span class="token function">nohup</span> python3 traffic_application.py <span class="token operator">></span>log/trafficInfo.log.log 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
-<span class="token function">nohup</span> python3 check_application.py <span class="token operator">></span>log/info.log 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
-<span class="token function">nohup</span> python3 truck_application.py <span class="token operator">></span>log/truckInfo.log 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
-<span class="token comment" spellcheck="true"># 退出虚拟环境</span>
-deactivate
-<span class="token keyword">echo</span> <span class="token string">"check_application.py traffic_application.py truck_application.py重启成功"</span>
+<h1 id="2-dockerfile构建dokcer镜像"><a href="#2-dockerfile构建dokcer镜像" class="headerlink" title="2. dockerfile构建dokcer镜像"></a><code>2. dockerfile构建dokcer镜像</code></h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 注明RUN命令可以有多个,CMD和ENTRYPOINT命令只能有一个</span>
+FROM nginx
+RUN <span class="token operator">&lt;</span>命令行命令<span class="token operator">></span> <span class="token comment" spellcheck="true"># &lt;命令行命令> 等同于，在终端操作的 shell 命令。</span>
+RUN <span class="token punctuation">[</span><span class="token string">"可执行文件"</span>, <span class="token string">"参数1"</span>, <span class="token string">"参数2"</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 例如：RUN ["./test.php", "dev", "offline"] 等价于 RUN ./test.php dev offline</span>
+
+<span class="token comment" spellcheck="true">## CMD和ENTRYPOINT命令融合写法</span>
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"nginx"</span>, <span class="token string">"-c"</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 定参</span>
+CMD <span class="token punctuation">[</span><span class="token string">"/etc/nginx/nginx.conf"</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 变参 </span>
+
+<span class="token comment" spellcheck="true">## VOLUME匿名挂载 https://www.jianshu.com/p/738a6455b804</span>
+VOLUME <span class="token punctuation">[</span><span class="token string">"&lt;路径1>"</span>, <span class="token string">"&lt;路径2>"</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+VOLUME <span class="token operator">&lt;</span>路径<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">## CMD 用法</span>
+CMD <span class="token punctuation">[</span> <span class="token string">"/bin/bash"</span> ,<span class="token string">"/start.sh"</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 在容器里/目录下写上start.sh脚本，脚本的最后一行需要加上/bin/bash 因为# docker只运行在pid为1的状态下 所有需要开启一个bash</span>
+CMD /etc/init.d/apache2 start <span class="token operator">&amp;&amp;</span> /bin/bash
+</code></pre>
+<h1 id="2-docker-compose的使用"><a href="#2-docker-compose的使用" class="headerlink" title="2. docker-compose的使用"></a><code>2. docker-compose的使用</code></h1><pre><code>待写
 </code></pre>
 
                 
@@ -629,8 +646,12 @@ deactivate
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/linux%E6%97%A5%E5%B8%B8%E9%9A%8F%E8%AE%B0/">
-                                    <span class="chip bg-color">linux日常随记</span>
+                                <a href="/tags/docker%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">docker基础</span>
+                                </a>
+                            
+                                <a href="/tags/docker%E4%BD%BF%E7%94%A8/">
+                                    <span class="chip bg-color">docker使用</span>
                                 </a>
                             
                         </div>
@@ -790,17 +811,18 @@ deactivate
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/112933904.html">
+                <a href="/2021/121543906.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="python调用百度api的视频识别接口">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="docker使用">
                         
-                        <span class="card-title">python调用百度api的视频识别接口</span>
+                        <span class="card-title">docker使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -810,26 +832,31 @@ deactivate
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/dokcer/" class="post-category">
+                                    dokcer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E8%B0%83%E7%94%A8%E7%99%BE%E5%BA%A6api%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
-                        <span class="chip bg-color">python调用百度api图像识别</span>
+                    <a href="/tags/docker%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">docker基础</span>
+                    </a>
+                    
+                    <a href="/tags/docker%E4%BD%BF%E7%94%A8/">
+                        <span class="chip bg-color">docker使用</span>
                     </a>
                     
                 </div>
@@ -843,24 +870,24 @@ deactivate
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/111223223.html">
+                <a href="/2021/121321986.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="python日常笔记">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="yolov5_detect.py重写">
                         
-                        <span class="card-title">python日常笔记</span>
+                        <span class="card-title">yolov5_detect.py重写</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Here's something encrypted, password is required to continue reading.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-13
                             </span>
                         <span class="publish-author">
                             
@@ -877,8 +904,8 @@ deactivate
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E6%97%A5%E5%B8%B8%E9%9A%8F%E8%AE%B0/">
-                        <span class="chip bg-color">python日常随记</span>
+                    <a href="/tags/yolov5-detect/">
+                        <span class="chip bg-color">yolov5_detect</span>
                     </a>
                     
                 </div>

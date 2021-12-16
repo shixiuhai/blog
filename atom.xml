@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-12-13T02:52:58.316Z</updated>
+  <updated>2021-12-16T03:49:08.477Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,20 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>docker使用</title>
+    <link href="http://www.fuyaoershang.xyz/2021/121543906.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/121543906.html</id>
+    <published>2021-12-15T01:35:29.000Z</published>
+    <updated>2021-12-16T03:49:08.477Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-手工构建docker镜像&quot;&gt;&lt;a href=&quot;#1-手工构建docker镜像&quot; class=&quot;headerlink&quot; title=&quot; 1. 手工构建docker镜像&quot;&gt;&lt;/a&gt;&lt;code&gt; 1. 手工构建docker镜像&lt;/code&gt;&lt;/h1&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="dokcer" scheme="http://www.fuyaoershang.xyz/categories/dokcer/"/>
+    
+    
+    <category term="docker基础" scheme="http://www.fuyaoershang.xyz/tags/docker%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="docker使用" scheme="http://www.fuyaoershang.xyz/tags/docker%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>yolov5_detect.py重写</title>
     <link href="http://www.fuyaoershang.xyz/2021/121321986.html"/>
     <id>http://www.fuyaoershang.xyz/2021/121321986.html</id>
     <published>2021-12-13T02:49:43.000Z</published>
-    <updated>2021-12-13T02:52:58.316Z</updated>
+    <updated>2021-12-16T09:26:56.564Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;吸烟口罩重写&quot;&gt;&lt;a href=&quot;#吸烟口罩重写&quot; class=&quot;headerlink&quot; title=&quot;吸烟口罩重写&quot;&gt;&lt;/a&gt;&lt;code&gt;吸烟口罩重写&lt;/code&gt;&lt;/h1&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
-        
-      
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
     
@@ -46,7 +67,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/121340417.html"/>
     <id>http://www.fuyaoershang.xyz/2021/121340417.html</id>
     <published>2021-12-13T02:34:45.000Z</published>
-    <updated>2021-12-13T02:48:30.904Z</updated>
+    <updated>2021-12-13T02:54:00.193Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
@@ -65,7 +86,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/12082134.html"/>
     <id>http://www.fuyaoershang.xyz/2021/12082134.html</id>
     <published>2021-12-08T02:33:09.000Z</published>
-    <updated>2021-12-08T02:33:52.971Z</updated>
+    <updated>2021-12-13T02:54:00.177Z</updated>
     
     
     
@@ -234,7 +255,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112949872.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112949872.html</id>
     <published>2021-11-29T02:17:48.000Z</published>
-    <updated>2021-12-07T08:32:55.324Z</updated>
+    <updated>2021-12-16T08:41:22.420Z</updated>
     
     
       
@@ -303,7 +324,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/110962388.html"/>
     <id>http://www.fuyaoershang.xyz/2021/110962388.html</id>
     <published>2021-11-09T07:28:07.000Z</published>
-    <updated>2021-11-12T05:48:39.973Z</updated>
+    <updated>2021-12-15T09:10:18.014Z</updated>
     
     
       
@@ -320,6 +341,10 @@
     
     
     <category term="python更新数据到mysql" scheme="http://www.fuyaoershang.xyz/tags/python%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%E5%88%B0mysql/"/>
+    
+    <category term="读取execel数据" scheme="http://www.fuyaoershang.xyz/tags/%E8%AF%BB%E5%8F%96execel%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="插入数据到excel" scheme="http://www.fuyaoershang.xyz/tags/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E5%88%B0excel/"/>
     
   </entry>
   
@@ -442,7 +467,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/101621696.html"/>
     <id>http://www.fuyaoershang.xyz/2021/101621696.html</id>
     <published>2021-10-16T02:05:05.000Z</published>
-    <updated>2021-12-01T05:34:31.005Z</updated>
+    <updated>2021-12-16T08:50:54.725Z</updated>
     
     
       
@@ -461,35 +486,6 @@
     <category term="github基础配置" scheme="http://www.fuyaoershang.xyz/tags/github%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
     
     <category term="github设置代理" scheme="http://www.fuyaoershang.xyz/tags/github%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>路由交换基础配置</title>
-    <link href="http://www.fuyaoershang.xyz/2021/10154050.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/10154050.html</id>
-    <published>2021-10-15T11:31:07.000Z</published>
-    <updated>2021-10-16T07:01:03.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;!-- # 路由交换 --&gt;
-
-&lt;h2 id=&quot;第一章-路由交换基础相关&quot;&gt;&lt;a href=&quot;#第一章-路由交换基础相关&quot; class=&quot;headerlink&quot; title=&quot;第一章 路由交换基础相关&quot;&gt;&lt;/a&gt;&lt;code&gt;第一章</summary>
-        
-      
-    
-    
-    
-    <category term="数据通信" scheme="http://www.fuyaoershang.xyz/categories/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/"/>
-    
-    
-    <category term="路由交换基础" scheme="http://www.fuyaoershang.xyz/tags/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="华为" scheme="http://www.fuyaoershang.xyz/tags/%E5%8D%8E%E4%B8%BA/"/>
     
   </entry>
   
