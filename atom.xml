@@ -345,7 +345,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112949872.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112949872.html</id>
     <published>2021-11-29T02:17:48.000Z</published>
-    <updated>2021-12-16T08:41:22.420Z</updated>
+    <updated>2021-12-19T14:17:08.419Z</updated>
     
     
       
@@ -362,6 +362,18 @@
     
     
     <category term="linux日常随记" scheme="http://www.fuyaoershang.xyz/tags/linux%E6%97%A5%E5%B8%B8%E9%9A%8F%E8%AE%B0/"/>
+    
+    <category term="linux设置环境变量" scheme="http://www.fuyaoershang.xyz/tags/linux%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    
+    <category term="nohup创建后台" scheme="http://www.fuyaoershang.xyz/tags/nohup%E5%88%9B%E5%BB%BA%E5%90%8E%E5%8F%B0/"/>
+    
+    <category term="linux删除所有空格" scheme="http://www.fuyaoershang.xyz/tags/linux%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%A9%BA%E6%A0%BC/"/>
+    
+    <category term="vim使用多窗口" scheme="http://www.fuyaoershang.xyz/tags/vim%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%AA%97%E5%8F%A3/"/>
+    
+    <category term="linux获取进程pid" scheme="http://www.fuyaoershang.xyz/tags/linux%E8%8E%B7%E5%8F%96%E8%BF%9B%E7%A8%8Bpid/"/>
+    
+    <category term="linux查看文件数" scheme="http://www.fuyaoershang.xyz/tags/linux%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%95%B0/"/>
     
   </entry>
   

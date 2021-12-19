@@ -514,6 +514,30 @@
                                 <span class="chip bg-color">linux日常随记</span>
                             </a>
                         
+                            <a href="/tags/linux%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">
+                                <span class="chip bg-color">linux设置环境变量</span>
+                            </a>
+                        
+                            <a href="/tags/nohup%E5%88%9B%E5%BB%BA%E5%90%8E%E5%8F%B0/">
+                                <span class="chip bg-color">nohup创建后台</span>
+                            </a>
+                        
+                            <a href="/tags/linux%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%A9%BA%E6%A0%BC/">
+                                <span class="chip bg-color">linux删除所有空格</span>
+                            </a>
+                        
+                            <a href="/tags/vim%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%AA%97%E5%8F%A3/">
+                                <span class="chip bg-color">vim使用多窗口</span>
+                            </a>
+                        
+                            <a href="/tags/linux%E8%8E%B7%E5%8F%96%E8%BF%9B%E7%A8%8Bpid/">
+                                <span class="chip bg-color">linux获取进程pid</span>
+                            </a>
+                        
+                            <a href="/tags/linux%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%95%B0/">
+                                <span class="chip bg-color">linux查看文件数</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -542,14 +566,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-16
+                    2021-12-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    451
+                    557
                 </div>
                 
 
@@ -615,6 +639,20 @@ pid3<span class="token operator">=</span><span class="token punctuation">$(</spa
 deactivate
 <span class="token keyword">echo</span> <span class="token string">"check_application.py traffic_application.py truck_application.py重启成功"</span>
 </code></pre>
+<h4 id="linux设置环境变量"><a href="#linux设置环境变量" class="headerlink" title="linux设置环境变量"></a>linux设置环境变量</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># bash 终端的情况下</span>
+<span class="token comment" spellcheck="true">## 1. 对所有用户有效</span>
+<span class="token function">vi</span> /etc/profile
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/usr/abc/def/
+<span class="token function">source</span> /etc/profile
+<span class="token comment" spellcheck="true">## 2. 对当前用户有效</span>
+<span class="token function">vi</span> /root/.bashrc
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/usr/abc/def/
+<span class="token function">source</span> /root/.bashrc
+
+<span class="token comment" spellcheck="true">## 3. 添加多个环境变量</span>
+<span class="token comment" spellcheck="true"># 比如添加搜索路径/home/cc/path1和/home/cc/path2,路径到PATH中,采用:来分隔,冒号左右不需要空格:</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/home/cc/path1:/home/cc/path2
+</code></pre>
 
                 
             </div>
@@ -631,6 +669,30 @@ deactivate
                             
                                 <a href="/tags/linux%E6%97%A5%E5%B8%B8%E9%9A%8F%E8%AE%B0/">
                                     <span class="chip bg-color">linux日常随记</span>
+                                </a>
+                            
+                                <a href="/tags/linux%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">
+                                    <span class="chip bg-color">linux设置环境变量</span>
+                                </a>
+                            
+                                <a href="/tags/nohup%E5%88%9B%E5%BB%BA%E5%90%8E%E5%8F%B0/">
+                                    <span class="chip bg-color">nohup创建后台</span>
+                                </a>
+                            
+                                <a href="/tags/linux%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%A9%BA%E6%A0%BC/">
+                                    <span class="chip bg-color">linux删除所有空格</span>
+                                </a>
+                            
+                                <a href="/tags/vim%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%AA%97%E5%8F%A3/">
+                                    <span class="chip bg-color">vim使用多窗口</span>
+                                </a>
+                            
+                                <a href="/tags/linux%E8%8E%B7%E5%8F%96%E8%BF%9B%E7%A8%8Bpid/">
+                                    <span class="chip bg-color">linux获取进程pid</span>
+                                </a>
+                            
+                                <a href="/tags/linux%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%95%B0/">
+                                    <span class="chip bg-color">linux查看文件数</span>
                                 </a>
                             
                         </div>
