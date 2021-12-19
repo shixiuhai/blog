@@ -508,12 +508,37 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/">
+                                <span class="chip bg-color">vscode配置python调试</span>
+                            </a>
+                        
+                            <a href="/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/">
+                                <span class="chip bg-color">vscode配置连接远程服务器开发</span>
+                            </a>
+                        
+                            <a href="/tags/vscode%E8%B0%83%E8%AF%95django/">
+                                <span class="chip bg-color">vscode调试django</span>
+                            </a>
+                        
+                            <a href="/tags/vscode%E8%B0%83%E8%AF%95flask/">
+                                <span class="chip bg-color">vscode调试flask</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/vscode/" class="post-category">
+                                vscode
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -536,7 +561,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    308
                 </div>
                 
 
@@ -563,7 +588,75 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="1-安装的插件已经同步到微软账户"><a href="#1-安装的插件已经同步到微软账户" class="headerlink" title="1.安装的插件已经同步到微软账户"></a><code>1.安装的插件已经同步到微软账户</code></h1><h1 id="2-日常调试python"><a href="#2-日常调试python" class="headerlink" title="2.日常调试python"></a><code>2.日常调试python</code></h1><blockquote>
+<p>直接debug按钮即可</p>
+</blockquote>
+<h1 id="3-日常调试flask"><a href="#3-日常调试flask" class="headerlink" title="3.日常调试flask"></a><code>3.日常调试flask</code></h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1. 在项目文件夹下创建.vscode文件夹</span>
+<span class="token comment" spellcheck="true">## 2. 在.vscode下创建launch.json</span>
+<span class="token comment" spellcheck="true">## 3. launch.json内容如下</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid<span class="token operator">=</span>830387
+    <span class="token string">"version"</span><span class="token keyword">:</span> <span class="token string">"0.2.0"</span>,
+    <span class="token string">"configurations"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
+        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+            <span class="token string">"name"</span><span class="token keyword">:</span> <span class="token string">"Python: Flask"</span>,
+            <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"python"</span>,
+            <span class="token string">"request"</span><span class="token keyword">:</span> <span class="token string">"launch"</span>,
+            <span class="token string">"module"</span><span class="token keyword">:</span> <span class="token string">"flask"</span>,
+            <span class="token string">"env"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+                <span class="token string">"FLASK_APP"</span><span class="token keyword">:</span> <span class="token string">"flask_app_1.py"</span>,
+                <span class="token string">"FLASK_ENV"</span><span class="token keyword">:</span> <span class="token string">"development"</span>
+            <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+            <span class="token string">"args"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
+                <span class="token string">"run"</span>,
+                <span class="token string">"--no-debugger"</span>,
+                <span class="token string">"--no-reload"</span> 
+            <span class="token punctuation">]</span>,
+            <span class="token string">"jinja"</span><span class="token keyword">:</span> <span class="token boolean">true</span>
+        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    <span class="token punctuation">]</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+</code></pre>
+<h1 id="4-日常调试django"><a href="#4-日常调试django" class="headerlink" title="4.日常调试django"></a><code>4.日常调试django</code></h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1. 在项目文件夹下创建.vscode文件夹</span>
+<span class="token comment" spellcheck="true">## 2. 在.vscode下创建launch.json</span>
+<span class="token comment" spellcheck="true">## 3. launch.json内容如下</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid<span class="token operator">=</span>830387
+    <span class="token string">"version"</span><span class="token keyword">:</span> <span class="token string">"0.2.0"</span>,
+    <span class="token string">"configurations"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
+        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+            <span class="token string">"name"</span><span class="token keyword">:</span> <span class="token string">"Python: Django"</span>,
+            <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"python"</span>,
+            <span class="token string">"request"</span><span class="token keyword">:</span> <span class="token string">"launch"</span>,
+            <span class="token string">"program"</span><span class="token keyword">:</span> <span class="token string">"$&amp;#123;workspaceFolder&amp;#125;\\manage.py"</span>,
+            <span class="token string">"args"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
+                <span class="token string">"runserver"</span>,
+                <span class="token string">"--noreload"</span>,
+            <span class="token punctuation">]</span>,
+            <span class="token string">"django"</span><span class="token keyword">:</span> <span class="token boolean">true</span>
+        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    <span class="token punctuation">]</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+</code></pre>
+<h1 id="5-vscode连接远程服务器"><a href="#5-vscode连接远程服务器" class="headerlink" title="5.vscode连接远程服务器"></a><code>5.vscode连接远程服务器</code></h1><blockquote>
+<p>导入图1 步骤1</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211219212029.png"></p>
+<blockquote>
+<p>导入图2 步骤二<br><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211219212236.png"></p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1. config里面内容配置如下（ssh配置文件里面的内容）</span>
+Host 104.225.236.140
+  HostName 104.225.236.140
+  User root
+  Port 27464
+  IdentityFile C:/Users/15256/.ssh/id_rsamyserver
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -576,7 +669,23 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/">
+                                    <span class="chip bg-color">vscode配置python调试</span>
+                                </a>
+                            
+                                <a href="/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/">
+                                    <span class="chip bg-color">vscode配置连接远程服务器开发</span>
+                                </a>
+                            
+                                <a href="/tags/vscode%E8%B0%83%E8%AF%95django/">
+                                    <span class="chip bg-color">vscode调试django</span>
+                                </a>
+                            
+                                <a href="/tags/vscode%E8%B0%83%E8%AF%95flask/">
+                                    <span class="chip bg-color">vscode调试flask</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -760,13 +869,37 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            shixiuhai
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/vscode/" class="post-category">
+                                    vscode
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/">
+                        <span class="chip bg-color">vscode配置python调试</span>
+                    </a>
+                    
+                    <a href="/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/">
+                        <span class="chip bg-color">vscode配置连接远程服务器开发</span>
+                    </a>
+                    
+                    <a href="/tags/vscode%E8%B0%83%E8%AF%95django/">
+                        <span class="chip bg-color">vscode调试django</span>
+                    </a>
+                    
+                    <a href="/tags/vscode%E8%B0%83%E8%AF%95flask/">
+                        <span class="chip bg-color">vscode调试flask</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

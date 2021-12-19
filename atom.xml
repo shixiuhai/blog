@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-12-19T13:01:02.569Z</updated>
+  <updated>2021-12-19T13:29:32.778Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -21,11 +21,29 @@
     <link href="http://www.fuyaoershang.xyz/2021/121939245.html"/>
     <id>http://www.fuyaoershang.xyz/2021/121939245.html</id>
     <published>2021-12-19T12:55:41.000Z</published>
-    <updated>2021-12-19T13:01:02.569Z</updated>
+    <updated>2021-12-19T13:29:32.778Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-安装的插件已经同步到微软账户&quot;&gt;&lt;a href=&quot;#1-安装的插件已经同步到微软账户&quot; class=&quot;headerlink&quot; title=&quot;1.安装的插件已经同步到微软账户&quot;&gt;&lt;/a&gt;&lt;code&gt;1.安装的插件已经同步到微软账户&lt;/code&gt;&lt;/h1&gt;&lt;h1</summary>
+        
+      
     
     
     
+    <category term="vscode" scheme="http://www.fuyaoershang.xyz/categories/vscode/"/>
     
+    
+    <category term="vscode配置python调试" scheme="http://www.fuyaoershang.xyz/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/"/>
+    
+    <category term="vscode配置连接远程服务器开发" scheme="http://www.fuyaoershang.xyz/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="vscode调试django" scheme="http://www.fuyaoershang.xyz/tags/vscode%E8%B0%83%E8%AF%95django/"/>
+    
+    <category term="vscode调试flask" scheme="http://www.fuyaoershang.xyz/tags/vscode%E8%B0%83%E8%AF%95flask/"/>
     
   </entry>
   
