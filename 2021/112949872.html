@@ -573,7 +573,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    557
+                    572
                 </div>
                 
 
@@ -642,16 +642,17 @@ deactivate
 <h4 id="linux设置环境变量"><a href="#linux设置环境变量" class="headerlink" title="linux设置环境变量"></a>linux设置环境变量</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># bash 终端的情况下</span>
 <span class="token comment" spellcheck="true">## 1. 对所有用户有效</span>
 <span class="token function">vi</span> /etc/profile
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/usr/abc/def/
+<span class="token comment" spellcheck="true">## 所有的引号可以不添加PATH必须大写</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"<span class="token variable">$PATH</span>:/usr/abc/def/"</span>
 <span class="token function">source</span> /etc/profile
 <span class="token comment" spellcheck="true">## 2. 对当前用户有效</span>
 <span class="token function">vi</span> /root/.bashrc
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/usr/abc/def/
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"<span class="token variable">$PATH</span>:/usr/abc/def/"</span>
 <span class="token function">source</span> /root/.bashrc
 
 <span class="token comment" spellcheck="true">## 3. 添加多个环境变量</span>
 <span class="token comment" spellcheck="true"># 比如添加搜索路径/home/cc/path1和/home/cc/path2,路径到PATH中,采用:来分隔,冒号左右不需要空格:</span>
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/home/cc/path1:/home/cc/path2
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"<span class="token variable">$PATH</span>:/home/cc/path1:/home/cc/path2"</span>
 </code></pre>
 
                 
