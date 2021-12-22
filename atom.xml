@@ -138,7 +138,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/121321986.html"/>
     <id>http://www.fuyaoershang.xyz/2021/121321986.html</id>
     <published>2021-12-13T02:49:43.000Z</published>
-    <updated>2021-12-16T09:26:56.564Z</updated>
+    <updated>2021-12-20T03:18:35.182Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
@@ -241,7 +241,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112911863.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112911863.html</id>
     <published>2021-11-29T09:00:42.000Z</published>
-    <updated>2021-11-29T09:25:50.388Z</updated>
+    <updated>2021-12-21T08:57:28.983Z</updated>
     
     
       
@@ -262,6 +262,8 @@
     <category term="视频推流" scheme="http://www.fuyaoershang.xyz/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/"/>
     
     <category term="视频目标物截图" scheme="http://www.fuyaoershang.xyz/tags/%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E7%89%A9%E6%88%AA%E5%9B%BE/"/>
+    
+    <category term="flask接口使用" scheme="http://www.fuyaoershang.xyz/tags/flask%E6%8E%A5%E5%8F%A3%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   
@@ -345,7 +347,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112949872.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112949872.html</id>
     <published>2021-11-29T02:17:48.000Z</published>
-    <updated>2021-12-19T14:50:16.382Z</updated>
+    <updated>2021-12-22T05:49:54.729Z</updated>
     
     
       
@@ -374,6 +376,8 @@
     <category term="linux获取进程pid" scheme="http://www.fuyaoershang.xyz/tags/linux%E8%8E%B7%E5%8F%96%E8%BF%9B%E7%A8%8Bpid/"/>
     
     <category term="linux查看文件数" scheme="http://www.fuyaoershang.xyz/tags/linux%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%95%B0/"/>
+    
+    <category term="linux安装python" scheme="http://www.fuyaoershang.xyz/tags/linux%E5%AE%89%E8%A3%85python/"/>
     
   </entry>
   

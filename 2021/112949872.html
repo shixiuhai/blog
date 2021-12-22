@@ -538,6 +538,10 @@
                                 <span class="chip bg-color">linux查看文件数</span>
                             </a>
                         
+                            <a href="/tags/linux%E5%AE%89%E8%A3%85python/">
+                                <span class="chip bg-color">linux安装python</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -566,21 +570,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-19
+                    2021-12-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    572
+                    911
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -654,6 +658,61 @@ deactivate
 <span class="token comment" spellcheck="true"># 比如添加搜索路径/home/cc/path1和/home/cc/path2,路径到PATH中,采用:来分隔,冒号左右不需要空格:</span>
 <span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"<span class="token variable">$PATH</span>:/home/cc/path1:/home/cc/path2"</span>
 </code></pre>
+<h4 id="screen-脚本使用"><a href="#screen-脚本使用" class="headerlink" title="screen 脚本使用"></a>screen 脚本使用</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## screen 配置开机自启动脚本</span>
+screen_name<span class="token operator">=</span><span class="token string">"my_screen"</span> 
+cmd<span class="token operator">=</span><span class="token string">"python test.py"</span><span class="token punctuation">;</span>  
+<span class="token function">screen</span> -dmS <span class="token variable">$screen_name</span> <span class="token comment" spellcheck="true"># 创建名字</span>
+<span class="token comment" spellcheck="true"># 方式一</span>
+<span class="token function">screen</span> -x -S <span class="token variable">$screen_name</span> -p 0 -X stuff <span class="token string">"<span class="token variable">$cmd</span>\n"</span> <span class="token comment" spellcheck="true"># 运行命令 </span>
+<span class="token comment" spellcheck="true"># 方式二 回车符可以在下一行传入</span>
+<span class="token function">screen</span> -x -S <span class="token variable">$screen_name</span> -p 0 -X stuff <span class="token string">"<span class="token variable">$cmd</span>"</span> <span class="token comment" spellcheck="true"># 运行命令不添加回车符号</span>
+<span class="token function">screen</span> -x -S <span class="token variable">$screen_name</span> -p 0 -X stuff <span class="token string">'\n'</span> <span class="token comment" spellcheck="true"># 添加回车符号</span>
+</code></pre>
+<h4 id="linux安装python"><a href="#linux安装python" class="headerlink" title="linux安装python"></a>linux安装python</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1. 获取linux的python包</span>
+<span class="token function">wget</span> xxxx.Python-3.6.5.tar.gz
+<span class="token comment" spellcheck="true">## 2. 准备编译环境</span>
+yum/apt <span class="token function">install</span> gcc <span class="token comment" spellcheck="true"># 或者还有其他需要安装的包</span>
+<span class="token comment" spellcheck="true">## 3. 开始编译</span>
+./configure --prefix<span class="token operator">=</span>/root/training/Python-3.6.5 <span class="token comment" spellcheck="true"># --prefix是指定安装目录</span>
+<span class="token function">make</span>
+<span class="token function">make</span> <span class="token function">install</span>
+
+<span class="token comment" spellcheck="true">## 4. 配置环境变量</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"<span class="token variable">$PATH</span>:/root/training/Python-3.6.5 "</span>
+
+<span class="token comment" spellcheck="true">## 5. 测试验证</span>
+<span class="token comment" spellcheck="true"># 终端输入python3.6.5启动python成功</span>
+</code></pre>
+<h3 id="linux开机自启动两种方法"><a href="#linux开机自启动两种方法" class="headerlink" title="linux开机自启动两种方法"></a>linux开机自启动两种方法</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1. 使用update-rc.d </span>
+<span class="token comment" spellcheck="true"># 创建shell脚本并移动到/etc/init.d里面</span>
+<span class="token function">cd</span> /etc/init.d
+<span class="token comment" spellcheck="true"># 配置开机启动</span>
+update-rc.d name defaults <span class="token comment" spellcheck="true"># 或者 update-rc.d name start 20 2 3 4 5 . stop 20 0 1 6 .</span>
+
+
+<span class="token comment" spellcheck="true">## 2. 使用systemd</span>
+<span class="token comment" spellcheck="true"># 进入到system下</span>
+/usr/lib/systemd/system/
+<span class="token comment" spellcheck="true"># 配置一个service文件</span>
+vim test.service
+<span class="token comment" spellcheck="true"># 内容如下例子</span>
+<span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+Description<span class="token operator">=</span>Frp Client Service
+After<span class="token operator">=</span>network.target
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+Type<span class="token operator">=</span>simple
+User<span class="token operator">=</span>nobody
+Restart<span class="token operator">=</span>on-failure
+RestartSec<span class="token operator">=</span>5s
+ExecStart<span class="token operator">=</span>/usr/bin/frpc -c /etc/frp/frpc.ini
+ExecReload<span class="token operator">=</span>/usr/bin/frpc reload -c /etc/frp/frpc.ini
+LimitNOFILE<span class="token operator">=</span>1048576
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+WantedBy<span class="token operator">=</span>multi-user.target
+
+<span class="token comment" spellcheck="true"># 启动配置使用systemctl命令即可</span>
+systemctl start <span class="token function">test</span>
+</code></pre>
 
                 
             </div>
@@ -694,6 +753,10 @@ deactivate
                             
                                 <a href="/tags/linux%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%95%B0/">
                                     <span class="chip bg-color">linux查看文件数</span>
+                                </a>
+                            
+                                <a href="/tags/linux%E5%AE%89%E8%A3%85python/">
+                                    <span class="chip bg-color">linux安装python</span>
                                 </a>
                             
                         </div>

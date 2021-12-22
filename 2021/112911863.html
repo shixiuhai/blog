@@ -522,6 +522,10 @@
                                 <span class="chip bg-color">视频目标物截图</span>
                             </a>
                         
+                            <a href="/tags/flask%E6%8E%A5%E5%8F%A3%E4%BD%BF%E7%94%A8/">
+                                <span class="chip bg-color">flask接口使用</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -550,21 +554,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-29
+                    2021-12-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    19 分
                 </div>
                 
 
@@ -1287,6 +1291,56 @@ video_fps <span class="token operator">=</span> <span class="token number">5</sp
     <span class="token comment" spellcheck="true"># print(results)</span>
     cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 </code></pre>
+<p><code>10 .flask接口创建</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">### post接口</span>
+server <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+@server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/gttx/objectrecognition'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">objectrecognition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    通过接口解析json数据
+    """</span>
+    <span class="token keyword">if</span> <span class="token operator">not</span> request<span class="token punctuation">.</span>data<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 返回没有数据</span>
+        <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token string">"&amp;#123;'message': 'None'&amp;#125;"</span><span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 以utf-8编码接收json数据</span>
+    information <span class="token operator">=</span> request<span class="token punctuation">.</span>data
+    <span class="token comment" spellcheck="true"># 解析json数据为字典格式</span>
+    information <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>information<span class="token punctuation">)</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        type <span class="token operator">=</span> information<span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span>
+        <span class="token triple-quoted-string string">"""
+        将传入的字符 type 传做为函数去调用function_app_2.py 下面代码的意思就是函数调用函数 smoke(information)
+        """</span>
+        eval<span class="token punctuation">(</span>type <span class="token operator">+</span> <span class="token string">"(%s)"</span><span class="token operator">%</span>information<span class="token punctuation">)</span> 
+    
+    <span class="token keyword">except</span>  TypeError <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'no this function or function error'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'result':'1'&amp;#125;)</span>
+    <span class="token comment" spellcheck="true"># return json.dumps(information,ensure_ascii=False)</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    启动flask服务
+    """</span>
+    <span class="token comment" spellcheck="true"># 指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问</span>
+    <span class="token comment" spellcheck="true"># server.run(debug=True, threaded=True,port=5000, host='127.0.0.1') # 多线程指定</span>
+    <span class="token comment" spellcheck="true"># 多进程指定，各个进程之间不冲突</span>
+    server<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> processes<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>port<span class="token operator">=</span><span class="token number">5000</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true">### get接口</span>
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
+<span class="token keyword">import</span> json
+server <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+@server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/gttx/objectrecognition'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+@server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/updata'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'get'</span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">updata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 接口传入的key的数值</span>
+    key <span class="token operator">=</span> request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问</span>
+    server<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8899</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">)</span>
+</code></pre>
 
                 
             </div>
@@ -1311,6 +1365,10 @@ video_fps <span class="token operator">=</span> <span class="token number">5</sp
                             
                                 <a href="/tags/%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E7%89%A9%E6%88%AA%E5%9B%BE/">
                                     <span class="chip bg-color">视频目标物截图</span>
+                                </a>
+                            
+                                <a href="/tags/flask%E6%8E%A5%E5%8F%A3%E4%BD%BF%E7%94%A8/">
+                                    <span class="chip bg-color">flask接口使用</span>
                                 </a>
                             
                         </div>
