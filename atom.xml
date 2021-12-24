@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-12-19T13:29:32.778Z</updated>
+  <updated>2021-12-24T05:32:23.407Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过voc的xml数据集生成yolov5的txt数据集</title>
+    <link href="http://www.fuyaoershang.xyz/2021/122420090.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/122420090.html</id>
+    <published>2021-12-24T04:36:53.000Z</published>
+    <updated>2021-12-24T05:32:23.407Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;# 1.代码如下所示&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot; language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token triple-quoted-string</summary>
+        
+      
+    
+    
+    
+    <category term="yolov5" scheme="http://www.fuyaoershang.xyz/categories/yolov5/"/>
+    
+    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/yolov5/python/"/>
+    
+    
+    <category term="voc数据集改yolov5数据集" scheme="http://www.fuyaoershang.xyz/tags/voc%E6%95%B0%E6%8D%AE%E9%9B%86%E6%94%B9yolov5%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    
+    <category term="xml转txt" scheme="http://www.fuyaoershang.xyz/tags/xml%E8%BD%ACtxt/"/>
+    
+  </entry>
   
   <entry>
     <title>记vscode相关配置</title>
@@ -470,25 +500,6 @@
     
     
     <category term="日记" scheme="http://www.fuyaoershang.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>防火墙连接云端详细配置</title>
-    <link href="http://www.fuyaoershang.xyz/2021/101910496.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/101910496.html</id>
-    <published>2021-10-19T11:58:17.000Z</published>
-    <updated>2021-10-21T03:18:54.390Z</updated>
-    
-    
-    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
-    
-    
-    
-    <category term="数据通信" scheme="http://www.fuyaoershang.xyz/categories/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/"/>
-    
-    
-    <category term="华为防火墙连接云端" scheme="http://www.fuyaoershang.xyz/tags/%E5%8D%8E%E4%B8%BA%E9%98%B2%E7%81%AB%E5%A2%99%E8%BF%9E%E6%8E%A5%E4%BA%91%E7%AB%AF/"/>
     
   </entry>
   

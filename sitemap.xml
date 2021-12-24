@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.fuyaoershang.xyz/2021/122420090.html</loc>
+    
+    <lastmod>2021-12-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.fuyaoershang.xyz/2021/112949872.html</loc>
     
     <lastmod>2021-12-22</lastmod>
@@ -640,6 +647,20 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://www.fuyaoershang.xyz/tags/voc%E6%95%B0%E6%8D%AE%E9%9B%86%E6%94%B9yolov5%E6%95%B0%E6%8D%AE%E9%9B%86/</loc>
+    <lastmod>2021-12-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.fuyaoershang.xyz/tags/xml%E8%BD%ACtxt/</loc>
+    <lastmod>2021-12-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -742,6 +763,20 @@
   
   <url>
     <loc>http://www.fuyaoershang.xyz/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/debian%E7%BD%91%E5%8D%A1%E9%9D%99%E6%80%81%E8%AE%BE%E7%BD%AE/ubuntu%E7%BD%91%E5%8D%A1%E9%9D%99%E6%80%81%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2021-12-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.fuyaoershang.xyz/categories/yolov5/</loc>
+    <lastmod>2021-12-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.fuyaoershang.xyz/categories/yolov5/python/</loc>
     <lastmod>2021-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
