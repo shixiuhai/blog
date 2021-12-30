@@ -83,6 +83,31 @@
     
     
     <entry>
+      <title>mysql基础笔记</title>
+      <link href="/2021/122117178.html"/>
+      <url>/2021/122117178.html</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="9030a9fd8df09c932157debbd90d1173b953d8f728b93ed12342910a376bdaff">14f2d733a805bc4143cc4d1dcd33bd08bcbf07520accae1acc30b02d3f4e443e96ee48eecfff5ab5a5532cdb254fe60f4465bcc83d42c7aa618a118a1ac80593a9193f7f75fba8ecc2c97babdc906f3a8758dd36c5d9f202be8bd93a6e7dab9ca8d3e6a341d7f6dd28b09ad74d280054d246173d698b5568ddab0eebd0d8082c6e20eece7078f5e36804c97692195b94702e4ee1cb3dd0b11c1952d4eac5dbaeab7416675968d1c1068fbe3eecd768fc8974c3570cc14ac09cb5014ae9024de99a8f551b4613958cb5cc15af55ec6cf56ab47afc3cfd5ad039232121cbd59a9abb71cd5cbea1c84ebab1e15e4d21ee68ae1adf43f5541f83866f96d764947b2dc499543f368e507852c620b3ba7274587bc913bc5deb51198bb1459daa6c3c2409afe6df0504f44ffd45998f38f4c05d7fc318233e9180c6bc3e21666a952b02df66ec671b7382079680f6c6d21786d05012185c75b7798ccc38071bf09851198fca613454e5dd1041970787481e9bc718f4e3b0780dce72951d042374bc09caad03f91a2d383384049ebc690731601ec3aa324e443c0d2d15d5729ad6508c1d256b749fce257264b5685a6ecf6a2e6b4d93edc63828c877b8b8f51a7ab9508e8db6cce7a18232142c029617fba6e304e62c4180f19e442e01254451764995b8dd0c916df10c33f8039d050aa247ef2872bdd6473a31a1d47eb785c28e8f861b237757e50e3f2192249bc313cdd14a6f42015fb701a1803ee934acf673c63435f79de7cf768c72fff058b40bb0bc87352b570b0450cc2d04fbd6e45e67c2208a41225eb925d97de1553b0d7c576a926a5d126af01848d80f155316b2ef75531cd98be77e0c03e758597aa151705eb3f0</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记vscode相关配置</title>
       <link href="/2021/121939245.html"/>
       <url>/2021/121939245.html</url>

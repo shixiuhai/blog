@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="记vscode相关配置, 思进不思停的博客笔记">
+    <meta name="keywords" content="mysql基础笔记, 思进不思停的博客笔记">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>记vscode相关配置 | 思进不思停的博客笔记</title>
+    <title>mysql基础笔记 | 思进不思停的博客笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -389,12 +389,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">记vscode相关配置</h1>
+                    <h1 class="description center-align post-title">mysql基础笔记</h1>
                 </div>
             </div>
         </div>
@@ -510,20 +510,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/">
-                                <span class="chip bg-color">vscode配置python调试</span>
-                            </a>
-                        
-                            <a href="/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">vscode配置连接远程服务器开发</span>
-                            </a>
-                        
-                            <a href="/tags/vscode%E8%B0%83%E8%AF%95django/">
-                                <span class="chip bg-color">vscode调试django</span>
-                            </a>
-                        
-                            <a href="/tags/vscode%E8%B0%83%E8%AF%95flask/">
-                                <span class="chip bg-color">vscode调试flask</span>
+                            <a href="/tags/mysql%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">mysql基础</span>
                             </a>
                         
                     </div>
@@ -534,8 +522,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/vscode/" class="post-category">
-                                vscode
+                            <a href="/categories/mysql/" class="post-category">
+                                mysql
                             </a>
                         
                     </div>
@@ -547,7 +535,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-19
+                    2021-12-21
                 </div>
                 
 
@@ -561,7 +549,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    309
+                    6
                 </div>
                 
 
@@ -588,76 +576,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>[TOC]</p>
-<h1 id="1-安装的插件已经同步到微软账户"><a href="#1-安装的插件已经同步到微软账户" class="headerlink" title="1.安装的插件已经同步到微软账户"></a><code>1.安装的插件已经同步到微软账户</code></h1><h1 id="2-日常调试python"><a href="#2-日常调试python" class="headerlink" title="2.日常调试python"></a><code>2.日常调试python</code></h1><blockquote>
-<p>直接debug按钮即可</p>
-</blockquote>
-<h1 id="3-日常调试flask"><a href="#3-日常调试flask" class="headerlink" title="3.日常调试flask"></a><code>3.日常调试flask</code></h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1. 在项目文件夹下创建.vscode文件夹</span>
-<span class="token comment" spellcheck="true">## 2. 在.vscode下创建launch.json</span>
-<span class="token comment" spellcheck="true">## 3. launch.json内容如下</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid<span class="token operator">=</span>830387
-    <span class="token string">"version"</span><span class="token keyword">:</span> <span class="token string">"0.2.0"</span>,
-    <span class="token string">"configurations"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-            <span class="token string">"name"</span><span class="token keyword">:</span> <span class="token string">"Python: Flask"</span>,
-            <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"python"</span>,
-            <span class="token string">"request"</span><span class="token keyword">:</span> <span class="token string">"launch"</span>,
-            <span class="token string">"module"</span><span class="token keyword">:</span> <span class="token string">"flask"</span>,
-            <span class="token string">"env"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-                <span class="token string">"FLASK_APP"</span><span class="token keyword">:</span> <span class="token string">"flask_app_1.py"</span>,
-                <span class="token string">"FLASK_ENV"</span><span class="token keyword">:</span> <span class="token string">"development"</span>
-            <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-            <span class="token string">"args"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-                <span class="token string">"run"</span>,
-                <span class="token string">"--no-debugger"</span>,
-                <span class="token string">"--no-reload"</span> 
-            <span class="token punctuation">]</span>,
-            <span class="token string">"jinja"</span><span class="token keyword">:</span> <span class="token boolean">true</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-    <span class="token punctuation">]</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-</code></pre>
-<h1 id="4-日常调试django"><a href="#4-日常调试django" class="headerlink" title="4.日常调试django"></a><code>4.日常调试django</code></h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1. 在项目文件夹下创建.vscode文件夹</span>
-<span class="token comment" spellcheck="true">## 2. 在.vscode下创建launch.json</span>
-<span class="token comment" spellcheck="true">## 3. launch.json内容如下</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid<span class="token operator">=</span>830387
-    <span class="token string">"version"</span><span class="token keyword">:</span> <span class="token string">"0.2.0"</span>,
-    <span class="token string">"configurations"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-            <span class="token string">"name"</span><span class="token keyword">:</span> <span class="token string">"Python: Django"</span>,
-            <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"python"</span>,
-            <span class="token string">"request"</span><span class="token keyword">:</span> <span class="token string">"launch"</span>,
-            <span class="token string">"program"</span><span class="token keyword">:</span> <span class="token string">"$&amp;#123;workspaceFolder&amp;#125;\\manage.py"</span>,
-            <span class="token string">"args"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-                <span class="token string">"runserver"</span>,
-                <span class="token string">"--noreload"</span>,
-            <span class="token punctuation">]</span>,
-            <span class="token string">"django"</span><span class="token keyword">:</span> <span class="token boolean">true</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-    <span class="token punctuation">]</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-</code></pre>
-<h1 id="5-vscode连接远程服务器"><a href="#5-vscode连接远程服务器" class="headerlink" title="5.vscode连接远程服务器"></a><code>5.vscode连接远程服务器</code></h1><blockquote>
-<p>导入图1 步骤1</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211219212029.png"></p>
-<blockquote>
-<p>导入图2 步骤二<br><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211219212236.png"></p>
-</blockquote>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1. config里面内容配置如下（ssh配置文件里面的内容）</span>
-Host 104.225.236.140
-  HostName 104.225.236.140
-  User root
-  Port 27464
-  IdentityFile C:/Users/15256/.ssh/id_rsamyserver
-</code></pre>
-
+                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="9030a9fd8df09c932157debbd90d1173b953d8f728b93ed12342910a376bdaff">14f2d733a805bc4143cc4d1dcd33bd08bcbf07520accae1acc30b02d3f4e443e96ee48eecfff5ab5a5532cdb254fe60f4465bcc83d42c7aa618a118a1ac80593a9193f7f75fba8ecc2c97babdc906f3a8758dd36c5d9f202be8bd93a6e7dab9ca8d3e6a341d7f6dd28b09ad74d280054d246173d698b5568ddab0eebd0d8082c6e20eece7078f5e36804c97692195b94702e4ee1cb3dd0b11c1952d4eac5dbaeab7416675968d1c1068fbe3eecd768fc8974c3570cc14ac09cb5014ae9024de99a8f551b4613958cb5cc15af55ec6cf56ab47afc3cfd5ad039232121cbd59a9abb71cd5cbea1c84ebab1e15e4d21ee68ae1adf43f5541f83866f96d764947b2dc499543f368e507852c620b3ba7274587bc913bc5deb51198bb1459daa6c3c2409afe6df0504f44ffd45998f38f4c05d7fc318233e9180c6bc3e21666a952b02df66ec671b7382079680f6c6d21786d05012185c75b7798ccc38071bf09851198fca613454e5dd1041970787481e9bc718f4e3b0780dce72951d042374bc09caad03f91a2d383384049ebc690731601ec3aa324e443c0d2d15d5729ad6508c1d256b749fce257264b5685a6ecf6a2e6b4d93edc63828c877b8b8f51a7ab9508e8db6cce7a18232142c029617fba6e304e62c4180f19e442e01254451764995b8dd0c916df10c33f8039d050aa247ef2872bdd6473a31a1d47eb785c28e8f861b237757e50e3f2192249bc313cdd14a6f42015fb701a1803ee934acf673c63435f79de7cf768c72fff058b40bb0bc87352b570b0450cc2d04fbd6e45e67c2208a41225eb925d97de1553b0d7c576a926a5d126af01848d80f155316b2ef75531cd98be77e0c03e758597aa151705eb3f0</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
                 
             </div>
             <hr/>
@@ -671,20 +601,8 @@ Host 104.225.236.140
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/">
-                                    <span class="chip bg-color">vscode配置python调试</span>
-                                </a>
-                            
-                                <a href="/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">vscode配置连接远程服务器开发</span>
-                                </a>
-                            
-                                <a href="/tags/vscode%E8%B0%83%E8%AF%95django/">
-                                    <span class="chip bg-color">vscode调试django</span>
-                                </a>
-                            
-                                <a href="/tags/vscode%E8%B0%83%E8%AF%95flask/">
-                                    <span class="chip bg-color">vscode调试flask</span>
+                                <a href="/tags/mysql%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">mysql基础</span>
                                 </a>
                             
                         </div>
@@ -848,31 +766,35 @@ Host 104.225.236.140
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/122117178.html">
+                <a href="/2021/122420090.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="mysql基础笔记">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="通过voc的xml数据集生成yolov5的txt数据集">
                         
-                        <span class="card-title">mysql基础笔记</span>
+                        <span class="card-title">通过voc的xml数据集生成yolov5的txt数据集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Here's something encrypted, password is required to continue reading.
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-24
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/mysql/" class="post-category">
-                                    mysql
+                            <a href="/categories/yolov5/" class="post-category">
+                                    yolov5
+                                </a>
+                            
+                            <a href="/categories/yolov5/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -882,8 +804,12 @@ Host 104.225.236.140
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mysql%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">mysql基础</span>
+                    <a href="/tags/voc%E6%95%B0%E6%8D%AE%E9%9B%86%E6%94%B9yolov5%E6%95%B0%E6%8D%AE%E9%9B%86/">
+                        <span class="chip bg-color">voc数据集改yolov5数据集</span>
+                    </a>
+                    
+                    <a href="/tags/xml%E8%BD%ACtxt/">
+                        <span class="chip bg-color">xml转txt</span>
                     </a>
                     
                 </div>
@@ -897,31 +823,31 @@ Host 104.225.236.140
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/1217198.html">
+                <a href="/2021/121939245.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="调用百度地图api获取经纬度">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="记vscode相关配置">
                         
-                        <span class="card-title">调用百度地图api获取经纬度</span>
+                        <span class="card-title">记vscode相关配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Here's something encrypted, password is required to continue reading.
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/vscode/" class="post-category">
+                                    vscode
                                 </a>
                             
                             
@@ -931,8 +857,20 @@ Host 104.225.236.140
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%B0%83%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEapi/">
-                        <span class="chip bg-color">调用百度地图api</span>
+                    <a href="/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/">
+                        <span class="chip bg-color">vscode配置python调试</span>
+                    </a>
+                    
+                    <a href="/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/">
+                        <span class="chip bg-color">vscode配置连接远程服务器开发</span>
+                    </a>
+                    
+                    <a href="/tags/vscode%E8%B0%83%E8%AF%95django/">
+                        <span class="chip bg-color">vscode调试django</span>
+                    </a>
+                    
+                    <a href="/tags/vscode%E8%B0%83%E8%AF%95flask/">
+                        <span class="chip bg-color">vscode调试flask</span>
                     </a>
                     
                 </div>

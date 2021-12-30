@@ -101,6 +101,25 @@
   </entry>
   
   <entry>
+    <title>mysql基础笔记</title>
+    <link href="http://www.fuyaoershang.xyz/2021/122117178.html"/>
+    <id>http://www.fuyaoershang.xyz/2021/122117178.html</id>
+    <published>2021-12-21T01:19:46.000Z</published>
+    <updated>2021-12-30T06:08:48.326Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="mysql" scheme="http://www.fuyaoershang.xyz/categories/mysql/"/>
+    
+    
+    <category term="mysql基础" scheme="http://www.fuyaoershang.xyz/tags/mysql%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>记vscode相关配置</title>
     <link href="http://www.fuyaoershang.xyz/2021/121939245.html"/>
     <id>http://www.fuyaoershang.xyz/2021/121939245.html</id>
@@ -504,37 +523,6 @@
     
     
     <category term="日常密码记录" scheme="http://www.fuyaoershang.xyz/tags/%E6%97%A5%E5%B8%B8%E5%AF%86%E7%A0%81%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python通过csv向mysql插入数据或者更新数据</title>
-    <link href="http://www.fuyaoershang.xyz/2021/110962388.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/110962388.html</id>
-    <published>2021-11-09T07:28:07.000Z</published>
-    <updated>2021-12-30T05:40:53.439Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;python通过csv向mysql插入数据或者更新数据&quot;&gt;&lt;a href=&quot;#python通过csv向mysql插入数据或者更新数据&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
-    
-    
-    <category term="python更新数据到mysql" scheme="http://www.fuyaoershang.xyz/tags/python%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%E5%88%B0mysql/"/>
-    
-    <category term="读取execel数据" scheme="http://www.fuyaoershang.xyz/tags/%E8%AF%BB%E5%8F%96execel%E6%95%B0%E6%8D%AE/"/>
-    
-    <category term="插入数据到excel" scheme="http://www.fuyaoershang.xyz/tags/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E5%88%B0excel/"/>
-    
-    <category term="pandns判断取出数据为空" scheme="http://www.fuyaoershang.xyz/tags/pandns%E5%88%A4%E6%96%AD%E5%8F%96%E5%87%BA%E6%95%B0%E6%8D%AE%E4%B8%BA%E7%A9%BA/"/>
     
   </entry>
   
