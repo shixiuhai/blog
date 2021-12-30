@@ -590,7 +590,7 @@
             <div id="articleContent">
                 <p><a href="https://shixiuhai.github.io/work_share/video_interface.zip"  target="_blank"  style="color: #8ebf42"> 点击这里下载本文项目</a></p>
 <p>[TOC]</p>
-<h1 id="1-flask-app-1-py分析"><a href="#1-flask-app-1-py分析" class="headerlink" title=" 1. flask_app_1.py分析"></a><code> 1. flask_app_1.py分析</code></h1><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h3 id="1-flask-app-1-py分析"><a href="#1-flask-app-1-py分析" class="headerlink" title="1. flask_app_1.py分析"></a>1. flask_app_1.py分析</h3><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 通过此flask 接口调用多个函数实现功能
 """</span>
 <span class="token keyword">from</span> class_app_3 <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -640,7 +640,7 @@ server <span class="token operator">=</span> Flask<span class="token punctuation
     server<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> processes<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>port<span class="token operator">=</span><span class="token number">5000</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">)</span>
     
 </code></pre>
-<h1 id="2-function-app-2-py分析"><a href="#2-function-app-2-py分析" class="headerlink" title=" 2. function_app_2.py分析"></a><code> 2. function_app_2.py分析</code></h1><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h3 id="2-function-app-2-py分析"><a href="#2-function-app-2-py分析" class="headerlink" title="2. function_app_2.py分析"></a>2. function_app_2.py分析</h3><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 flask接口传入的数据会在这里进行处理
 """</span>
 <span class="token keyword">from</span> class_app_3 <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -709,7 +709,7 @@ interfaceurl <span class="token operator">=</span> <span class="token string">"h
 <span class="token keyword">def</span> <span class="token function">other</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">pass</span>
 </code></pre>
-<h1 id="3-class-app-3-py分析"><a href="#3-class-app-3-py分析" class="headerlink" title="3. class_app_3.py分析"></a><code>3. class_app_3.py分析</code></h1><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h3 id="3-class-app-3-py分析"><a href="#3-class-app-3-py分析" class="headerlink" title="3. class_app_3.py分析"></a>3. class_app_3.py分析</h3><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 导入相关的库和函数
 """</span>
 <span class="token keyword">from</span> logging <span class="token keyword">import</span> error
@@ -1076,7 +1076,7 @@ server_ip <span class="token operator">=</span> <span class="token string">'183.
 <span class="token comment" spellcheck="true"># MyThread(add,args=()).start()</span>
 <span class="token comment" spellcheck="true"># MyThread(sum,args=()).start()</span>
 </code></pre>
-<h1 id="4-kafka-listen-4-py分析"><a href="#4-kafka-listen-4-py分析" class="headerlink" title=" 4. kafka_listen_4.py分析"></a><code> 4. kafka_listen_4.py分析</code></h1><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer<span class="token punctuation">,</span>KafkaProducer
+<h3 id="4-kafka-listen-4-py分析"><a href="#4-kafka-listen-4-py分析" class="headerlink" title="4. kafka_listen_4.py分析"></a>4. kafka_listen_4.py分析</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer<span class="token punctuation">,</span>KafkaProducer
 <span class="token keyword">import</span> json
 <span class="token triple-quoted-string string">"""
 data = &amp;#123;'value_1' : 'value_2'&amp;#125;
@@ -1110,7 +1110,7 @@ server_ip 是服务器ip+端口的形式 ip:port 这里为了保证唯一将topi
             <span class="token keyword">pass</span>
     
 </code></pre>
-<h1 id="5-post-request-text-py分析"><a href="#5-post-request-text-py分析" class="headerlink" title=" 5. post_request_text.py分析"></a><code> 5. post_request_text.py分析</code></h1><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""Perform test request"""</span>
+<h3 id="5-post-request-text-py分析"><a href="#5-post-request-text-py分析" class="headerlink" title="5. post_request_text.py分析"></a>5. post_request_text.py分析</h3><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""Perform test request"""</span>
 <span class="token keyword">import</span> pprint
 <span class="token keyword">import</span> json
 <span class="token keyword">import</span> requests
@@ -1133,7 +1133,7 @@ response <span class="token operator">=</span> requests<span class="token punctu
 <span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'result'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># requests.post(interfaceurl, data=information)</span>
 </code></pre>
-<h1 id="6-requirements-txt分析"><a href="#6-requirements-txt分析" class="headerlink" title=" 6. requirements.txt分析"></a><code> 6. requirements.txt分析</code></h1><pre class=" language-python"><code class="language-python">absl<span class="token operator">-</span>py<span class="token operator">==</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0</span>
+<h3 id="6-requirements-txt分析"><a href="#6-requirements-txt分析" class="headerlink" title="6. requirements.txt分析"></a>6. requirements.txt分析</h3><pre class=" language-python"><code class="language-python">absl<span class="token operator">-</span>py<span class="token operator">==</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0</span>
 cachetools<span class="token operator">==</span><span class="token number">4.2</span><span class="token punctuation">.</span><span class="token number">4</span>
 certifi<span class="token operator">==</span><span class="token number">2021.10</span><span class="token punctuation">.</span><span class="token number">8</span>
 charset<span class="token operator">-</span>normalizer<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">7</span>
@@ -1187,7 +1187,7 @@ urllib3<span class="token operator">==</span><span class="token number">1.26</sp
 Werkzeug<span class="token operator">==</span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">2</span>
 zipp<span class="token operator">==</span><span class="token number">3.6</span><span class="token punctuation">.</span><span class="token number">0</span>
 </code></pre>
-<h1 id="7-kafka-consumer-py分析（测试）"><a href="#7-kafka-consumer-py分析（测试）" class="headerlink" title=" 7. kafka_consumer.py分析（测试）"></a><code> 7. kafka_consumer.py分析（测试）</code></h1><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer
+<h3 id="7-kafka-consumer-py分析（测试）"><a href="#7-kafka-consumer-py分析（测试）" class="headerlink" title="7. kafka_consumer.py分析（测试）"></a>7. kafka_consumer.py分析（测试）</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer
 <span class="token keyword">import</span> json
 <span class="token keyword">import</span> time
 <span class="token keyword">from</span> kafka_listen_4 <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -1202,7 +1202,7 @@ value_key <span class="token operator">=</span> <span class="token string">'stat
     <span class="token keyword">break</span>
       
 </code></pre>
-<h1 id="8-kafka-producer-py分析（测试）"><a href="#8-kafka-producer-py分析（测试）" class="headerlink" title=" 8. kafka_producer.py分析（测试）"></a><code> 8. kafka_producer.py分析（测试）</code></h1><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka_listen_4 <span class="token keyword">import</span> <span class="token operator">*</span>
+<h3 id="8-kafka-producer-py分析（测试）"><a href="#8-kafka-producer-py分析（测试）" class="headerlink" title="8. kafka_producer.py分析（测试）"></a>8. kafka_producer.py分析（测试）</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka_listen_4 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token triple-quoted-string string">"""调用测试"""</span>
 server_ip <span class="token operator">=</span> <span class="token string">'183.131.192.8:9092'</span>
 producer_data <span class="token operator">=</span>  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'status0':'2434'&amp;#125;</span>
@@ -1211,7 +1211,7 @@ topic <span class="token operator">=</span> <span class="token string">'smoke3'<
 <span class="token comment" spellcheck="true"># 消息生产</span>
 kafka_producer<span class="token punctuation">(</span>producer_data<span class="token punctuation">,</span>server_ip<span class="token punctuation">,</span>topic<span class="token punctuation">)</span>
 </code></pre>
-<h1 id="9-test（用于测试一些写法）-py分析（测试）"><a href="#9-test（用于测试一些写法）-py分析（测试）" class="headerlink" title=" 9. test（用于测试一些写法）.py分析（测试）"></a><code> 9. test（用于测试一些写法）.py分析（测试）</code></h1><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer<span class="token punctuation">,</span>KafkaProducer
+<h3 id="9-test（用于测试一些写法）-py分析（测试）"><a href="#9-test（用于测试一些写法）-py分析（测试）" class="headerlink" title="9. test（用于测试一些写法）.py分析（测试）"></a>9. test（用于测试一些写法）.py分析（测试）</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> kafka <span class="token keyword">import</span> KafkaConsumer<span class="token punctuation">,</span>KafkaProducer
 <span class="token keyword">import</span> json
 <span class="token keyword">import</span> cv2
 <span class="token keyword">import</span> time
@@ -1283,7 +1283,7 @@ video_fps <span class="token operator">=</span> <span class="token number">5</sp
     <span class="token comment" spellcheck="true"># print(results)</span>
     cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 </code></pre>
-<h1 id="10-flask接口创建"><a href="#10-flask接口创建" class="headerlink" title="10 .flask接口创建"></a><code>10 .flask接口创建</code></h1><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">### post接口</span>
+<h3 id="10-flask接口创建"><a href="#10-flask接口创建" class="headerlink" title="10 .flask接口创建"></a>10 .flask接口创建</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">### post接口</span>
 <span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
 server <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
 @server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/gttx/objectrecognition'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>

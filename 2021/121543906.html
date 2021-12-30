@@ -546,14 +546,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-16
+                    2021-12-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    396
+                    397
                 </div>
                 
 
@@ -580,7 +580,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-手工构建docker镜像"><a href="#1-手工构建docker镜像" class="headerlink" title=" 1. 手工构建docker镜像"></a><code> 1. 手工构建docker镜像</code></h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## docker 基础命令 docker run docker commit docker exec </span>
+                <p>[TOC]</p>
+<h3 id="1-手工构建docker镜像"><a href="#1-手工构建docker镜像" class="headerlink" title="1. 手工构建docker镜像"></a>1. 手工构建docker镜像</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## docker 基础命令 docker run docker commit docker exec </span>
 </code></pre>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 获取镜像</span>
 docker pull ubuntu <span class="token comment" spellcheck="true"># 获取镜像ubuntu镜像</span>
@@ -613,7 +614,7 @@ docker run --rm <span class="token operator">&lt;</span>容器 ID or name<span c
 <span class="token comment" spellcheck="true">## docker bash运行多个命令方法</span>
 docker run -itd  --name test150 apache2:v20 /bin/sh -c <span class="token string">'service apache2 start &amp;&amp; /bin/bash'</span>
 </code></pre>
-<h1 id="2-dockerfile构建dokcer镜像"><a href="#2-dockerfile构建dokcer镜像" class="headerlink" title="2. dockerfile构建dokcer镜像"></a><code>2. dockerfile构建dokcer镜像</code></h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 注明RUN命令可以有多个,CMD和ENTRYPOINT命令只能有一个</span>
+<h3 id="2-dockerfile构建dokcer镜像"><a href="#2-dockerfile构建dokcer镜像" class="headerlink" title="2. dockerfile构建dokcer镜像"></a>2. dockerfile构建dokcer镜像</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 注明RUN命令可以有多个,CMD和ENTRYPOINT命令只能有一个</span>
 FROM nginx
 RUN <span class="token operator">&lt;</span>命令行命令<span class="token operator">></span> <span class="token comment" spellcheck="true"># &lt;命令行命令> 等同于，在终端操作的 shell 命令。</span>
 RUN <span class="token punctuation">[</span><span class="token string">"可执行文件"</span>, <span class="token string">"参数1"</span>, <span class="token string">"参数2"</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 例如：RUN ["./test.php", "dev", "offline"] 等价于 RUN ./test.php dev offline</span>
@@ -630,7 +631,7 @@ VOLUME <span class="token operator">&lt;</span>路径<span class="token operator
 CMD <span class="token punctuation">[</span> <span class="token string">"/bin/bash"</span> ,<span class="token string">"/start.sh"</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 在容器里/目录下写上start.sh脚本，脚本的最后一行需要加上/bin/bash 因为# docker只运行在pid为1的状态下 所有需要开启一个bash</span>
 CMD /etc/init.d/apache2 start <span class="token operator">&amp;&amp;</span> /bin/bash
 </code></pre>
-<h1 id="2-docker-compose的使用"><a href="#2-docker-compose的使用" class="headerlink" title="2. docker-compose的使用"></a><code>2. docker-compose的使用</code></h1><pre><code>待写
+<h3 id="3-docker-compose的使用"><a href="#3-docker-compose的使用" class="headerlink" title="3. docker-compose的使用"></a>3. docker-compose的使用</h3><pre><code>待写
 </code></pre>
 
                 

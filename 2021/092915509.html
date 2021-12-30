@@ -546,7 +546,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-15
+                    2021-12-30
                 </div>
                 
 
@@ -580,7 +580,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="frp-服务端配置"><a href="#frp-服务端配置" class="headerlink" title="frp 服务端配置"></a>frp 服务端配置</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> frp_0.33.0_linux_amd64/
+                <p>[TOC]</p>
+<h2 id="frp-服务端配置"><a href="#frp-服务端配置" class="headerlink" title="frp 服务端配置"></a>frp 服务端配置</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> frp_0.33.0_linux_amd64/
 <span class="token function">vi</span> frps.ini
 <span class="token punctuation">[</span>common<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true"># frp监听的端口，默认是7000，可以改成其他的</span>
@@ -704,7 +705,7 @@ plugin_key_path <span class="token operator">=</span> C:/Samples/_.walterlv.com_
 <h2 id="测试穿透是否配置成功"><a href="#测试穿透是否配置成功" class="headerlink" title="测试穿透是否配置成功"></a>测试穿透是否配置成功</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> 用户名@服务端ip  -p 端口号
 <span class="token comment" spellcheck="true"># 这里一定要注意，这里用的是服务端的ip和用户名，端口号用的frpc.ini文件中的remote_port。如果你登录成功，那么，恭喜你，你已经学会了利用frc怎么配置内网穿透了！！！</span>
 </code></pre>
-<h3 id="frps-完整"><a href="#frps-完整" class="headerlink" title="frps 完整"></a>frps 完整</h3><pre class=" language-bash"><code class="language-bash">vim frps.ini
+<h2 id="frps-完整"><a href="#frps-完整" class="headerlink" title="frps 完整"></a>frps 完整</h2><pre class=" language-bash"><code class="language-bash">vim frps.ini
  
 基础配置
 ​
