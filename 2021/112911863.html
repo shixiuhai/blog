@@ -554,21 +554,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-21
+                    2021-12-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    20 分
                 </div>
                 
 
@@ -1293,6 +1293,7 @@ video_fps <span class="token operator">=</span> <span class="token number">5</sp
 </code></pre>
 <p><code>10 .flask接口创建</code></p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">### post接口</span>
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
 server <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
 @server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/gttx/objectrecognition'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">objectrecognition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1332,7 +1333,6 @@ server <span class="token operator">=</span> Flask<span class="token punctuation
 <span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
 <span class="token keyword">import</span> json
 server <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
-@server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/gttx/objectrecognition'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 @server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/updata'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'get'</span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">updata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># 接口传入的key的数值</span>
@@ -1340,6 +1340,22 @@ server <span class="token operator">=</span> Flask<span class="token punctuation
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># 指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问</span>
     server<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8899</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">)</span>
+    
+<span class="token comment" spellcheck="true">### 写多个函数</span>
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
+<span class="token keyword">import</span> json
+server <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+@server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/gttx/objectrecognition'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+@server<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/updata'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'get'</span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">updata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 接口传入的key的数值</span>
+    key <span class="token operator">=</span> request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问</span>
+    server<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8899</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">)</span>
+
 </code></pre>
 
                 

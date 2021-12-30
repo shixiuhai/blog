@@ -522,6 +522,10 @@
                                 <span class="chip bg-color">插入数据到excel</span>
                             </a>
                         
+                            <a href="/tags/pandns%E5%88%A4%E6%96%AD%E5%8F%96%E5%87%BA%E6%95%B0%E6%8D%AE%E4%B8%BA%E7%A9%BA/">
+                                <span class="chip bg-color">pandns判断取出数据为空</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -550,7 +554,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-15
+                    2021-12-30
                 </div>
                 
 
@@ -596,6 +600,9 @@ df<span class="token punctuation">.</span>to_excel<span class="token punctuation
    <span class="token number">1</span>     <span class="token number">1</span>   <span class="token number">1</span>    <span class="token number">1</span>   <span class="token number">1</span>
    <span class="token number">2</span>     <span class="token number">2</span>   <span class="token number">2</span>    <span class="token number">2</span>   <span class="token number">2</span>
 </code></pre>
+<h1 id="pandns判断取出数据为空"><a href="#pandns判断取出数据为空" class="headerlink" title="pandns判断取出数据为空"></a><code>pandns判断取出数据为空</code></h1><pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">or</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
+</code></pre>
 <h2 id="插入数据v1-0版本"><a href="#插入数据v1-0版本" class="headerlink" title="插入数据v1.0版本"></a><code>插入数据v1.0版本</code></h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> time
 <span class="token keyword">import</span> pymysql
@@ -603,6 +610,7 @@ df<span class="token punctuation">.</span>to_excel<span class="token punctuation
 <span class="token keyword">import</span> time
 <span class="token keyword">import</span> datetime
 <span class="token keyword">import</span> os
+
 
 <span class="token triple-quoted-string string">"""遍历所有的csv文件"""</span>
 <span class="token comment" spellcheck="true"># 待写</span>
@@ -1360,6 +1368,10 @@ v4.0添加了防止插入数据中断,可以在已有的数据基础上更新数
                             
                                 <a href="/tags/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E5%88%B0excel/">
                                     <span class="chip bg-color">插入数据到excel</span>
+                                </a>
+                            
+                                <a href="/tags/pandns%E5%88%A4%E6%96%AD%E5%8F%96%E5%87%BA%E6%95%B0%E6%8D%AE%E4%B8%BA%E7%A9%BA/">
+                                    <span class="chip bg-color">pandns判断取出数据为空</span>
                                 </a>
                             
                         </div>
