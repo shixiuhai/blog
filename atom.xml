@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2021-12-30T06:29:34.933Z</updated>
+  <updated>2022-01-04T03:56:00.285Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,34 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基于flask的简单前后端分离</title>
-    <link href="http://www.fuyaoershang.xyz/2021/123024029.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/123024029.html</id>
-    <published>2021-12-30T03:54:49.000Z</published>
-    <updated>2021-12-30T06:29:34.933Z</updated>
+    <title>nginx基础使用</title>
+    <link href="http://www.fuyaoershang.xyz/2022/010442496.html"/>
+    <id>http://www.fuyaoershang.xyz/2022/010442496.html</id>
+    <published>2022-01-04T03:32:59.000Z</published>
+    <updated>2022-01-04T03:56:00.285Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;二级标题测试&quot;&gt;&lt;a href=&quot;#二级标题测试&quot; class=&quot;headerlink&quot; title=&quot;二级标题测试&quot;&gt;&lt;/a&gt;&lt;code&gt;二级标题测试&lt;/code&gt;&lt;/h2&gt;&lt;h3 id=&quot;1-后端python代码&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;nginx-反向代理配置&quot;&gt;&lt;a href=&quot;#nginx-反向代理配置&quot; class=&quot;headerlink&quot; title=&quot;nginx 反向代理配置&quot;&gt;&lt;/a&gt;nginx 反向代理配置&lt;/h3&gt;&lt;pre class=&quot;</summary>
         
       
     
     
     
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    <category term="nginx" scheme="http://www.fuyaoershang.xyz/categories/nginx/"/>
     
     
-    <category term="简单的前后端分离" scheme="http://www.fuyaoershang.xyz/tags/%E7%AE%80%E5%8D%95%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
+    <category term="nginx基础" scheme="http://www.fuyaoershang.xyz/tags/nginx%E5%9F%BA%E7%A1%80/"/>
     
-    <category term="flask" scheme="http://www.fuyaoershang.xyz/tags/flask/"/>
-    
-    <category term="js简单应用" scheme="http://www.fuyaoershang.xyz/tags/js%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8/"/>
-    
-    <category term="python操作mysql实现查询" scheme="http://www.fuyaoershang.xyz/tags/python%E6%93%8D%E4%BD%9Cmysql%E5%AE%9E%E7%8E%B0%E6%9F%A5%E8%AF%A2/"/>
+    <category term="nginx反向代理" scheme="http://www.fuyaoershang.xyz/tags/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
     
   </entry>
   
@@ -285,14 +280,14 @@
     <link href="http://www.fuyaoershang.xyz/2021/120755240.html"/>
     <id>http://www.fuyaoershang.xyz/2021/120755240.html</id>
     <published>2021-12-07T09:18:28.000Z</published>
-    <updated>2021-12-30T05:48:15.162Z</updated>
+    <updated>2022-01-04T03:57:26.531Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;1-shell-脚本范例&quot;&gt;&lt;a href=&quot;#1-shell-脚本范例&quot; class=&quot;headerlink&quot; title=&quot;1. shell 脚本范例&quot;&gt;&lt;/a&gt;&lt;code&gt;1. shell 脚本范例&lt;/code&gt;&lt;/h1&gt;&lt;h3 id=&quot;范例1&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h1 id=&quot;shell-脚本范例&quot;&gt;&lt;a href=&quot;#shell-脚本范例&quot; class=&quot;headerlink&quot; title=&quot;shell 脚本范例&quot;&gt;&lt;/a&gt;shell 脚本范例&lt;/h1&gt;&lt;h3 id=&quot;范例1&quot;&gt;&lt;a href=&quot;#范例1&quot;</summary>
         
       
     
@@ -488,7 +483,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/111223223.html"/>
     <id>http://www.fuyaoershang.xyz/2021/111223223.html</id>
     <published>2021-11-12T05:39:31.000Z</published>
-    <updated>2021-11-29T02:19:01.653Z</updated>
+    <updated>2021-12-30T06:51:31.903Z</updated>
     
     
       

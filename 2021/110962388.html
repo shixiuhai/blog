@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python通过csv向mysql插入数据或者更新数据, 思进不思停的博客笔记">
+    <meta name="keywords" content="python下excel和txt和csv和mysql相互间数据插入, 思进不思停的博客笔记">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python通过csv向mysql插入数据或者更新数据 | 思进不思停的博客笔记</title>
+    <title>python下excel和txt和csv和mysql相互间数据插入 | 思进不思停的博客笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -389,12 +389,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python通过csv向mysql插入数据或者更新数据</h1>
+                    <h1 class="description center-align post-title">python下excel和txt和csv和mysql相互间数据插入</h1>
                 </div>
             </div>
         </div>
@@ -526,6 +526,18 @@
                                 <span class="chip bg-color">pandns判断取出数据为空</span>
                             </a>
                         
+                            <a href="/tags/sql%E5%AE%9E%E7%8E%B0%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/">
+                                <span class="chip bg-color">sql实现大量数据批量插入</span>
+                            </a>
+                        
+                            <a href="/tags/sql%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/">
+                                <span class="chip bg-color">sql批量插入</span>
+                            </a>
+                        
+                            <a href="/tags/mysql%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">mysql数据批量到数据库</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -554,21 +566,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-30
+                    2022-01-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    5.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    28 分
                 </div>
                 
 
@@ -588,7 +600,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python通过csv向mysql插入数据或者更新数据"><a href="#python通过csv向mysql插入数据或者更新数据" class="headerlink" title="python通过csv向mysql插入数据或者更新数据"></a><code>python通过csv向mysql插入数据或者更新数据</code></h1><h2 id="插入数据到excel里"><a href="#插入数据到excel里" class="headerlink" title="插入数据到excel里"></a><code>插入数据到excel里</code></h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+                <h1 id="python下excel和txt和csv和mysql相互间数据插入"><a href="#python下excel和txt和csv和mysql相互间数据插入" class="headerlink" title="python下excel和txt和csv和mysql相互间数据插入"></a>python下excel和txt和csv和mysql相互间数据插入</h1><h3 id="插入数据到excel里"><a href="#插入数据到excel里" class="headerlink" title="插入数据到excel里"></a>插入数据到excel里</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 data <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'评级编号': [1,2],</span>
         <span class="token string">'名称'</span><span class="token punctuation">:</span> name_list<span class="token punctuation">,</span>
         <span class="token string">'分数'</span><span class="token punctuation">:</span> score_list<span class="token punctuation">,</span>
@@ -601,10 +613,13 @@ df<span class="token punctuation">.</span>to_excel<span class="token punctuation
    <span class="token number">1</span>     <span class="token number">1</span>   <span class="token number">1</span>    <span class="token number">1</span>   <span class="token number">1</span>
    <span class="token number">2</span>     <span class="token number">2</span>   <span class="token number">2</span>    <span class="token number">2</span>   <span class="token number">2</span>
 </code></pre>
-<h1 id="pandns判断取出数据为空"><a href="#pandns判断取出数据为空" class="headerlink" title="pandns判断取出数据为空"></a><code>pandns判断取出数据为空</code></h1><pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">or</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h3 id="pandns判断取出数据为空"><a href="#pandns判断取出数据为空" class="headerlink" title="pandns判断取出数据为空"></a>pandns判断取出数据为空</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">or</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">pass</span>
 </code></pre>
-<h2 id="插入数据v1-0版本"><a href="#插入数据v1-0版本" class="headerlink" title="插入数据v1.0版本"></a><code>插入数据v1.0版本</code></h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<h3 id="python向csv中插入数据"><a href="#python向csv中插入数据" class="headerlink" title="python向csv中插入数据"></a>python向csv中插入数据</h3><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+v1.0单纯的数据插入
+"""</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> time
 <span class="token keyword">import</span> pymysql
 <span class="token keyword">import</span> random
@@ -703,8 +718,8 @@ df<span class="token punctuation">.</span>to_excel<span class="token punctuation
     <span class="token triple-quoted-string string">"""数据库数据插入完成后关闭数据库"""</span>
     <span class="token comment" spellcheck="true"># 关闭数据库连接</span>
     db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-<h2 id="插入数据v2-0版本"><a href="#插入数据v2-0版本" class="headerlink" title="插入数据v2.0版本"></a><code>插入数据v2.0版本</code></h2><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+    
+<span class="token triple-quoted-string string">"""
 v2.0添加了防止插入数据中断,查询时采用了两个字段 LOG_TIME 和 INTERFACE_INFO
 """</span>
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
@@ -839,8 +854,9 @@ v2.0添加了防止插入数据中断,查询时采用了两个字段 LOG_TIME �
     <span class="token triple-quoted-string string">"""数据库数据插入完成后关闭数据库"""</span>
     <span class="token comment" spellcheck="true"># 关闭数据库连接</span>
     db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-<h2 id="插入数据v3-0版本"><a href="#插入数据v3-0版本" class="headerlink" title="插入数据v3.0版本"></a><code>插入数据v3.0版本</code></h2><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+    
+    
+<span class="token triple-quoted-string string">"""
 v3.0添加了防止插入数据中断,可以在已有的数据基础上更新数据，数据查询字段依靠log_time和interface_info
 """</span>
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
@@ -1006,9 +1022,9 @@ v3.0添加了防止插入数据中断,可以在已有的数据基础上更新数
     <span class="token triple-quoted-string string">"""数据库数据插入完成后关闭数据库"""</span>
     <span class="token comment" spellcheck="true"># 关闭数据库连接</span>
     db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-<h2 id="插入数据v4-0版本"><a href="#插入数据v4-0版本" class="headerlink" title="插入数据v4.0版本"></a><code>插入数据v4.0版本</code></h2><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
-v2.0添加了防止插入数据中断,可以在已有的数据基础上更新数据，数据查询字段依靠log_time和interface_info,实现了默认插入和已经存在的进行更新。
+
+ <span class="token triple-quoted-string string">"""
+v4.0添加了防止插入数据中断,可以在已有的数据基础上更新数据，数据查询字段依靠log_time和interface_info,实现了默认插入和已经存在的进行更新。
 """</span>
 <span class="token comment" spellcheck="true"># 导入相关需要使用的函数库</span>
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
@@ -1174,9 +1190,9 @@ v2.0添加了防止插入数据中断,可以在已有的数据基础上更新数
     <span class="token triple-quoted-string string">"""数据库数据插入完成后关闭数据库"""</span>
     <span class="token comment" spellcheck="true"># 关闭数据库连接</span>
     db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-<h2 id="插入数据v5-0版本"><a href="#插入数据v5-0版本" class="headerlink" title="插入数据v5.0版本"></a><code>插入数据v5.0版本</code></h2><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
-v4.0添加了防止插入数据中断,可以在已有的数据基础上更新数据，数据查询字段依靠log_time和interface_info,实现了默认插入和已经存在的进行更新
+
+<span class="token triple-quoted-string string">"""
+v5.0添加了防止插入数据中断,可以在已有的数据基础上更新数据，数据查询字段依靠log_time和interface_info,实现了默认插入和已经存在的进行更新
 增加了查询是否存在的可信度
 """</span>
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
@@ -1343,7 +1359,412 @@ v4.0添加了防止插入数据中断,可以在已有的数据基础上更新数
 
     <span class="token triple-quoted-string string">"""数据库数据插入完成后关闭数据库"""</span>
     <span class="token comment" spellcheck="true"># 关闭数据库连接</span>
+    db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>    
+</code></pre>
+<h2 id="sql实现大量数据批量插入"><a href="#sql实现大量数据批量插入" class="headerlink" title="sql实现大量数据批量插入"></a><code>sql实现大量数据批量插入</code></h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> pymysql
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> datetime
+<span class="token keyword">import</span> os
+<span class="token comment" spellcheck="true"># 定义一个数据全局列表</span>
+value_list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token triple-quoted-string string">"""遍历所有的csv文件"""</span>
+<span class="token comment" spellcheck="true"># 待写</span>
+<span class="token keyword">def</span> <span class="token function">get_csv_file</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+
+<span class="token triple-quoted-string string">"""生成随机整数"""</span>
+<span class="token keyword">def</span> <span class="token function">create_random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">1000000</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""时间戳的转换"""</span>
+<span class="token comment" spellcheck="true"># 正常日期转时间戳</span>
+<span class="token keyword">def</span> <span class="token function">timeconversion</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t <span class="token operator">=</span> time<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>t<span class="token punctuation">,</span> <span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#转换成时间戳</span>
+    t_result <span class="token operator">=</span> time<span class="token punctuation">.</span>mktime<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> t_result
+
+
+<span class="token triple-quoted-string string">"""执行sql数据插入数据"""</span>
+<span class="token comment" spellcheck="true"># def sql_execute(log_time,ip,host,type,interface_info,clock,value,ns,created_time):</span>
+<span class="token comment" spellcheck="true">#     # SQL 插入语句</span>
+<span class="token comment" spellcheck="true">#     ns = create_random()</span>
+<span class="token comment" spellcheck="true">#     # type is </span>
+<span class="token comment" spellcheck="true">#     sql = "INSERT INTO zabbix_flow_data_copy1(log_time, \</span>
+<span class="token comment" spellcheck="true">#     ip, host, type,interface_info,clock,value,ns,created_time) \</span>
+<span class="token comment" spellcheck="true">#     VALUES ('%s', '%s', '%s', '%d', '%s','%s','%s','%s','%s')" % \</span>
+<span class="token comment" spellcheck="true">#     (int(log_time),ip,host,type,interface_info,int(clock),int(value),ns,created_time)</span>
+<span class="token comment" spellcheck="true">#     try:</span>
+<span class="token comment" spellcheck="true">#         # 使用cursor()方法获取操作游标 </span>
+<span class="token comment" spellcheck="true">#         cursor = db.cursor()</span>
+<span class="token comment" spellcheck="true">#         # 执行sql语句</span>
+<span class="token comment" spellcheck="true">#         cursor.execute(sql)</span>
+<span class="token comment" spellcheck="true">#         # 提交到数据库执行</span>
+<span class="token comment" spellcheck="true">#         db.commit()</span>
+<span class="token comment" spellcheck="true">#         </span><span class="token triple-quoted-string string">"""插入数据查看调试"""</span>
+<span class="token comment" spellcheck="true">#         print("插入的数据为: '%s', '%s', %s, '%s', '%s','%s','%s','%s','%s'"%(int(log_time),ip,host,type,interface_info,int(clock),int(value),ns,created_time))</span>
+<span class="token comment" spellcheck="true">#         # time.sleep(2)</span>
+<span class="token comment" spellcheck="true">#     except:</span>
+<span class="token comment" spellcheck="true">#         # 如果发生错误则回滚,在错误的实在再关闭数据库</span>
+<span class="token comment" spellcheck="true">#         db.rollback()</span>
+<span class="token keyword">def</span> <span class="token function">splicing_all_value_insert</span><span class="token punctuation">(</span>log_time<span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span>type<span class="token punctuation">,</span>interface_info<span class="token punctuation">,</span>clock<span class="token punctuation">,</span>value<span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> value_list
+    ns <span class="token operator">=</span> create_random<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    clock<span class="token operator">=</span>int<span class="token punctuation">(</span>clock<span class="token punctuation">)</span>
+    value<span class="token operator">=</span>int<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    log_time<span class="token operator">=</span>int<span class="token punctuation">(</span>log_time<span class="token punctuation">)</span>
+    value_information<span class="token operator">=</span><span class="token punctuation">(</span>log_time<span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span>type<span class="token punctuation">,</span>interface_info<span class="token punctuation">,</span>clock<span class="token punctuation">,</span>value<span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span>
+    value_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>value_information<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    
+
+
+<span class="token triple-quoted-string string">"""使用pandas读取和处理"""</span>
+<span class="token keyword">def</span> <span class="token function">read_deal_csv</span><span class="token punctuation">(</span>filedir<span class="token punctuation">,</span>filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""处理一下filename，想办法获取到interface_info数据"""</span>
+    <span class="token keyword">pass</span>
+    this_file <span class="token operator">=</span> filedir <span class="token operator">+</span> <span class="token string">'/'</span> <span class="token operator">+</span> filename
+    <span class="token comment" spellcheck="true"># 读取10行以后</span>
+    <span class="token comment" spellcheck="true"># 2.把Excel文件中的数据读入pandas</span>
+    df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>this_file<span class="token punctuation">,</span> skiprows<span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># row 取数据</span>
+    <span class="token keyword">for</span> index<span class="token punctuation">,</span> row <span class="token keyword">in</span> df<span class="token punctuation">.</span>iterrows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>   
+        <span class="token comment" spellcheck="true"># 时间 row[0]</span>
+        <span class="token comment" spellcheck="true"># IN流量row[1]</span>
+        <span class="token comment" spellcheck="true"># OUT流量row[2]</span>
+        <span class="token triple-quoted-string string">"""调用sql_execute插入数据"""</span>
+        <span class="token comment" spellcheck="true"># 进口数据插入</span>
+        created_time<span class="token operator">=</span>datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">or</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># print(row[1],row[2])</span>
+            <span class="token comment" spellcheck="true"># in 数据</span>
+            splicing_all_value_insert<span class="token punctuation">(</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>interface_in_info<span class="token punctuation">,</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># out 数据</span>
+            splicing_all_value_insert<span class="token punctuation">(</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>interface_out_info<span class="token punctuation">,</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># sql_execute(timeconversion(row[0]),ip,host,1,interface_in_info,timeconversion(row[0]),row[1],ns,created_time)</span>
+            <span class="token comment" spellcheck="true"># 出口数据插入</span>
+            <span class="token comment" spellcheck="true"># sql_execute(timeconversion(row[0]),ip,host,2,interface_out_info,timeconversion(row[0]),row[2],ns,created_time)</span>
+
+            
+            <span class="token comment" spellcheck="true"># print(row[0],float(row[1]))</span>
+    <span class="token triple-quoted-string string">"""一张表结束一行插入数据到sql"""</span>
+    <span class="token comment" spellcheck="true"># 在写sql语句时，不管字段为什么类型，占位符统一使用%s,且不能加上引号。例如</span>
+    <span class="token comment" spellcheck="true"># sql="insert into tablename (id,name) values (%s,%s)"</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        sql <span class="token operator">=</span> "INSERT INTO zabbix_flow_data_copy1<span class="token punctuation">(</span>log_time<span class="token punctuation">,</span> \
+    ip<span class="token punctuation">,</span> host<span class="token punctuation">,</span> type<span class="token punctuation">,</span>interface_info<span class="token punctuation">,</span>clock<span class="token punctuation">,</span>value<span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span> \
+    VALUES <span class="token punctuation">(</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">)</span>"
+        cursor<span class="token punctuation">.</span>executemany<span class="token punctuation">(</span>sql<span class="token punctuation">,</span>value_list<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>filename<span class="token operator">+</span><span class="token string">"数据插入成功"</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 如果错误回滚一下</span>
+        db<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+
+<span class="token triple-quoted-string string">"""代码开始"""</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""连接数据库"""</span>
+    <span class="token comment" spellcheck="true"># 打开数据库连接</span>
+    <span class="token comment" spellcheck="true"># db = pymysql.connect(host='172.16.1.15',</span>
+    <span class="token comment" spellcheck="true">#                     user='bigdata',</span>
+    <span class="token comment" spellcheck="true">#                     password='bigdata2020',</span>
+    <span class="token comment" spellcheck="true">#                     database='zabbix')</span>
+    <span class="token comment" spellcheck="true"># 打开数据库连接</span>
+    db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+                        user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+                        password<span class="token operator">=</span><span class="token string">'sxh.200008'</span><span class="token punctuation">,</span>
+                        database<span class="token operator">=</span><span class="token string">'mydb'</span><span class="token punctuation">)</span>
+           
+    
+    <span class="token triple-quoted-string string">"""三个可以随意填充的数据"""</span>
+    ip<span class="token operator">=</span><span class="token string">'183.131.213.129'</span>
+    host<span class="token operator">=</span><span class="token string">'QiuBin-core'</span>
+    ns<span class="token operator">=</span><span class="token string">''</span>
+    <span class="token comment" spellcheck="true"># 手动设置interface_info</span>
+    interface_in_info<span class="token operator">=</span><span class="token string">''</span>
+    interface_out_info<span class="token operator">=</span><span class="token string">''</span>
+
+    
+    <span class="token triple-quoted-string string">"""遍历csv文件"""</span>
+    files_dir<span class="token operator">=</span>r<span class="token string">'D:\agotime\补录流量\36.27.214.254精英12708(1)(1)\36.27.214.254精英12708'</span>
+    <span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>files_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> file_name <span class="token keyword">in</span> files<span class="token punctuation">:</span>
+            name_split_list<span class="token operator">=</span>file_name<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span>
+            interface_split_list<span class="token operator">=</span>name_split_list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"'."</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># interface out-flow</span>
+            <span class="token comment" spellcheck="true"># interface in-flow</span>
+            interface_in_info<span class="token operator">=</span><span class="token string">"interface in-flow"</span><span class="token operator">+</span>interface_split_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">,</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+            interface_out_info<span class="token operator">=</span><span class="token string">"interface out-flow"</span><span class="token operator">+</span>interface_split_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">,</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+
+            <span class="token triple-quoted-string string">"""读取csv文件并处理"""</span>
+            read_deal_csv<span class="token punctuation">(</span>files_dir<span class="token punctuation">,</span>file_name<span class="token punctuation">)</span>
+            
+
+    <span class="token triple-quoted-string string">"""数据库数据插入完成后关闭数据库"""</span>
+    <span class="token comment" spellcheck="true"># 关闭数据库连接</span>
     db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="python数据批量插入到数据库中"><a href="#python数据批量插入到数据库中" class="headerlink" title="python数据批量插入到数据库中"></a>python数据批量插入到数据库中</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> pymysql
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> datetime
+<span class="token keyword">import</span> os
+
+<span class="token triple-quoted-string string">"""遍历所有的csv文件"""</span>
+<span class="token comment" spellcheck="true"># 待写</span>
+<span class="token keyword">def</span> <span class="token function">get_csv_file</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+
+<span class="token triple-quoted-string string">"""生成随机整数"""</span>
+<span class="token keyword">def</span> <span class="token function">create_random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">1000000</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""时间戳的转换"""</span>
+<span class="token comment" spellcheck="true"># 正常日期转时间戳</span>
+<span class="token keyword">def</span> <span class="token function">timeconversion</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t <span class="token operator">=</span> time<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>t<span class="token punctuation">,</span> <span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#转换成时间戳</span>
+    t_result <span class="token operator">=</span> time<span class="token punctuation">.</span>mktime<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> t_result
+
+
+<span class="token triple-quoted-string string">"""执行sql数据插入数据"""</span>
+<span class="token comment" spellcheck="true"># def sql_execute(log_time,ip,host,type,interface_info,clock,value,ns,created_time):</span>
+<span class="token comment" spellcheck="true">#     # SQL 插入语句</span>
+<span class="token comment" spellcheck="true">#     ns = create_random()</span>
+<span class="token comment" spellcheck="true">#     # type is </span>
+<span class="token comment" spellcheck="true">#     sql = "INSERT INTO zabbix_flow_data_copy1(log_time, \</span>
+<span class="token comment" spellcheck="true">#     ip, host, type,interface_info,clock,value,ns,created_time) \</span>
+<span class="token comment" spellcheck="true">#     VALUES ('%s', '%s', '%s', '%d', '%s','%s','%s','%s','%s')" % \</span>
+<span class="token comment" spellcheck="true">#     (int(log_time),ip,host,type,interface_info,int(clock),int(value),ns,created_time)</span>
+<span class="token comment" spellcheck="true">#     try:</span>
+<span class="token comment" spellcheck="true">#         # 使用cursor()方法获取操作游标 </span>
+<span class="token comment" spellcheck="true">#         cursor = db.cursor()</span>
+<span class="token comment" spellcheck="true">#         # 执行sql语句</span>
+<span class="token comment" spellcheck="true">#         cursor.execute(sql)</span>
+<span class="token comment" spellcheck="true">#         # 提交到数据库执行</span>
+<span class="token comment" spellcheck="true">#         db.commit()</span>
+<span class="token comment" spellcheck="true">#         </span><span class="token triple-quoted-string string">"""插入数据查看调试"""</span>
+<span class="token comment" spellcheck="true">#         print("插入的数据为: '%s', '%s', %s, '%s', '%s','%s','%s','%s','%s'"%(int(log_time),ip,host,type,interface_info,int(clock),int(value),ns,created_time))</span>
+<span class="token comment" spellcheck="true">#         # time.sleep(2)</span>
+<span class="token comment" spellcheck="true">#     except:</span>
+<span class="token comment" spellcheck="true">#         # 如果发生错误则回滚,在错误的实在再关闭数据库</span>
+<span class="token comment" spellcheck="true">#         db.rollback()</span>
+<span class="token keyword">def</span> <span class="token function">splicing_all_value_insert</span><span class="token punctuation">(</span>log_time<span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span>type<span class="token punctuation">,</span>interface_info<span class="token punctuation">,</span>clock<span class="token punctuation">,</span>value<span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ns <span class="token operator">=</span> create_random<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    clock<span class="token operator">=</span>int<span class="token punctuation">(</span>clock<span class="token punctuation">)</span>
+    value<span class="token operator">=</span>int<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    log_time<span class="token operator">=</span>int<span class="token punctuation">(</span>log_time<span class="token punctuation">)</span>
+    value_information<span class="token operator">=</span><span class="token punctuation">(</span>log_time<span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span>type<span class="token punctuation">,</span>interface_info<span class="token punctuation">,</span>clock<span class="token punctuation">,</span>value<span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span>
+    value_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>value_information<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print(value)</span>
+    
+
+
+<span class="token triple-quoted-string string">"""使用pandas读取和处理"""</span>
+<span class="token keyword">def</span> <span class="token function">read_deal_csv</span><span class="token punctuation">(</span>filedir<span class="token punctuation">,</span>filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""处理一下filename，想办法获取到interface_info数据"""</span>
+    <span class="token keyword">pass</span>
+    this_file <span class="token operator">=</span> filedir <span class="token operator">+</span> <span class="token string">'/'</span> <span class="token operator">+</span> filename
+    <span class="token comment" spellcheck="true"># 读取10行以后</span>
+    <span class="token comment" spellcheck="true"># 2.把Excel文件中的数据读入pandas</span>
+    df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>this_file<span class="token punctuation">,</span> skiprows<span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># row 取数据</span>
+    <span class="token keyword">for</span> index<span class="token punctuation">,</span> row <span class="token keyword">in</span> df<span class="token punctuation">.</span>iterrows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>   
+        <span class="token comment" spellcheck="true"># 时间 row[0]</span>
+        <span class="token comment" spellcheck="true"># IN流量row[1]</span>
+        <span class="token comment" spellcheck="true"># OUT流量row[2]</span>
+        <span class="token triple-quoted-string string">"""调用sql_execute插入数据"""</span>
+        <span class="token comment" spellcheck="true"># 进口数据插入</span>
+        created_time<span class="token operator">=</span>datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span> <span class="token operator">and</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+        <span class="token keyword">if</span>  pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token number">1</span><span class="token punctuation">:</span>
+            splicing_all_value_insert<span class="token punctuation">(</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>interface_out_info<span class="token punctuation">,</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> pd<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token number">1</span><span class="token punctuation">:</span>
+            splicing_all_value_insert<span class="token punctuation">(</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ip<span class="token punctuation">,</span>host<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>interface_in_info<span class="token punctuation">,</span>timeconversion<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># else:</span>
+        <span class="token comment" spellcheck="true">#     # print(row[1],row[2])</span>
+        <span class="token comment" spellcheck="true">#     # in 数据</span>
+        <span class="token comment" spellcheck="true">#     splicing_all_value_insert(timeconversion(row[0]),ip,host,1,interface_in_info,timeconversion(row[0]),row[1],ns,created_time)</span>
+        <span class="token comment" spellcheck="true">#     # out 数据</span>
+        <span class="token comment" spellcheck="true">#     splicing_all_value_insert(timeconversion(row[0]),ip,host,2,interface_out_info,timeconversion(row[0]),row[2],ns,created_time)</span>
+        <span class="token comment" spellcheck="true">#     # sql_execute(timeconversion(row[0]),ip,host,1,interface_in_info,timeconversion(row[0]),row[1],ns,created_time)</span>
+        <span class="token comment" spellcheck="true">#     # 出口数据插入</span>
+        <span class="token comment" spellcheck="true">#     # sql_execute(timeconversion(row[0]),ip,host,2,interface_out_info,timeconversion(row[0]),row[2],ns,created_time)</span>
+
+            
+            <span class="token comment" spellcheck="true"># print(row[0],float(row[1]))</span>
+    <span class="token triple-quoted-string string">"""一张表结束一行插入数据到sql"""</span>
+    <span class="token comment" spellcheck="true"># 在写sql语句时，不管字段为什么类型，占位符统一使用%s,且不能加上引号。例如</span>
+    <span class="token comment" spellcheck="true"># sql="insert into tablename (id,name) values (%s,%s)"</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        sql <span class="token operator">=</span> "INSERT INTO zabbix_flow_data_tmp_copy11<span class="token punctuation">(</span>log_time<span class="token punctuation">,</span> \
+    ip<span class="token punctuation">,</span> host<span class="token punctuation">,</span> type<span class="token punctuation">,</span>interface_info<span class="token punctuation">,</span>clock<span class="token punctuation">,</span>value<span class="token punctuation">,</span>ns<span class="token punctuation">,</span>created_time<span class="token punctuation">)</span> \
+    VALUES <span class="token punctuation">(</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">)</span>"
+        cursor<span class="token punctuation">.</span>executemany<span class="token punctuation">(</span>sql<span class="token punctuation">,</span>value_list<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>filename<span class="token operator">+</span><span class="token string">"数据插入成功"</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 如果错误回滚一下</span>
+        db<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+
+<span class="token triple-quoted-string string">"""代码开始"""</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""连接数据库"""</span>
+    <span class="token comment" spellcheck="true"># 打开数据库连接</span>
+    db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'172.16.1.15'</span><span class="token punctuation">,</span>
+                        user<span class="token operator">=</span><span class="token string">'bigdata'</span><span class="token punctuation">,</span>
+                        password<span class="token operator">=</span><span class="token string">'bigdata2020'</span><span class="token punctuation">,</span>
+                        database<span class="token operator">=</span><span class="token string">'zabbix'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 打开数据库连接</span>
+    <span class="token comment" spellcheck="true"># db = pymysql.connect(host='127.0.0.1',</span>
+    <span class="token comment" spellcheck="true">#                     user='root',</span>
+    <span class="token comment" spellcheck="true">#                     password='sxh.200008',</span>
+    <span class="token comment" spellcheck="true">#                     database='mydb')</span>
+           
+    
+    <span class="token triple-quoted-string string">"""三个可以随意填充的数据"""</span>
+    ip<span class="token operator">=</span><span class="token string">'61.174.252.17'</span>
+    host<span class="token operator">=</span><span class="token string">'JingYing-12808-1'</span>
+    ns<span class="token operator">=</span><span class="token string">''</span>
+    <span class="token comment" spellcheck="true"># 手动设置interface_info</span>
+    interface_in_info<span class="token operator">=</span><span class="token string">''</span>
+    interface_out_info<span class="token operator">=</span><span class="token string">''</span>
+
+    
+    <span class="token triple-quoted-string string">"""遍历csv文件"""</span>
+    files_dir<span class="token operator">=</span>r<span class="token string">'D:\下载\菁英12808-1'</span>
+    <span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>files_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> file_name <span class="token keyword">in</span> files<span class="token punctuation">:</span>
+            name_split_list<span class="token operator">=</span>file_name<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span>
+            interface_split_list<span class="token operator">=</span>name_split_list<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"'."</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># interface out-flow</span>
+            <span class="token comment" spellcheck="true"># interface in-flow</span>
+            interface_in_info<span class="token operator">=</span><span class="token string">"interface in-flow"</span><span class="token operator">+</span>interface_split_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">,</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+            interface_out_info<span class="token operator">=</span><span class="token string">"interface out-flow"</span><span class="token operator">+</span>interface_split_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">,</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+
+            value_list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token triple-quoted-string string">"""读取csv文件并处理"""</span>
+            read_deal_csv<span class="token punctuation">(</span>files_dir<span class="token punctuation">,</span>file_name<span class="token punctuation">)</span>
+            
+
+    <span class="token triple-quoted-string string">"""数据库数据插入完成后关闭数据库"""</span>
+    <span class="token comment" spellcheck="true"># 关闭数据库连接</span>
+    db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="通过txt向mysql里插入数据"><a href="#通过txt向mysql里插入数据" class="headerlink" title="通过txt向mysql里插入数据"></a>通过txt向mysql里插入数据</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
+<span class="token comment" spellcheck="true"># 对字符串进行转义</span>
+<span class="token keyword">from</span> pymysql<span class="token punctuation">.</span>converters <span class="token keyword">import</span> escape_string
+<span class="token keyword">def</span> <span class="token function">sql_insert</span><span class="token punctuation">(</span>TableName<span class="token punctuation">,</span>SongName<span class="token punctuation">,</span>SingerName<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    sql <span class="token operator">=</span> "INSERT INTO <span class="token operator">%</span>s<span class="token punctuation">(</span>song_name<span class="token punctuation">,</span> \
+    singer_name<span class="token punctuation">)</span> \
+    VALUES <span class="token punctuation">(</span><span class="token string">'%s'</span><span class="token punctuation">,</span> <span class="token string">'%s'</span><span class="token punctuation">)</span>" <span class="token operator">%</span> \
+    <span class="token punctuation">(</span>TableName<span class="token punctuation">,</span>SongName<span class="token punctuation">,</span>SingerName<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># try:</span>
+    <span class="token comment" spellcheck="true"># 使用cursor()方法获取操作游标 </span>
+    cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 执行sql语句</span>
+    cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 提交到数据库执行</span>
+    db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print("sucessful")</span>
+    <span class="token comment" spellcheck="true"># time.sleep(2)</span>
+    <span class="token comment" spellcheck="true"># except Exception as e:</span>
+    <span class="token comment" spellcheck="true">#     print("错误"+e)</span>
+    <span class="token comment" spellcheck="true">#     print("错误跳过继续")</span>
+        <span class="token comment" spellcheck="true"># 如果发生错误则回滚,在错误的实在再关闭数据库</span>
+        <span class="token comment" spellcheck="true"># db.rollback()</span>
+
+
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 打开数据库连接</span>
+    <span class="token comment" spellcheck="true"># ktv_song_baolijin</span>
+    db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'10.8.0.42'</span><span class="token punctuation">,</span>
+                        user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+                        password<span class="token operator">=</span><span class="token string">'Gttx@2020'</span><span class="token punctuation">,</span>
+                        database<span class="token operator">=</span><span class="token string">'push'</span><span class="token punctuation">)</span>
+    f <span class="token operator">=</span> open<span class="token punctuation">(</span>r<span class="token string">"C:\Users\15256\Desktop\宝丽金\song_mix.txt"</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true"># 返回一个文件对象 </span>
+    lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true"># 调用文件的 readline()方法 </span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> lines<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># split() 默认就是以空格为分割</span>
+        line_list<span class="token operator">=</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        SongName<span class="token operator">=</span>line_list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+        SingerName<span class="token operator">=</span>line_list<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> SingerName<span class="token punctuation">.</span>isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+        <span class="token comment" spellcheck="true"># print("歌曲插入完成"+str(SongName)+"----"+str(SingerName))</span>
+        sql_insert<span class="token punctuation">(</span><span class="token string">"ktv_song_baolijin"</span><span class="token punctuation">,</span>escape_string<span class="token punctuation">(</span>SongName<span class="token punctuation">)</span><span class="token punctuation">,</span>escape_string<span class="token punctuation">(</span>SingerName<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print("歌曲插入完成"+str(SongName)+"----"+str(SingerName))</span>
+    <span class="token comment" spellcheck="true"># 完成关闭数据库</span>
+    db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print(SongName+"---------"+SingerName)</span>
+    <span class="token comment" spellcheck="true"># break</span>
+    <span class="token comment" spellcheck="true"># print(line.split()[2])</span>
+    <span class="token comment" spellcheck="true"># break</span>
+    <span class="token comment" spellcheck="true">#line_list=line.split(" ")</span>
+
+    <span class="token comment" spellcheck="true"># print(line_list[0][3])</span>
+
+</code></pre>
+<h3 id="通过txt向mysql里批量插入数据"><a href="#通过txt向mysql里批量插入数据" class="headerlink" title="通过txt向mysql里批量插入数据"></a>通过txt向mysql里批量插入数据</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
+<span class="token comment" spellcheck="true"># 对字符串进行转义</span>
+<span class="token keyword">from</span> pymysql<span class="token punctuation">.</span>converters <span class="token keyword">import</span> escape_string
+<span class="token keyword">def</span> <span class="token function">splicing_all_value_insert</span><span class="token punctuation">(</span>SongName<span class="token punctuation">,</span>SingerName<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    value_information<span class="token operator">=</span><span class="token punctuation">(</span>escape_string<span class="token punctuation">(</span>SongName<span class="token punctuation">)</span><span class="token punctuation">,</span>escape_string<span class="token punctuation">(</span>SingerName<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    value_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>value_information<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 打开数据库连接</span>
+    <span class="token comment" spellcheck="true"># ktv_song_baolijin</span>
+    <span class="token comment" spellcheck="true"># db = pymysql.connect(host='10.8.0.42',</span>
+    <span class="token comment" spellcheck="true">#                     user='root',</span>
+    <span class="token comment" spellcheck="true">#                     password='Gttx@2020',</span>
+    <span class="token comment" spellcheck="true">#                     database='push')</span>
+
+    db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+                    user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+                    password<span class="token operator">=</span><span class="token string">'sxh.200008'</span><span class="token punctuation">,</span>
+                    database<span class="token operator">=</span><span class="token string">'mydb'</span><span class="token punctuation">)</span>
+    f <span class="token operator">=</span> open<span class="token punctuation">(</span>r<span class="token string">"C:\Users\15256\Desktop\宝丽金\song_mix.txt"</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true"># 返回一个文件对象 </span>
+    lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true"># 调用文件的 readline()方法 </span>
+    value_list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> lines<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># split() 默认就是以空格为分割</span>
+        line_list<span class="token operator">=</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        SongName<span class="token operator">=</span>line_list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+        SingerName<span class="token operator">=</span>line_list<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span>
+        <span class="token triple-quoted-string string">"""放入到列表中"""</span>
+        splicing_all_value_insert<span class="token punctuation">(</span>SongName<span class="token punctuation">,</span>SingerName<span class="token punctuation">)</span>
+    
+    <span class="token triple-quoted-string string">"""将列表中的数据插入"""</span>
+    cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    sql <span class="token operator">=</span> "INSERT INTO ktv_song_baolijin<span class="token punctuation">(</span>song_name<span class="token punctuation">,</span> \
+    singer_name<span class="token punctuation">)</span> \
+    VALUES <span class="token punctuation">(</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">)</span>"
+    cursor<span class="token punctuation">.</span>executemany<span class="token punctuation">(</span>sql<span class="token punctuation">,</span>value_list<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 关闭数据库</span>
+    cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 
                 
@@ -1373,6 +1794,18 @@ v4.0添加了防止插入数据中断,可以在已有的数据基础上更新数
                             
                                 <a href="/tags/pandns%E5%88%A4%E6%96%AD%E5%8F%96%E5%87%BA%E6%95%B0%E6%8D%AE%E4%B8%BA%E7%A9%BA/">
                                     <span class="chip bg-color">pandns判断取出数据为空</span>
+                                </a>
+                            
+                                <a href="/tags/sql%E5%AE%9E%E7%8E%B0%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/">
+                                    <span class="chip bg-color">sql实现大量数据批量插入</span>
+                                </a>
+                            
+                                <a href="/tags/sql%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/">
+                                    <span class="chip bg-color">sql批量插入</span>
+                                </a>
+                            
+                                <a href="/tags/mysql%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">mysql数据批量到数据库</span>
                                 </a>
                             
                         </div>
@@ -1762,7 +2195,7 @@ v4.0添加了防止插入数据中断,可以在已有的数据基础上更新数
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">shixiuhai</a>

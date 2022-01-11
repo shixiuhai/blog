@@ -542,14 +542,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-29
+                    2021-12-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    216
+                    273
                 </div>
                 
 
@@ -617,6 +617,21 @@ test_kwargs<span class="token punctuation">(</span><span class="token operator">
 <h4 id="pip-指定阿里源安装"><a href="#pip-指定阿里源安装" class="headerlink" title="pip 指定阿里源安装"></a>pip 指定阿里源安装</h4><pre class=" language-python"><code class="language-python">pip install <span class="token operator">-</span>r requirements<span class="token punctuation">.</span>txt  <span class="token operator">-</span>i https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span>
 </code></pre>
 <h4 id="pip-生成-requirements-环境依赖文件"><a href="#pip-生成-requirements-环境依赖文件" class="headerlink" title="pip 生成 requirements 环境依赖文件"></a>pip 生成 requirements 环境依赖文件</h4><pre class=" language-python"><code class="language-python">pip freeze  <span class="token operator">></span> requirements
+</code></pre>
+<h3 id="pyton遍历文件夹下的文件"><a href="#pyton遍历文件夹下的文件" class="headerlink" title="pyton遍历文件夹下的文件"></a>pyton遍历文件夹下的文件</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
+<span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>imagesdir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 获取文件夹下所以图片的名字</span>
+        <span class="token keyword">for</span> imagename <span class="token keyword">in</span> files<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 拼接图片路径</span>
+            imagepath <span class="token operator">=</span> root <span class="token operator">+</span> <span class="token string">'/'</span><span class="token operator">+</span> imagename
+            images_path_name_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+                <span class="token string">'imagepath'</span><span class="token punctuation">:</span>imagepath<span class="token punctuation">,</span>
+                <span class="token string">'imagename'</span><span class="token punctuation">:</span>imagename
+        
+
+            <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;)</span>
+    
+    <span class="token keyword">return</span> images_path_name_list
 </code></pre>
 
                 
@@ -1055,7 +1070,7 @@ test_kwargs<span class="token punctuation">(</span><span class="token operator">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">shixiuhai</a>
