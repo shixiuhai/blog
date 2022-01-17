@@ -574,21 +574,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-30
+                    2022-01-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    941
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -718,6 +718,30 @@ WantedBy<span class="token operator">=</span>multi-user.target
 systemctl start <span class="token function">test</span>
 </code></pre>
 <h3 id="ubuntu-ufw设置端口允许（9000端口允许）"><a href="#ubuntu-ufw设置端口允许（9000端口允许）" class="headerlink" title="ubuntu ufw设置端口允许（9000端口允许）"></a>ubuntu ufw设置端口允许（9000端口允许）</h3><pre class=" language-bash"><code class="language-bash">ufw allow proto tcp from 10.8.0.0/24 to 10.8.0.37 port 9000
+</code></pre>
+<h3 id="python3-消息队列-queue"><a href="#python3-消息队列-queue" class="headerlink" title="python3 消息队列(queue)"></a>python3 消息队列(queue)</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 进程之间通过消息队列进行共享</span>
+<span class="token comment" spellcheck="true"># 导入消息队列模块</span>
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> multiprocessing
+<span class="token keyword">import</span> threading
+<span class="token comment" spellcheck="true"># 创建一个放1个消息的消息队列</span>
+queue<span class="token operator">=</span>multiprocessing<span class="token punctuation">.</span>Queue<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true"># 放入第一个值</span>
+i<span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">def</span> <span class="token function">aa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> i
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        i<span class="token operator">+=</span><span class="token number">1</span>
+        queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token operator">%</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">bb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"消费到的数据"</span><span class="token operator">+</span>queue<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>aa<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># threading.Thread(target=bb,args=()).start()</span>
 </code></pre>
 
                 

@@ -546,21 +546,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-08
+                    2022-01-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    97
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -580,10 +580,199 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="yolov5命令训练命令"><a href="#yolov5命令训练命令" class="headerlink" title="yolov5命令训练命令"></a>yolov5命令训练命令</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --nproc_per_node指定训练Gpu的个数, --batch 16 加快训练速度（批处理） --cfg 指定神经网络模型 --data 训练数据集</span>
-<span class="token comment" spellcheck="true"># -- project 模型保存位置  --device 0,1 指定GPU 0和1进行训练</span>
-<span class="token comment" spellcheck="true"># smoke.yaml是训练数据集指定文件</span>
-python3 <span class="token operator">-</span>m torch<span class="token punctuation">.</span>distributed<span class="token punctuation">.</span>launch <span class="token operator">-</span><span class="token operator">-</span>nproc_per_node <span class="token number">2</span> train<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>batch <span class="token number">16</span> <span class="token operator">-</span><span class="token operator">-</span>cfg <span class="token punctuation">.</span><span class="token operator">/</span>models<span class="token operator">/</span>yolov5l<span class="token punctuation">.</span>yaml <span class="token operator">-</span><span class="token operator">-</span>data <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>smokingdata<span class="token operator">/</span>smoke<span class="token punctuation">.</span>yaml  <span class="token operator">-</span><span class="token operator">-</span>project <span class="token punctuation">.</span><span class="token operator">/</span>weight<span class="token operator">/</span>smoke  <span class="token operator">-</span><span class="token operator">-</span>device <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span>
+                <h4 id="yolov5命令训练命令"><a href="#yolov5命令训练命令" class="headerlink" title="yolov5命令训练命令"></a>yolov5命令训练命令</h4><pre class=" language-python"><code class="language-python"><span class="token operator">-</span>m torch<span class="token punctuation">.</span>distributed<span class="token punctuation">.</span>launch 指定并行的方式<span class="token punctuation">;</span> 、
+<span class="token operator">-</span><span class="token operator">-</span>nproc_per_node <span class="token number">2</span> 指定的GPU是两块；
+s<span class="token operator">-</span><span class="token operator">-</span>batch <span class="token number">16</span> 批处理大小加快训练速度；
+<span class="token operator">-</span><span class="token operator">-</span>cfg <span class="token punctuation">.</span><span class="token operator">/</span>models<span class="token operator">/</span>yolov5l<span class="token punctuation">.</span>yaml是指定加载的神经网络模型；
+<span class="token operator">-</span><span class="token operator">-</span>data <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>maskdata<span class="token operator">/</span>mask<span class="token punctuation">.</span>yaml 是指定训练集位置；
+<span class="token operator">-</span><span class="token operator">-</span>project <span class="token punctuation">.</span><span class="token operator">/</span>weight<span class="token operator">/</span>mask 是指定生成的训练模型位置；
+<span class="token operator">-</span><span class="token operator">-</span>device <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span>表示使用了GPU <span class="token number">0</span>和GPU1
+python3 <span class="token operator">-</span>m torch<span class="token punctuation">.</span>distributed<span class="token punctuation">.</span>launch <span class="token operator">-</span><span class="token operator">-</span>nproc_per_node <span class="token number">2</span> train<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>batch <span class="token number">32</span> <span class="token operator">-</span><span class="token operator">-</span>cfg <span class="token punctuation">.</span><span class="token operator">/</span>models<span class="token operator">/</span>yolov5l<span class="token punctuation">.</span>yaml <span class="token operator">-</span><span class="token operator">-</span>data <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>FaceTrain<span class="token operator">/</span>face<span class="token punctuation">.</span>yaml  <span class="token operator">-</span><span class="token operator">-</span>project <span class="token punctuation">.</span><span class="token operator">/</span>weight
+</code></pre>
+<h1 id="基于yolov5训练项目-基于python脚本"><a href="#基于yolov5训练项目-基于python脚本" class="headerlink" title="基于yolov5训练项目 基于python脚本"></a>基于yolov5训练项目 基于python脚本</h1><h3 id="代码使用"><a href="#代码使用" class="headerlink" title="代码使用"></a>代码使用</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 1. 获取项目</span>
+<span class="token function">git</span> clone http://172.16.0.8:6001/shixiuhai/yolov5_train.git
+<span class="token comment" spellcheck="true"># 2. 运行环境 python3.8.6-3.8.9</span>
+<span class="token comment" spellcheck="true"># 3. 配置虚拟环境（windows）</span>
+pip <span class="token function">install</span> virtualenv
+virtualenv <span class="token function">env</span> <span class="token comment" spellcheck="true"># env是虚拟环境的名字</span>
+
+<span class="token comment" spellcheck="true"># 4.  进入虚拟环境</span>
+<span class="token function">env</span> /scripts/active<span class="token punctuation">(</span>windows<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 5. 环境依赖位置在yolov5里面 requirements.txt 安装依赖的方法 pip install -r yolov5_deal_data/yolov5/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ # 指定阿里源进行安装</span>
+
+<span class="token comment" spellcheck="true"># 6. 完成以上步骤后即可运行代码</span>
+</code></pre>
+<h3 id="代码介绍"><a href="#代码介绍" class="headerlink" title="代码介绍"></a>代码介绍</h3><p>项目的根目录如下所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/yolov5xunliangeng.PNG"></p>
+<h1 id="1-基于voc数据集转换为txt数据集的方案"><a href="#1-基于voc数据集转换为txt数据集的方案" class="headerlink" title="1. 基于voc数据集转换为txt数据集的方案"></a><code>1. 基于voc数据集转换为txt数据集的方案</code></h1><p>1.1 由于网络上可以参考的数据集的格式大部分都是voc数据集格式，这里我们需要一种可以将voc数据集转换为txt数据集的快速方案</p>
+<p>代码位置在：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/voctoyolov5.png"></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 代码实现如下，是从xml文件中提取关键关键内容到txt</span>
+<span class="token comment" spellcheck="true"># xml_path 是需要转换的xml文件路径</span>
+<span class="token comment" spellcheck="true"># txt_path 是生成的yolov5标注的txt文件存放路径位置</span>
+<span class="token comment" spellcheck="true"># cls_id 是训练多个类别时，自行设定的类的顺序，这个顺序从 0 开始 比如 0代表A类 1代表B类 2代表C类 依次类推</span>
+
+
+<span class="token triple-quoted-string string">"""实现voc的xml数据集转换为txt数据集"""</span>
+<span class="token keyword">import</span> xml<span class="token punctuation">.</span>etree<span class="token punctuation">.</span>ElementTree <span class="token keyword">as</span> ET
+<span class="token keyword">import</span> pickle
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> os <span class="token keyword">import</span> listdir<span class="token punctuation">,</span> getcwd
+<span class="token keyword">from</span> os<span class="token punctuation">.</span>path <span class="token keyword">import</span> join
+<span class="token comment" spellcheck="true">## 0安全帽 1卡车 2 脚手架</span>
+<span class="token comment" spellcheck="true"># 改变坐标格式 将做标里面的size 转换对应到txt里面的数据</span>
+<span class="token keyword">def</span> <span class="token function">convert</span><span class="token punctuation">(</span>size<span class="token punctuation">,</span> box<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dw <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token operator">/</span><span class="token punctuation">(</span>size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    dh <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token operator">/</span><span class="token punctuation">(</span>size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    x <span class="token operator">=</span> <span class="token punctuation">(</span>box<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> box<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2.0</span> 
+    y <span class="token operator">=</span> <span class="token punctuation">(</span>box<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> box<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2.0</span> 
+    w <span class="token operator">=</span> box<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> box<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    h <span class="token operator">=</span> box<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">-</span> box<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+    x <span class="token operator">=</span> x<span class="token operator">*</span>dw
+    w <span class="token operator">=</span> w<span class="token operator">*</span>dw
+    y <span class="token operator">=</span> y<span class="token operator">*</span>dh
+    h <span class="token operator">=</span> h<span class="token operator">*</span>dh
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>w<span class="token punctuation">,</span>h<span class="token punctuation">)</span>
+xml_path <span class="token operator">=</span> <span class="token string">"C:/Users/15256/Downloads/VOC2028/VOC2028/Annotations/"</span>
+txt_path <span class="token operator">=</span> <span class="token string">"C:/Users/15256/Downloads/VOC2028/VOC2028/labels/"</span>
+<span class="token keyword">def</span> <span class="token function">convert_annotation</span><span class="token punctuation">(</span>xml_path<span class="token punctuation">,</span>txt_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>txt_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>txt_path<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> image_id <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>xml_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token comment" spellcheck="true">#         print(xml_path+image_id)</span>
+        xml_file <span class="token operator">=</span> open<span class="token punctuation">(</span>xml_path<span class="token operator">+</span>image_id<span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+        txt_file <span class="token operator">=</span> open<span class="token punctuation">(</span>txt_path<span class="token operator">+</span>image_id<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"txt"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+        tree<span class="token operator">=</span>ET<span class="token punctuation">.</span>parse<span class="token punctuation">(</span>xml_file<span class="token punctuation">)</span>
+        root <span class="token operator">=</span> tree<span class="token punctuation">.</span>getroot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        size <span class="token operator">=</span> root<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'size'</span><span class="token punctuation">)</span>
+        w <span class="token operator">=</span> int<span class="token punctuation">(</span>size<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'width'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+        h <span class="token operator">=</span> int<span class="token punctuation">(</span>size<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'height'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> obj <span class="token keyword">in</span> root<span class="token punctuation">.</span>iter<span class="token punctuation">(</span><span class="token string">'object'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># difficult = obj.find('difficult').text</span>
+            <span class="token comment" spellcheck="true"># difficult=0</span>
+            <span class="token comment" spellcheck="true"># 目标名字</span>
+            <span class="token comment" spellcheck="true">#cls = obj.find('name').text</span>
+            <span class="token comment" spellcheck="true"># cls_id = obj.index(cls)</span>
+            <span class="token comment" spellcheck="true"># print(cls_id)</span>
+            <span class="token comment" spellcheck="true"># if cls=='mask':</span>
+            <span class="token comment" spellcheck="true">#     cls_id=0</span>
+            <span class="token comment" spellcheck="true"># elif cls=='nomask':</span>
+            <span class="token comment" spellcheck="true">#     cls_id=1</span>
+            <span class="token comment" spellcheck="true"># 获取做标相关数值</span>
+            <span class="token comment" spellcheck="true"># cls_id 目标的位置 0 1 2</span>
+            cls_id<span class="token operator">=</span><span class="token number">0</span>
+            xmlbox <span class="token operator">=</span> obj<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'bndbox'</span><span class="token punctuation">)</span>
+        
+            b <span class="token operator">=</span> <span class="token punctuation">(</span>float<span class="token punctuation">(</span>xmlbox<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'xmin'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">,</span> float<span class="token punctuation">(</span>xmlbox<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'xmax'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">,</span> float<span class="token punctuation">(</span>xmlbox<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'ymin'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">,</span> float<span class="token punctuation">(</span>xmlbox<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'ymax'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            bb <span class="token operator">=</span> convert<span class="token punctuation">(</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>h<span class="token punctuation">)</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+            txt_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>str<span class="token punctuation">(</span>cls_id<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span>str<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token keyword">for</span> a <span class="token keyword">in</span> bb<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
+convert_annotation<span class="token punctuation">(</span>xml_path<span class="token punctuation">,</span>txt_path<span class="token punctuation">)</span>
+</code></pre>
+<h1 id="2-基于已有模型的再次训练"><a href="#2-基于已有模型的再次训练" class="headerlink" title="2. 基于已有模型的再次训练"></a><code>2. 基于已有模型的再次训练</code></h1><p>2.1 代码位置如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/yolov5banzidong%E8%AE%AD%E7%BB%83.png"></p>
+<p>2.2 运行方法</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1. 删除sourceimages targetimages targetlabels里面所有的内容</span>
+<span class="token comment" spellcheck="true"># 2. 将所需要的进行自动标注的图片放到sourceimages文件夹中</span>
+<span class="token comment" spellcheck="true"># 3. 已经训练好的模型放置位置在yolov5/mydata/models/ago_models (这个路径是相对与根目录的相对路径)</span>
+<span class="token comment" spellcheck="true"># 4. 运行make_images_to_labels_1.py 会进行自动标注</span>
+<span class="token comment" spellcheck="true"># 5. 进入到targetimages这个文件夹中将感觉有问题的图片进行删除</span>
+<span class="token comment" spellcheck="true"># 6. 运行del_unconfidence_labels_2.py 会删除不信任的图片</span>
+<span class="token comment" spellcheck="true"># 7. maketrain_3.py 跳过，目前已经不使用了</span>
+</code></pre>
+<h1 id="3-下载部分网站上的训练图片"><a href="#3-下载部分网站上的训练图片" class="headerlink" title="3. 下载部分网站上的训练图片"></a><code>3. 下载部分网站上的训练图片</code></h1><blockquote>
+<p>代码的位置在项目如下图所示：其中代码适用的网站只有</p>
+<p># 素材1 <a target="_blank" rel="noopener" href="https://sc.orsoon.com/search/0-%E5%90%B8%E7%83%9F-0-0-0-0-0-0-0-9-0-0-0-0-3.html">https://sc.orsoon.com/search/0-%E5%90%B8%E7%83%9F-0-0-0-0-0-0-0-9-0-0-0-0-3.html</a></p>
+<p># 素材2 <a target="_blank" rel="noopener" href="https://www.pexels.com/zh-cn/searc">https://www.pexels.com/zh-cn/searc</a></p>
+<p>因为是简单的爬取方案后续考虑采用Scrapy框架优化</p>
+<p>代码图片保存路径fileurl=”C:/Users/Administrator/Desktop/“+str(a)+’.jpg’</p>
+<p>其中C:/Users/Administrator/Desktop/是保存在计算机中的路径</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/asdfasdfasf.png"></p>
+<pre class=" language-python"><code class="language-python">
+<span class="token keyword">from</span> urllib<span class="token punctuation">.</span>request <span class="token keyword">import</span> urlopen
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<span class="token keyword">import</span> requests
+
+
+
+<span class="token comment" spellcheck="true"># 发送请求返回页面标签</span>
+response <span class="token operator">=</span> urlopen<span class="token punctuation">(</span><span class="token string">"https://sc.orsoon.com/search/0-%E5%90%B8%E7%83%9F-0-0-0-0-0-0-0-9-0-0-0-0-1.html"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 以utf-8编码格式读取response数据</span>
+response <span class="token operator">=</span> response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(response)</span>
+
+<span class="token comment" spellcheck="true"># # 使用BeautifulSoup截取</span>
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>response<span class="token punctuation">,</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(soup)</span>
+<span class="token comment" spellcheck="true"># print(soup)</span>
+<span class="token comment" spellcheck="true"># # 截取所有img标签</span>
+<span class="token comment" spellcheck="true"># 定义一个存放链接地址的列表</span>
+images_url_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># print(soup.find_all("img"))</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"data-original"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> item<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"data-original"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        images_url_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"data-original"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        images_url_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"src"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+a<span class="token operator">=</span><span class="token number">1000</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> images_url_list<span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 进行下载存储</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 进行下载链接get</span>
+    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    fileurl<span class="token operator">=</span><span class="token string">"C:/Users/Administrator/Desktop/"</span><span class="token operator">+</span>str<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'.jpg'</span>
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span>fileurl<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>r<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+
+
+    
+    <span class="token comment" spellcheck="true"># print(item.get("data-original"))</span>
+    <span class="token comment" spellcheck="true"># print(item.attrs.get("data-original"))</span>
+
+<span class="token comment" spellcheck="true"># # 文件名称</span>
+<span class="token comment" spellcheck="true"># a = 0</span>
+<span class="token comment" spellcheck="true"># # 遍历img标签集和</span>
+<span class="token comment" spellcheck="true"># for item in soup.find_all("img"):</span>
+<span class="token comment" spellcheck="true">#     print(item.attrs.get("src"))</span>
+<span class="token comment" spellcheck="true">#     # 下载图片</span>
+<span class="token comment" spellcheck="true">#     # 下载图片保存的位置及名称</span>
+<span class="token comment" spellcheck="true">#     a += 1;</span>
+<span class="token comment" spellcheck="true">#     fileurl = "C:/Users/Administrator/Desktop/" + str(a) + ".jpg"</span>
+<span class="token comment" spellcheck="true">#     # 写入保存</span>
+<span class="token comment" spellcheck="true">#     r = requests.get(item.attrs.get("src"))</span>
+<span class="token comment" spellcheck="true">#     with open(fileurl, 'wb') as f:</span>
+<span class="token comment" spellcheck="true">#         f.write(r.content)</span>
+<span class="token comment" spellcheck="true"># https://photoos.macsc.com/180504/180504_99/wiqgkfDV0r_small.jpg</span>
+<span class="token comment" spellcheck="true"># https://photoos.macsc.com/180504/180504_99/wiqgkfDV0r_small.jpg</span>
+<span class="token comment" spellcheck="true"># 素材1 https://sc.orsoon.com/search/0-%E5%90%B8%E7%83%9F-0-0-0-0-0-0-0-9-0-0-0-0-3.html</span>
+<span class="token comment" spellcheck="true"># 素材2 https://www.pexels.com/zh-cn/searc</span>
+</code></pre>
+<h1 id="4-基于命令的方式对数据集进行训练"><a href="#4-基于命令的方式对数据集进行训练" class="headerlink" title="4. 基于命令的方式对数据集进行训练"></a><code>4. 基于命令的方式对数据集进行训练</code></h1><h3 id="命令训练"><a href="#命令训练" class="headerlink" title="命令训练"></a>命令训练</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 1. 这是一种基于双GPU可加速的训练方案</span>
+<span class="token comment" spellcheck="true"># 2.参数介绍</span>
+-m torch.distributed.launch 指定并行的方式<span class="token punctuation">;</span> 、
+--nproc_per_node 2 指定的GPU是两块；--batch 16 批处理大小；
+--cfg ./models/yolov5l.yaml是指定加载的神经网络模型；
+--data <span class="token punctuation">..</span>/maskdata/mask.yaml 是指定训练集位置；
+--project ./weight/mask 是指定生成的训练模型位置；
+--device 0,1表示使用了GPU 0和GPU1
+python3 -m torch.distributed.launch --nproc_per_node 2 train.py --batch 16 --cfg ./models/yolov5l.yaml --data <span class="token punctuation">..</span>/maskdata/mask.yaml  --project ./weight/mask  --device 0,1
+</code></pre>
+<blockquote>
+<p>yolov5l.yaml内容参考如下图所示 其中最重要需要修改的就是nc，nc的选择根据实际我们训练的总类数进行选择</p>
+<p>关于神经网络对模型准确性(在640尺寸上)的排序由小到大为 5n&lt;5s&lt;5m&lt;5l&lt;5x</p>
+<p>关于神经网络对模型准确性(在1280尺寸上)的排序由小到大为 5n6&lt;5s6&lt;5m6&lt;5l6&lt;5x6</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/yolov5xunlianxuanzengshengjianwangl.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shixiuhai/Gallery1@master/yolov.PNG"></p>
+<h3 id="训练中简单的可视化"><a href="#训练中简单的可视化" class="headerlink" title="训练中简单的可视化"></a>训练中简单的可视化</h3><blockquote>
+<p>因为yolov5里面自带tensorboard，所有tensorboard的可视化</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash">tensorboard --logdir<span class="token operator">=</span>runs --host 0.0.0.0 <span class="token comment" spellcheck="true"># runs 在实际中是模型生成的路径即为上述训练过程中--project指定的 ./weight/mask</span>
+在实际路径的选择上可以选择相对路径也可以为绝对路径
 </code></pre>
 
                 

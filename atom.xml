@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2022-01-04T03:56:00.285Z</updated>
+  <updated>2022-01-13T09:08:45.736Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>算法基础</title>
+    <link href="http://www.fuyaoershang.xyz/2022/011317141.html"/>
+    <id>http://www.fuyaoershang.xyz/2022/011317141.html</id>
+    <published>2022-01-13T08:41:40.000Z</published>
+    <updated>2022-01-13T09:08:45.736Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;递归实列-汉诺塔问题&quot;&gt;&lt;a href=&quot;#递归实列-汉诺塔问题&quot; class=&quot;headerlink&quot; title=&quot;递归实列(汉诺塔问题)&quot;&gt;&lt;/a&gt;递归实列(汉诺塔问题)&lt;/h3&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="算法基础" scheme="http://www.fuyaoershang.xyz/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="基础算法" scheme="http://www.fuyaoershang.xyz/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nginx基础使用</title>
     <link href="http://www.fuyaoershang.xyz/2022/010442496.html"/>
     <id>http://www.fuyaoershang.xyz/2022/010442496.html</id>
     <published>2022-01-04T03:32:59.000Z</published>
-    <updated>2022-01-04T03:56:00.285Z</updated>
+    <updated>2022-01-11T09:46:22.491Z</updated>
     
     
       
@@ -309,7 +334,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112926093.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112926093.html</id>
     <published>2021-11-29T09:28:00.000Z</published>
-    <updated>2021-12-08T09:05:01.810Z</updated>
+    <updated>2022-01-13T01:37:05.300Z</updated>
     
     
       
@@ -442,7 +467,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/112949872.html"/>
     <id>http://www.fuyaoershang.xyz/2021/112949872.html</id>
     <published>2021-11-29T02:17:48.000Z</published>
-    <updated>2021-12-30T05:44:01.590Z</updated>
+    <updated>2022-01-14T06:15:42.653Z</updated>
     
     
       
@@ -483,7 +508,7 @@
     <link href="http://www.fuyaoershang.xyz/2021/111223223.html"/>
     <id>http://www.fuyaoershang.xyz/2021/111223223.html</id>
     <published>2021-11-12T05:39:31.000Z</published>
-    <updated>2021-12-30T06:51:31.903Z</updated>
+    <updated>2022-01-17T01:55:37.282Z</updated>
     
     
       
@@ -500,25 +525,6 @@
     
     
     <category term="python日常随记" scheme="http://www.fuyaoershang.xyz/tags/python%E6%97%A5%E5%B8%B8%E9%9A%8F%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>日常密码本</title>
-    <link href="http://www.fuyaoershang.xyz/2021/11122148.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/11122148.html</id>
-    <published>2021-11-12T03:56:55.000Z</published>
-    <updated>2021-12-19T06:16:25.746Z</updated>
-    
-    
-    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
-    
-    
-    
-    <category term="日常密码" scheme="http://www.fuyaoershang.xyz/categories/%E6%97%A5%E5%B8%B8%E5%AF%86%E7%A0%81/"/>
-    
-    
-    <category term="日常密码记录" scheme="http://www.fuyaoershang.xyz/tags/%E6%97%A5%E5%B8%B8%E5%AF%86%E7%A0%81%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   

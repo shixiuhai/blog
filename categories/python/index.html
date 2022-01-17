@@ -618,6 +618,15 @@
                 </a>
                 
                 
+                <a href="/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" title="算法基础: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">算法基础
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
             </div>
         </div>
     </div>
@@ -784,8 +793,10 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                yolov5命令训练命令# --nproc_per_node指定训练Gpu的个数, --batch 16 加快训练速度（批处理） --cfg 指定神经网络模型 --data 训练数据集
-# -- project 模型保存位置  --devi
+                                yolov5命令训练命令-m torch.distributed.launch 指定并行的方式; 、
+--nproc_per_node 2 指定的GPU是两块；
+s--batch 16 批处理大小加快训练速度；
+--cfg ./models
                             
                         </div>
                         <div class="publish-info">
