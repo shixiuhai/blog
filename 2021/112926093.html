@@ -546,7 +546,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-13
+                    2022-01-18
                 </div>
                 
 
@@ -587,6 +587,7 @@ s<span class="token operator">-</span><span class="token operator">-</span>batch
 <span class="token operator">-</span><span class="token operator">-</span>data <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>maskdata<span class="token operator">/</span>mask<span class="token punctuation">.</span>yaml 是指定训练集位置；
 <span class="token operator">-</span><span class="token operator">-</span>project <span class="token punctuation">.</span><span class="token operator">/</span>weight<span class="token operator">/</span>mask 是指定生成的训练模型位置；
 <span class="token operator">-</span><span class="token operator">-</span>device <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span>表示使用了GPU <span class="token number">0</span>和GPU1
+<span class="token operator">-</span><span class="token operator">-</span> <span class="token operator">-</span><span class="token operator">-</span>weights face<span class="token punctuation">.</span>pt 表示基于的基础模型
 python3 <span class="token operator">-</span>m torch<span class="token punctuation">.</span>distributed<span class="token punctuation">.</span>launch <span class="token operator">-</span><span class="token operator">-</span>nproc_per_node <span class="token number">2</span> train<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>batch <span class="token number">32</span> <span class="token operator">-</span><span class="token operator">-</span>cfg <span class="token punctuation">.</span><span class="token operator">/</span>models<span class="token operator">/</span>yolov5l<span class="token punctuation">.</span>yaml <span class="token operator">-</span><span class="token operator">-</span>data <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>FaceTrain<span class="token operator">/</span>face<span class="token punctuation">.</span>yaml  <span class="token operator">-</span><span class="token operator">-</span>project <span class="token punctuation">.</span><span class="token operator">/</span>weight
 </code></pre>
 <h1 id="基于yolov5训练项目-基于python脚本"><a href="#基于yolov5训练项目-基于python脚本" class="headerlink" title="基于yolov5训练项目 基于python脚本"></a>基于yolov5训练项目 基于python脚本</h1><h3 id="代码使用"><a href="#代码使用" class="headerlink" title="代码使用"></a>代码使用</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 1. 获取项目</span>

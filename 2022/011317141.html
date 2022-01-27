@@ -542,14 +542,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-13
+                    2022-01-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    63
+                    132
                 </div>
                 
 
@@ -585,6 +585,24 @@
       
         <span class="token comment" spellcheck="true"># 将 n-1个盘中从b经过a移动到c</span>
         hanoi<span class="token punctuation">(</span>n<span class="token punctuation">,</span>b<span class="token punctuation">,</span>a<span class="token punctuation">,</span>c<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="二分查找代码"><a href="#二分查找代码" class="headerlink" title="二分查找代码"></a>二分查找代码</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">binary_search</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    left <span class="token operator">=</span><span class="token number">0</span> 
+    right<span class="token operator">=</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">while</span> left <span class="token operator">&lt;=</span>right<span class="token punctuation">:</span>
+        mid <span class="token operator">=</span> <span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+        <span class="token keyword">if</span> li<span class="token punctuation">(</span>mid<span class="token punctuation">)</span> <span class="token operator">==</span> val<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> mid
+        <span class="token comment" spellcheck="true"># val li(mid)</span>
+        <span class="token keyword">elif</span> li<span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token operator">></span>val<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 待查找值在mid 左边</span>
+            right<span class="token operator">=</span>mid<span class="token number">-1</span>
+        <span class="token comment" spellcheck="true">#li(mid) val</span>
+        <span class="token keyword">else</span>：<span class="token comment" spellcheck="true"># li(mid)&lt;val # 待查找值在右边</span>
+            left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
+      <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> NONE
+            
+            
 </code></pre>
 
                 
@@ -761,48 +779,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/011317141.html">
+                <a href="/2022/012143105.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法基础">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="基于多台交换机的数据补录方法">
                         
-                        <span class="card-title">算法基础</span>
+                        <span class="card-title">基于多台交换机的数据补录方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Here's something encrypted, password is required to continue reading.
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    算法基础
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">基础算法</span>
+                    <a href="/tags/csv%E5%88%B0mysql/">
+                        <span class="chip bg-color">csv到mysql</span>
+                    </a>
+                    
+                    <a href="/tags/mysql%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/">
+                        <span class="chip bg-color">mysql数据批量插入</span>
                     </a>
                     
                 </div>
