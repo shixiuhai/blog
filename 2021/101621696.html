@@ -546,21 +546,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-30
+                    2022-02-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    894
+                    978
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -694,6 +694,19 @@ vim filename
 <span class="token function">git</span> config --global --unset http.proxy
 
 <span class="token function">git</span> config --global --unset https.proxy
+
+<span class="token comment" spellcheck="true">## github 设置用户名和邮箱</span>
+<span class="token comment" spellcheck="true"># 1. 全局设置（对所有git工程都有效）</span>
+
+<span class="token function">git</span> config --global user.name  用户名 <span class="token comment" spellcheck="true"># 设置用户名</span>
+
+<span class="token function">git</span> config --global user.email 邮箱 <span class="token comment" spellcheck="true"># 设置邮箱</span>
+
+<span class="token comment" spellcheck="true"># 2. 对特定branch（切换到工程目录下执行）</span>
+<span class="token function">git</span> config user.name 用户名 <span class="token comment" spellcheck="true"># 设置用户名</span>
+
+<span class="token function">git</span> config user.email 邮箱 <span class="token comment" spellcheck="true"># 设置邮箱</span>
+
 
 <span class="token comment" spellcheck="true">## git上传指定账户和密码</span>
 <span class="token function">git</span> push http://abc@qq.com:abc123456@git.xxx.com/www.git
