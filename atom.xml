@@ -6,7 +6,7 @@
   <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2022-03-16T08:56:10.165Z</updated>
+  <updated>2022-03-17T07:17:39.175Z</updated>
   <id>http://www.fuyaoershang.xyz/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>端云平台常用问题搜集解决</title>
+    <link href="http://www.fuyaoershang.xyz/2022/031738036.html"/>
+    <id>http://www.fuyaoershang.xyz/2022/031738036.html</id>
+    <published>2022-03-17T07:16:21.000Z</published>
+    <updated>2022-03-17T07:17:39.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基础环境相关管理&quot;&gt;&lt;a href=&quot;#基础环境相关管理&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日记" scheme="http://www.fuyaoershang.xyz/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="端云平台常用问题搜集解决" scheme="http://www.fuyaoershang.xyz/tags/%E7%AB%AF%E4%BA%91%E5%B9%B3%E5%8F%B0%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98%E6%90%9C%E9%9B%86%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>scrapy学习</title>
     <link href="http://www.fuyaoershang.xyz/2022/03045367.html"/>
     <id>http://www.fuyaoershang.xyz/2022/03045367.html</id>
     <published>2022-03-04T02:15:55.000Z</published>
-    <updated>2022-03-16T08:56:10.165Z</updated>
+    <updated>2022-03-16T09:32:36.895Z</updated>
     
     
       
@@ -483,31 +508,6 @@
     
     
     <category term="网站备案信息查询脚本" scheme="http://www.fuyaoershang.xyz/tags/%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python调用asrtv1.0的语音识别脏话接口</title>
-    <link href="http://www.fuyaoershang.xyz/2021/112915113.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/112915113.html</id>
-    <published>2021-11-29T04:27:08.000Z</published>
-    <updated>2021-11-29T08:22:11.733Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://shixiuhai.github.io/work_share/python_asrt_Recognition.zip&quot;  target=&quot;_blank&quot;  style=&quot;color: #8ebf42&quot;&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
-    
-    
-    <category term="python调用asrt实现脏话识别" scheme="http://www.fuyaoershang.xyz/tags/python%E8%B0%83%E7%94%A8asrt%E5%AE%9E%E7%8E%B0%E8%84%8F%E8%AF%9D%E8%AF%86%E5%88%AB/"/>
     
   </entry>
   
