@@ -546,14 +546,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-03-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    204
+                    283
                 </div>
                 
 
@@ -580,7 +580,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="nginx-反向代理配置"><a href="#nginx-反向代理配置" class="headerlink" title="nginx 反向代理配置"></a>nginx 反向代理配置</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 反向代理基本配置</span>
+                <h3 id="关于nginx代理的几种情况进行一下描述"><a href="#关于nginx代理的几种情况进行一下描述" class="headerlink" title="关于nginx代理的几种情况进行一下描述"></a>关于nginx代理的几种情况进行一下描述</h3><ul>
+<li>正向代理是帮助用户进行代理，web网站不知道真实用户</li>
+<li>反向代理是帮助服务器代理，用户不知道真实的服务器</li>
+<li>nginx 配置负载均衡</li>
+</ul>
+<h3 id="nginx配置网站访问"><a href="#nginx配置网站访问" class="headerlink" title="nginx配置网站访问"></a>nginx配置网站访问</h3><h2 id="nginx支持php访问"><a href="#nginx支持php访问" class="headerlink" title="nginx支持php访问"></a>nginx支持php访问</h2><h3 id="nginx-反向代理配置"><a href="#nginx-反向代理配置" class="headerlink" title="nginx 反向代理配置"></a>nginx 反向代理配置</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 反向代理基本配置</span>
 server <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
         listen       80<span class="token punctuation">;</span>
         server_name  208.208.128.122<span class="token punctuation">;</span>
