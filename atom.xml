@@ -3,11 +3,11 @@
   <title>思进不思停的博客笔记</title>
   
   <subtitle>思进不思停</subtitle>
-  <link href="http://www.fuyaoershang.xyz/atom.xml" rel="self"/>
+  <link href="https://shixiuhai.github.io/blog/atom.xml" rel="self"/>
   
-  <link href="http://www.fuyaoershang.xyz/"/>
-  <updated>2022-03-25T09:12:47.700Z</updated>
-  <id>http://www.fuyaoershang.xyz/</id>
+  <link href="https://shixiuhai.github.io/blog/"/>
+  <updated>2022-03-28T09:29:53.609Z</updated>
+  <id>https://shixiuhai.github.io/blog/</id>
   
   <author>
     <name>shixiuhai</name>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>oauth2开发</title>
+    <link href="https://shixiuhai.github.io/blog/2022/032822757.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/032822757.html</id>
+    <published>2022-03-28T07:26:46.000Z</published>
+    <updated>2022-03-28T09:29:53.609Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;oauth2-整体流程&quot;&gt;&lt;a href=&quot;#oauth2-整体流程&quot; class=&quot;headerlink&quot; title=&quot;oauth2 整体流程&quot;&gt;&lt;/a&gt;oauth2 整体流程&lt;/h2&gt;&lt;h2 id=&quot;oauth2-参数相关&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://shixiuhai.github.io/blog/categories/python/"/>
+    
+    
+    <category term="oauth2登录认证接口" scheme="https://shixiuhai.github.io/blog/tags/oauth2%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E6%8E%A5%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于scrapy实现对网页敏感词和敏感图片的识别</title>
-    <link href="http://www.fuyaoershang.xyz/2022/032511872.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/032511872.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/032511872.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/032511872.html</id>
     <published>2022-03-25T07:44:16.000Z</published>
-    <updated>2022-03-25T09:12:47.700Z</updated>
+    <updated>2022-03-25T09:31:10.666Z</updated>
     
     
       
@@ -34,38 +59,38 @@
     
     
     
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    <category term="python" scheme="https://shixiuhai.github.io/blog/categories/python/"/>
     
     
-    <category term="分布式爬虫" scheme="http://www.fuyaoershang.xyz/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"/>
+    <category term="分布式爬虫" scheme="https://shixiuhai.github.io/blog/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>端云修改记录</title>
-    <link href="http://www.fuyaoershang.xyz/2022/032342720.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/032342720.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/032342720.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/032342720.html</id>
     <published>2022-03-23T01:12:46.000Z</published>
-    <updated>2022-03-24T05:36:35.328Z</updated>
+    <updated>2022-05-18T02:18:26.164Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
     
-    <category term="随记" scheme="http://www.fuyaoershang.xyz/categories/%E9%9A%8F%E8%AE%B0/"/>
+    <category term="随记" scheme="https://shixiuhai.github.io/blog/categories/%E9%9A%8F%E8%AE%B0/"/>
     
     
-    <category term="问题日志" scheme="http://www.fuyaoershang.xyz/tags/%E9%97%AE%E9%A2%98%E6%97%A5%E5%BF%97/"/>
+    <category term="问题日志" scheme="https://shixiuhai.github.io/blog/tags/%E9%97%AE%E9%A2%98%E6%97%A5%E5%BF%97/"/>
     
   </entry>
   
   <entry>
     <title>openvpn部署安装使用</title>
-    <link href="http://www.fuyaoershang.xyz/2022/032234838.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/032234838.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/032234838.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/032234838.html</id>
     <published>2022-03-22T02:30:58.000Z</published>
-    <updated>2022-03-22T02:30:58.274Z</updated>
+    <updated>2022-03-25T09:31:10.660Z</updated>
     
     
     
@@ -75,29 +100,29 @@
   
   <entry>
     <title>端云平台常用问题搜集解决</title>
-    <link href="http://www.fuyaoershang.xyz/2022/031738036.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/031738036.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/031738036.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/031738036.html</id>
     <published>2022-03-17T07:16:21.000Z</published>
-    <updated>2022-03-24T07:49:33.045Z</updated>
+    <updated>2022-05-18T02:17:21.339Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
     
-    <category term="日记" scheme="http://www.fuyaoershang.xyz/categories/%E6%97%A5%E8%AE%B0/"/>
+    <category term="日记" scheme="https://shixiuhai.github.io/blog/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="端云平台常用问题搜集解决" scheme="http://www.fuyaoershang.xyz/tags/%E7%AB%AF%E4%BA%91%E5%B9%B3%E5%8F%B0%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98%E6%90%9C%E9%9B%86%E8%A7%A3%E5%86%B3/"/>
+    <category term="端云平台常用问题搜集解决" scheme="https://shixiuhai.github.io/blog/tags/%E7%AB%AF%E4%BA%91%E5%B9%B3%E5%8F%B0%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98%E6%90%9C%E9%9B%86%E8%A7%A3%E5%86%B3/"/>
     
   </entry>
   
   <entry>
     <title>scrapy学习</title>
-    <link href="http://www.fuyaoershang.xyz/2022/03045367.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/03045367.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/03045367.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/03045367.html</id>
     <published>2022-03-04T02:15:55.000Z</published>
-    <updated>2022-03-16T09:32:36.895Z</updated>
+    <updated>2022-04-07T02:17:59.600Z</updated>
     
     
       
@@ -110,17 +135,17 @@
     
     
     
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    <category term="python" scheme="https://shixiuhai.github.io/blog/categories/python/"/>
     
     
-    <category term="网络爬虫" scheme="http://www.fuyaoershang.xyz/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
+    <category term="网络爬虫" scheme="https://shixiuhai.github.io/blog/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>数据结构设计</title>
-    <link href="http://www.fuyaoershang.xyz/2022/022217947.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/022217947.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/022217947.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/022217947.html</id>
     <published>2022-02-22T06:10:37.000Z</published>
     <updated>2022-03-04T02:23:45.236Z</updated>
     
@@ -138,38 +163,38 @@
     
     
     
-    <category term="web开发" scheme="http://www.fuyaoershang.xyz/categories/web%E5%BC%80%E5%8F%91/"/>
+    <category term="web开发" scheme="https://shixiuhai.github.io/blog/categories/web%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="数据结构设计" scheme="http://www.fuyaoershang.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    <category term="数据结构设计" scheme="https://shixiuhai.github.io/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>基于多台交换机的数据补录方法</title>
-    <link href="http://www.fuyaoershang.xyz/2022/012143105.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/012143105.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/012143105.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/012143105.html</id>
     <published>2022-01-21T07:29:01.000Z</published>
-    <updated>2022-01-27T03:54:40.784Z</updated>
+    <updated>2022-03-21T10:24:01.933Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
     
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    <category term="python" scheme="https://shixiuhai.github.io/blog/categories/python/"/>
     
     
-    <category term="csv到mysql" scheme="http://www.fuyaoershang.xyz/tags/csv%E5%88%B0mysql/"/>
+    <category term="csv到mysql" scheme="https://shixiuhai.github.io/blog/tags/csv%E5%88%B0mysql/"/>
     
-    <category term="mysql数据批量插入" scheme="http://www.fuyaoershang.xyz/tags/mysql%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/"/>
+    <category term="mysql数据批量插入" scheme="https://shixiuhai.github.io/blog/tags/mysql%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/"/>
     
   </entry>
   
   <entry>
     <title>算法基础</title>
-    <link href="http://www.fuyaoershang.xyz/2022/011317141.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/011317141.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/011317141.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/011317141.html</id>
     <published>2022-01-13T08:41:40.000Z</published>
     <updated>2022-01-20T01:07:20.367Z</updated>
     
@@ -184,19 +209,19 @@
     
     
     
-    <category term="算法基础" scheme="http://www.fuyaoershang.xyz/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    <category term="算法基础" scheme="https://shixiuhai.github.io/blog/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
     
     
-    <category term="基础算法" scheme="http://www.fuyaoershang.xyz/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    <category term="基础算法" scheme="https://shixiuhai.github.io/blog/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>nginx基础使用</title>
-    <link href="http://www.fuyaoershang.xyz/2022/010442496.html"/>
-    <id>http://www.fuyaoershang.xyz/2022/010442496.html</id>
+    <link href="https://shixiuhai.github.io/blog/2022/010442496.html"/>
+    <id>https://shixiuhai.github.io/blog/2022/010442496.html</id>
     <published>2022-01-04T03:32:59.000Z</published>
-    <updated>2022-03-25T09:29:44.804Z</updated>
+    <updated>2022-05-11T03:59:01.917Z</updated>
     
     
       
@@ -209,19 +234,19 @@
     
     
     
-    <category term="nginx" scheme="http://www.fuyaoershang.xyz/categories/nginx/"/>
+    <category term="nginx" scheme="https://shixiuhai.github.io/blog/categories/nginx/"/>
     
     
-    <category term="nginx基础" scheme="http://www.fuyaoershang.xyz/tags/nginx%E5%9F%BA%E7%A1%80/"/>
+    <category term="nginx基础" scheme="https://shixiuhai.github.io/blog/tags/nginx%E5%9F%BA%E7%A1%80/"/>
     
-    <category term="nginx反向代理" scheme="http://www.fuyaoershang.xyz/tags/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    <category term="nginx反向代理" scheme="https://shixiuhai.github.io/blog/tags/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>python对redis基础使用</title>
-    <link href="http://www.fuyaoershang.xyz/2021/122948490.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/122948490.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/122948490.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/122948490.html</id>
     <published>2021-12-29T08:17:36.000Z</published>
     <updated>2021-12-30T05:56:48.710Z</updated>
     
@@ -237,14 +262,14 @@
     
     
     
-    <category term="python操作redis基础" scheme="http://www.fuyaoershang.xyz/tags/python%E6%93%8D%E4%BD%9Credis%E5%9F%BA%E7%A1%80/"/>
+    <category term="python操作redis基础" scheme="https://shixiuhai.github.io/blog/tags/python%E6%93%8D%E4%BD%9Credis%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>通过voc的xml数据集生成yolov5的txt数据集</title>
-    <link href="http://www.fuyaoershang.xyz/2021/122420090.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/122420090.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/122420090.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/122420090.html</id>
     <published>2021-12-24T04:36:53.000Z</published>
     <updated>2021-12-30T05:59:22.397Z</updated>
     
@@ -259,40 +284,40 @@
     
     
     
-    <category term="yolov5" scheme="http://www.fuyaoershang.xyz/categories/yolov5/"/>
+    <category term="yolov5" scheme="https://shixiuhai.github.io/blog/categories/yolov5/"/>
     
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/yolov5/python/"/>
+    <category term="python" scheme="https://shixiuhai.github.io/blog/categories/yolov5/python/"/>
     
     
-    <category term="voc数据集改yolov5数据集" scheme="http://www.fuyaoershang.xyz/tags/voc%E6%95%B0%E6%8D%AE%E9%9B%86%E6%94%B9yolov5%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    <category term="voc数据集改yolov5数据集" scheme="https://shixiuhai.github.io/blog/tags/voc%E6%95%B0%E6%8D%AE%E9%9B%86%E6%94%B9yolov5%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
-    <category term="xml转txt" scheme="http://www.fuyaoershang.xyz/tags/xml%E8%BD%ACtxt/"/>
+    <category term="xml转txt" scheme="https://shixiuhai.github.io/blog/tags/xml%E8%BD%ACtxt/"/>
     
   </entry>
   
   <entry>
     <title>mysql基础笔记</title>
-    <link href="http://www.fuyaoershang.xyz/2021/122117178.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/122117178.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/122117178.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/122117178.html</id>
     <published>2021-12-21T01:19:46.000Z</published>
-    <updated>2021-12-30T06:09:09.060Z</updated>
+    <updated>2022-05-17T11:53:11.000Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
     
-    <category term="mysql" scheme="http://www.fuyaoershang.xyz/categories/mysql/"/>
+    <category term="mysql" scheme="https://shixiuhai.github.io/blog/categories/mysql/"/>
     
     
-    <category term="mysql基础" scheme="http://www.fuyaoershang.xyz/tags/mysql%E5%9F%BA%E7%A1%80/"/>
+    <category term="mysql基础" scheme="https://shixiuhai.github.io/blog/tags/mysql%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>记vscode相关配置</title>
-    <link href="http://www.fuyaoershang.xyz/2021/121939245.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/121939245.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/121939245.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/121939245.html</id>
     <published>2021-12-19T12:55:41.000Z</published>
     <updated>2021-12-30T06:22:49.398Z</updated>
     
@@ -308,23 +333,23 @@
     
     
     
-    <category term="vscode" scheme="http://www.fuyaoershang.xyz/categories/vscode/"/>
+    <category term="vscode" scheme="https://shixiuhai.github.io/blog/categories/vscode/"/>
     
     
-    <category term="vscode配置python调试" scheme="http://www.fuyaoershang.xyz/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/"/>
+    <category term="vscode配置python调试" scheme="https://shixiuhai.github.io/blog/tags/vscode%E9%85%8D%E7%BD%AEpython%E8%B0%83%E8%AF%95/"/>
     
-    <category term="vscode配置连接远程服务器开发" scheme="http://www.fuyaoershang.xyz/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/"/>
+    <category term="vscode配置连接远程服务器开发" scheme="https://shixiuhai.github.io/blog/tags/vscode%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vscode调试django" scheme="http://www.fuyaoershang.xyz/tags/vscode%E8%B0%83%E8%AF%95django/"/>
+    <category term="vscode调试django" scheme="https://shixiuhai.github.io/blog/tags/vscode%E8%B0%83%E8%AF%95django/"/>
     
-    <category term="vscode调试flask" scheme="http://www.fuyaoershang.xyz/tags/vscode%E8%B0%83%E8%AF%95flask/"/>
+    <category term="vscode调试flask" scheme="https://shixiuhai.github.io/blog/tags/vscode%E8%B0%83%E8%AF%95flask/"/>
     
   </entry>
   
   <entry>
     <title>调用百度地图api获取经纬度</title>
-    <link href="http://www.fuyaoershang.xyz/2021/1217198.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/1217198.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/1217198.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/1217198.html</id>
     <published>2021-12-17T08:06:41.000Z</published>
     <updated>2021-12-30T05:59:48.512Z</updated>
     
@@ -333,17 +358,17 @@
     
     
     
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    <category term="python" scheme="https://shixiuhai.github.io/blog/categories/python/"/>
     
     
-    <category term="调用百度地图api" scheme="http://www.fuyaoershang.xyz/tags/%E8%B0%83%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEapi/"/>
+    <category term="调用百度地图api" scheme="https://shixiuhai.github.io/blog/tags/%E8%B0%83%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEapi/"/>
     
   </entry>
   
   <entry>
     <title>js基础学习</title>
-    <link href="http://www.fuyaoershang.xyz/2021/121730907.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/121730907.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/121730907.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/121730907.html</id>
     <published>2021-12-17T02:09:38.000Z</published>
     <updated>2021-12-30T05:55:28.240Z</updated>
     
@@ -358,19 +383,19 @@
     
     
     
-    <category term="js" scheme="http://www.fuyaoershang.xyz/categories/js/"/>
+    <category term="js" scheme="https://shixiuhai.github.io/blog/categories/js/"/>
     
     
-    <category term="js基础" scheme="http://www.fuyaoershang.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
+    <category term="js基础" scheme="https://shixiuhai.github.io/blog/tags/js%E5%9F%BA%E7%A1%80/"/>
     
-    <category term="js基本学习" scheme="http://www.fuyaoershang.xyz/tags/js%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0/"/>
+    <category term="js基本学习" scheme="https://shixiuhai.github.io/blog/tags/js%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>docker使用</title>
-    <link href="http://www.fuyaoershang.xyz/2021/121543906.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/121543906.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/121543906.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/121543906.html</id>
     <published>2021-12-15T01:35:29.000Z</published>
     <updated>2021-12-30T06:24:14.606Z</updated>
     
@@ -386,19 +411,19 @@
     
     
     
-    <category term="dokcer" scheme="http://www.fuyaoershang.xyz/categories/dokcer/"/>
+    <category term="dokcer" scheme="https://shixiuhai.github.io/blog/categories/dokcer/"/>
     
     
-    <category term="docker基础" scheme="http://www.fuyaoershang.xyz/tags/docker%E5%9F%BA%E7%A1%80/"/>
+    <category term="docker基础" scheme="https://shixiuhai.github.io/blog/tags/docker%E5%9F%BA%E7%A1%80/"/>
     
-    <category term="docker使用" scheme="http://www.fuyaoershang.xyz/tags/docker%E4%BD%BF%E7%94%A8/"/>
+    <category term="docker使用" scheme="https://shixiuhai.github.io/blog/tags/docker%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   
   <entry>
     <title>yolov5_detect.py重写</title>
-    <link href="http://www.fuyaoershang.xyz/2021/121321986.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/121321986.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/121321986.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/121321986.html</id>
     <published>2021-12-13T02:49:43.000Z</published>
     <updated>2021-12-30T06:35:33.479Z</updated>
     
@@ -407,17 +432,17 @@
     
     
     
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    <category term="python" scheme="https://shixiuhai.github.io/blog/categories/python/"/>
     
     
-    <category term="yolov5_detect" scheme="http://www.fuyaoershang.xyz/tags/yolov5-detect/"/>
+    <category term="yolov5_detect" scheme="https://shixiuhai.github.io/blog/tags/yolov5-detect/"/>
     
   </entry>
   
   <entry>
     <title>网站域名截图</title>
-    <link href="http://www.fuyaoershang.xyz/2021/121340417.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/121340417.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/121340417.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/121340417.html</id>
     <published>2021-12-13T02:34:45.000Z</published>
     <updated>2021-12-13T02:54:00.193Z</updated>
     
@@ -426,56 +451,27 @@
     
     
     
-    <category term="python" scheme="http://www.fuyaoershang.xyz/categories/python/"/>
+    <category term="python" scheme="https://shixiuhai.github.io/blog/categories/python/"/>
     
     
-    <category term="网站域名截图" scheme="http://www.fuyaoershang.xyz/tags/%E7%BD%91%E7%AB%99%E5%9F%9F%E5%90%8D%E6%88%AA%E5%9B%BE/"/>
+    <category term="网站域名截图" scheme="https://shixiuhai.github.io/blog/tags/%E7%BD%91%E7%AB%99%E5%9F%9F%E5%90%8D%E6%88%AA%E5%9B%BE/"/>
     
   </entry>
   
   <entry>
     <title>go语言入门</title>
-    <link href="http://www.fuyaoershang.xyz/2021/12082134.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/12082134.html</id>
+    <link href="https://shixiuhai.github.io/blog/2021/12082134.html"/>
+    <id>https://shixiuhai.github.io/blog/2021/12082134.html</id>
     <published>2021-12-08T02:33:09.000Z</published>
     <updated>2021-12-13T02:54:00.177Z</updated>
     
     
     
     
-    <category term="go" scheme="http://www.fuyaoershang.xyz/categories/go/"/>
+    <category term="go" scheme="https://shixiuhai.github.io/blog/categories/go/"/>
     
     
-    <category term="go入门" scheme="http://www.fuyaoershang.xyz/tags/go%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shell脚本基础和进阶</title>
-    <link href="http://www.fuyaoershang.xyz/2021/120755240.html"/>
-    <id>http://www.fuyaoershang.xyz/2021/120755240.html</id>
-    <published>2021-12-07T09:18:28.000Z</published>
-    <updated>2022-01-04T03:57:26.531Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;shell-脚本范例&quot;&gt;&lt;a href=&quot;#shell-脚本范例&quot; class=&quot;headerlink&quot; title=&quot;shell 脚本范例&quot;&gt;&lt;/a&gt;shell 脚本范例&lt;/h1&gt;&lt;h3 id=&quot;范例1&quot;&gt;&lt;a href=&quot;#范例1&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.fuyaoershang.xyz/categories/linux/"/>
-    
-    
-    <category term="shell" scheme="http://www.fuyaoershang.xyz/tags/shell/"/>
-    
-    <category term="shell基础" scheme="http://www.fuyaoershang.xyz/tags/shell%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="shell进阶" scheme="http://www.fuyaoershang.xyz/tags/shell%E8%BF%9B%E9%98%B6/"/>
+    <category term="go入门" scheme="https://shixiuhai.github.io/blog/tags/go%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
